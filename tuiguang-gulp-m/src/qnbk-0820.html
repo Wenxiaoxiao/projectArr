@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"全能爆款保险组", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/qnbk-0820.css">
+</head>
+
+<body>
+    <div class="body-container qnbk-0820">
+        <div class="comon-box-1" id="showFixed">
+            <div class="qrcode">
+                <img alt="" class="qrcode_target">
+            </div>
+            <span class="shineWords">长按识别二维码</span>
+            <img src="@@webRoot/lib/images/qnbk-0820/1.jpg" alt="" class="img-c">
+        </div>
+        <img src="@@webRoot/lib/images/qnbk-0820/2.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/qnbk-0820/3.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/qnbk-0820/4.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/qnbk-0820/5.jpg" alt="" class="img-c">
+        <div class="comon-box-2">
+            <div class="qrcode">
+                <img alt="" class="qrcode_target">
+            </div>
+            <img src="@@webRoot/lib/images/qnbk-0820/6.jpg" alt="" class="img-c">
+        </div>
+        @@include("include/tell.htm")
+        <div class="blank"></div>
+        <a href="#showFixed" class="botton-fixed">
+            <span class="left">成功测算保费即<span>送儿童疫苗保险</span>一份</span>
+            <span class="right">立即预约</span>
+        </a>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+$(function() {
+    scrollFixed();
+    function scrollFixed() {
+        var showFixedHeight = $("#showFixed").offset().top
+        $(window).on("scroll", function () {
+            if ($(this).scrollTop() > showFixedHeight) {
+                $(".botton-fixed").addClass("show")
+            } else {
+                $(".botton-fixed").removeClass("show")
+            }
+        })
+    };
+    //二维码轮询
+    var qrcodeList = ['./lib/images/qnbk-0820/qrcode/1.jpg','./lib/images/qnbk-0820/qrcode/2.jpg',
+    './lib/images/qnbk-0820/qrcode/3.jpg','./lib/images/qnbk-0820/qrcode/4.jpg',
+    './lib/images/qnbk-0820/qrcode/5.jpg','./lib/images/qnbk-0820/qrcode/6.jpg',
+    './lib/images/qnbk-0820/qrcode/7.jpg','./lib/images/qnbk-0820/qrcode/8.jpg',
+    './lib/images/qnbk-0820/qrcode/9.jpg','./lib/images/qnbk-0820/qrcode/10.jpg'];
+    var index = Math.floor(Math.random()*10);
+    $(".qrcode_target").attr("src",qrcodeList[index]);
+})
+</script>
+
+</html>

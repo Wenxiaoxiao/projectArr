@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"2020给孩子买的重疾险", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/zjx-1110.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="zjx-1110">
+
+        <div class="header">
+            <h3>免费测算保费</h3>
+
+            <div class="premiumBox" id="fixedTop">
+                <div class="premium-border">
+
+                    <div class="premium-box">
+                    </div>
+                    <span class="btns" id="subMitBtn">立即测算保费</span>
+                    <p class="pre-text">请输入您的真实手机号码，便于接收保费测算结果</p>
+                    <p class="pre-text1">* 安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或者其他用途。</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="zjx-list">
+        </div>
+        <div id="showFixed"></div>
+        <div class="zjx-list1">
+            <h3>给孩子买重疾险 每月50元就能买到好产品！</h3>
+            <div class="list1-img">
+                <img src="@@webRoot/lib/images/zjx-1110/zjx3.png" alt="">
+            </div>
+            <div class="list1-img1">
+                <img src="@@webRoot/lib/images/zjx-1110/zjx7.jpg" alt="">
+            </div>
+        </div>
+
+        <a href="#fixedTop" class="fenge zoom">
+            测一测哪款适合家里萌宝
+        </a>
+
+        <div class="zjx-list2">
+            <h3>孩子保险怎么买？多种保障方案超值选</h3>
+            <div class="list2-text1">0岁宝宝，1千元撬动最高<span>581</span>万保障，意外、疾病全覆盖！<div class="border"></div>
+            </div>
+            <div class="list2-img1">
+                <img src="@@webRoot/lib/images/zjx-1110/zjx5.png" alt="">
+            </div>
+            <a href="#fixedTop" class="list2-img2 zoom">
+                点击更多保障方案搭配
+            </a>
+            <div class="list2-text">0岁宝宝，4千元撬动最高<span>901.2</span>万保障，守护孩子一生！<div class="border"></div>
+            </div>
+            <div class="list2-img3">
+                <img src="@@webRoot/lib/images/zjx-1110/zjx6.png" alt="">
+            </div>
+        </div>
+
+        <div class="zjx-list3">
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    @@include("include/tell.htm")
+    <div class="blanks" style="width: 100%;height:50px;"></div>
+    <a href="#fixedTop" class="botton-fixed">查看测评结果</a>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function () {
+
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+
+        var fromsFn = $.fromsFn();
+
+    
+        var fromData = [
+            {
+                name: '孩子年龄：',
+                type: 6,
+                id: 'age',
+                items: [
+                    { value: '0-3岁', selected: true },
+                    { value: '4-10岁' },
+                    { value: '11-17岁' },
+                ]
+            },
+            {
+                name: '孩子性别',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                },]
+            },
+            {
+                name: '基本保额：',
+                type: 6,
+                id: 'jbbe',
+                items: [
+                    { value: '30万' },
+                    { value: '40万' },
+                    { value: '50万', selected: true },
+                    { value: '50万以上' },
+                ]
+            },
+            {
+                name: '您的姓名：',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话：',
+                type: 3,
+                id: 'mobile',
+            },];
+        fromsFn.startFroms(fromData, {
+            title: '2020给孩子买的重疾险',
+        })
+        scrollFixed();
+
+    })
+</script>
+
+</html>

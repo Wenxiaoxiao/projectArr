@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"2020年全明星中国好保险", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/hqwyrs-1019.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container hqwyrs-1019">
+        <div class="banner">
+            <img src="@@webRoot/lib/images/hqwyrs-1019/banner.jpg" alt="" class="img-c">
+        </div>
+        <div class="premiumBox" id="showFixed">
+            <div class="premium-border">
+                <div class="premium-title">
+                    <span class="yuan"></span>
+                    测一测买一份终身型的重疾险
+                    需要多少钱？
+                    <span class="yuan"></span>
+                </div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">查看测试结果</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您开启保障，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <div class="pageContent" >
+            <div class="box">
+                <div class="box-title">
+                    <div class="p6">大病保障全</div>
+                </div>
+                <div class="img-box">
+                    <img src="@@webRoot/lib/images/hqwyrs-1019/3.png" alt="" class="img-c img-1">
+                    <span class="b-p-2 p7">全面保障“一步到位”保费双重豁免</span>
+                    <span class="b-p-2 p8">188种疾病保障，累计最高赔付372万</span>
+                    <span class="b-p-2 p9">50种轻症可累计赔付3次 </span>
+                    <span class="b-p-2 p10">附加18种少儿高发特疾 一家三代都能买</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-title">
+                    <div class="p6">住院不用愁</div>
+                </div>
+                <div class="img-box">
+                    <img src="@@webRoot/lib/images/hqwyrs-1019/4.png" alt="" class="img-c img-2">
+                    <span class="b-p-3 p11">帮忙安排门诊</br>
+                        预约及医疗陪诊</span>
+                    <span class="b-p-3 p12">帮忙安排住院</br>
+                        绿色通道</span>
+                    <span class="b-p-3 p13">帮忙获取全球医疗</br>
+                        专家第二诊疗意见 </span>
+                    <span class="b-p-3 p14">帮忙垫付住院费</br>
+                        免押金住院
+                        </span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-title">
+                    <div class="p6">理赔不操心</div>
+                </div>
+                <div class="img-box">
+                    <img src="@@webRoot/lib/images/hqwyrs-1019/5.png" alt="" class="img-c img-3">
+                    <div class="p-b-4 p17">
+                        <div class="p15">出险报案</div>
+                        <div class="p16">通过7*24小时服务热线进行报案</div>
+                    </div>
+                    <div class="p-b-4 p18">
+                        <div class="p15">收集资料</div>
+                        <div class="p16">1对1提供理赔协助服务</div>
+                        <div class="p16">帮忙客户收集理赔所需资料</div>
+                        <div class="p16">告知理赔事项给出建议</div>
+                    </div>
+                    <div class="p-b-4 p19">
+                        <div class="p15">理赔成功</div>
+                        <div class="p16">核对理赔明细</div>
+                        <div class="p16">确认客户收到理赔款项 </div>
+                        <div class="p16">方可结案</div>
+                    </div>
+                    <div class="p-b-4 p20">
+                        <div class="p15">督查回访</div>
+                        <div class="p16">进行案件督查回访</div>
+                        <div class="p16">听取客户意见和建议</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    @@include("include/tell.htm") 
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        var fromData = [
+            {
+                name: '您的性别',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }, ]
+            },
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData,{
+            title:'2020年全明星中国好保险',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+})
+</script>
+</html>

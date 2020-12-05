@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"如意尊终身寿险，保额终身增长的寿险", "keywords": "如意尊保险、终身寿险、增额终身寿险、如意尊增额终身寿险、寿险", "description": "信泰人寿如意尊增额终身寿险-一款让计划赶得上变化，2020年值得入手的终身寿险" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/ryz-0710.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container ryz-0710">
+        <div class="banner">
+            <img src="@@webRoot/lib/images/ryz-0710/img_01.jpg" alt="" class="img-c">
+        </div>
+        <div class="premiumBox" id="showFixed">
+            <div class="premium-border">
+                <div class="premium-title">
+                    <div class="title">保费测算</div>
+                </div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即测保费</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <img src="@@webRoot/lib/images/ryz-0710/img_03.jpg" alt="" class="img-c" id="addFixed">
+        <img data-original="@@webRoot/lib/images/ryz-0710/img_04.jpg" alt="" class="img-c lazy">
+        <img data-original="@@webRoot/lib/images/ryz-0710/img_05.jpg" alt="" class="img-c lazy">
+        <img data-original="@@webRoot/lib/images/ryz-0710/img_06.jpg" alt="" class="img-c lazy">
+        <img data-original="@@webRoot/lib/images/ryz-0710/img_07.jpg" alt="" class="img-c lazy">
+        <img data-original="@@webRoot/lib/images/ryz-0710/img_08.jpg" alt="" class="img-c lazy">
+        <img data-original="@@webRoot/lib/images/ryz-0710/img_09.jpg" alt="" class="img-c lazy">
+        <img data-original="@@webRoot/lib/images/ryz-0710/img_11.jpg" alt="" class="img-c lazy">
+        <img data-original="@@webRoot/lib/images/ryz-0710/12.jpg" alt="" class="img-c lazy">
+        @@include("include/tell.htm")
+        <div class="blanks" style="width: 100%;height:45px;"></div>
+        <a href="#showFixed" class="botton-fixed">
+            免费测算保费
+        </a>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+        {
+            name: '为谁投保',
+            type: 4,
+            id: 'ages',
+            items: [{
+                value: '自己',
+                selected:true
+            }, {
+                value: '子女'
+            }
+        ]
+        },
+        {
+            name: '您的性别',
+            type: 6,
+            id: 'sex',
+            items: [{
+                value:'男',
+                selected:true
+            }, {
+                value:'女'
+            }]
+        },
+        {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        },
+        {
+            name: '手机号码',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'如意尊终身寿险，保额终身增长的寿险',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+        scrollFixed() //按钮显示隐藏
+        function scrollFixed() {
+            var showFixedHeight = $("#addFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() > showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        fromsFn.lazyImg() //按钮显示隐藏
+})
+</script>
+
+</html>

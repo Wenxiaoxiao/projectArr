@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"重疾险全网评测", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/shzjx-0924.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+<body>
+    <div class="body-container shzjx-0924">
+        <div class="common-box-1">
+            <!-- <img src="@@webRoot/lib/images/shzjx-0924/1.jpg" alt="" class="img-c lazy"> -->
+            <div class="top-tit">梧桐树保险网产品推荐官-华少</div>
+            <div class="big-tit">2020实惠重疾险</div>
+            <div class="content-wrapper">
+                <div class="content-item"><img src="@@webRoot/lib/images/shzjx-0924/checked.png"><span>最高<span class="red">160%</span>保额赔付</span></div>
+                <div class="content-item"><img src="@@webRoot/lib/images/shzjx-0924/checked.png"><span>覆盖<span class="red">188+种</span>疾病 高发疾病强化保障</span></div>
+                <div class="content-item"><img src="@@webRoot/lib/images/shzjx-0924/checked.png"><span>多次<span class="red">轻症、中症</span>多次赔付 赔付比例高</span></div>
+            </div>
+        </div>
+        <div class="premiumBox" id="showFixed">
+            <div class="nownum">今日免费领取名额只剩<span class="setNum"></span>个</div>
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即免费领取<span>（原价￥169元）</span></span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <img src="@@webRoot/lib/images/shzjx-0924/3.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/shzjx-0924/4.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/shzjx-0924/5.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/shzjx-0924/6.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/shzjx-0924/7.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/shzjx-0924/8.jpg" alt="" class="img-c lazy">
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    <!-- @@include("include/tell.htm") -->
+    <div class="blanks"></div>
+    <a href="#showFixed" class="botton-fixed">立即免费领取</a>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function() {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top;
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        function setNum(){
+            //一天96个，每小时4个,15分钟1个
+            var tempNum = 96;
+            var today = new Date().getFullYear()+'/'+(new Date().getMonth()+1)+'/'+new Date().getDate();
+            var start = new Date(today).getTime();
+            var now = new Date().getTime();
+            var tmp = Math.floor((now-start)/900000);
+            tempNum = tempNum - tmp;
+            $('.setNum').text(tempNum);
+        }
+        var timer = setInterval(function(){
+            setNum();
+        },60000)
+        setNum();
+        var fromData = [
+            
+        {
+            name: '被保人年龄',
+            type: 6,
+            id: 'age',
+            items: [{
+                value: '0-17岁',
+                
+            }, {
+                value: '18-30岁',
+                selected: true
+            }, {
+                value: '31-50岁'
+            }]
+        }, 
+        {
+            name: '被保人性别',
+            type: 4,
+            id: 'sex',
+            items: [{
+                value: '男'
+            }, {
+                value: '女'
+            }]
+        }, 
+        {
+            name: '基本保额',
+            type:6,
+            id: 'jbbe',
+            items: [{
+                value: '5-20万'
+            }, {
+                value: '21-30万'
+            }, {
+                value: '31-50万',
+                selected: true
+            }]
+        }, 
+         {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'重疾险全网评测',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+})
+</script>
+
+</html>

@@ -1,0 +1,174 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.yswy-20200917{
+    background: #d8e9ff;
+    width:r(750);
+    .img-c{
+        width:r(750);
+    }
+    .common-box-1{
+        width:r(750);
+        height:r(884);
+        padding-top:r(39);
+        background:url('../../images/yswy-20200917/1.jpg') no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        .desc{
+            width:r(709);
+            height:r(306);
+            background: #fff;
+            border:r(2) solid #00c590;
+            border-radius:r(10);
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            bottom:r(40);
+            text-align: center;
+            .tit{
+                font-size: r(68);
+                color: #03bd8b;
+                line-height:r(120);
+            }
+            .shine-dots{
+                width:r(647);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin:0 auto;
+                height:r(120);
+                &>.shine-dot{
+                    width:r(198);
+                    height:r(120);
+                    box-shadow:0 0 r(5) rgba(18,182,162,0.3);
+                    border-radius:r(20);
+                    overflow: hidden;
+                    .top{
+                        height:r(69);
+                        color: #fff;
+                        font-size: r(34);
+                        font-weight: bold;
+                        line-height:r(68);
+                        background-image: linear-gradient(to bottom,#04d9a1,#11b5a2);
+                    }
+                    .bottom{
+                        color: #3c3b3b;
+                        height:r(51);
+                        line-height:r(50);
+                        font-size: r(25);
+                    }
+                }
+            }
+        }
+    }
+    .premiumBox{
+        background:url('../../images/yswy-20200917/2.jpg') no-repeat;
+        background-size: 100% auto;
+        width:r(750);
+        height: r(883);
+        padding:r(126) r(60) r(27);
+        margin:0 auto;
+        border:none;
+        border-radius: 0;
+        overflow: hidden;
+        position: relative;
+        .nownum{
+            position: absolute;
+            top:r(72);
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: r(30);
+            .setNum{
+                color: #fff600;
+            }
+        }
+        .premium-border{
+            width:100%;
+            background:#ffffff;
+            position: relative;
+            .premium-title{
+                width: r(426);
+                height:r(90);
+                line-height:r(90);
+                font-size:r(58);
+                color:#fff;
+                background:#ff7a5b;
+                position: absolute;
+                left:50%;
+                transform: translateX(-50%);
+                top:r(-38);
+                text-align: center;
+                font-weight: bold;
+                border-radius:r(10);
+            }
+            .premium-box{
+                .qm-change{
+                    margin-bottom:r(8);
+                    min-height: r(70);
+                    .labeltxt{
+                        color:#000;
+                        white-space: nowrap;
+                    }
+                    .box-right{
+                        color:#000;
+                        .radio-box{
+                            min-width:r(75);
+                        }
+                    }
+                }
+            }
+            .btns{
+                animation: commonScale 1s infinite ease-in-out;
+                width:r(583);
+                height:r(100);
+                // background-image: linear-gradient(to bottom,#f74800,#e20b00);
+                background-color: #ff7400;
+                box-shadow: 0 2px 3px rgba(255,116,0, 0.2);
+                border-radius: r(50);
+                line-height:r(100);
+                display: block;
+                text-align: center;
+                margin:0 auto;
+                font-size:r(42);
+                font-weight: bold;
+                color:#fff;
+                &>i{
+                    font-size: r(26);
+                    font-weight: normal;
+                    text-decoration: line-through;
+                    display: inline-block;
+                    margin-left:r(10);
+                }
+            }
+            .pre-text{
+                color:#666666;
+                padding:r(0);
+                font-size:r(20);
+            }
+        }
+    }
+}
+.blanks{
+    height:r(100);
+}
+.botton-fixed{
+    width: 100%;
+    font-size: r(36);
+    height:r(100);
+    line-height:r(100);
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom:r(-100);
+    background-image: linear-gradient(to bottom,#f74800,#e20b00);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    &.show{
+        bottom: 0;
+    }
+}

@@ -1,0 +1,59 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.sebx-0629{
+    background: #c3ece4;
+    width:r(750);
+    .img-c{
+        width:r(750);
+    }
+    .premiumBox{
+        width:r(750);
+        height:r(914);
+        background:url("../../images/sebx-0629/3.png") no-repeat;
+        background-size:100% 100%;
+        padding:r(188) r(40) r(0) r(53);
+        border:none;
+        margin:0 auto;
+        border-radius:0;
+        .qm-change{
+            .labeltxt{
+                color:#000;
+                font-size:r(27);
+                text-align: center;
+            }
+            .box-right{
+                .changes{
+                    border:1px solid #dbdbdb;
+                    border-radius:r(15);
+                }
+                .radio-box.active{
+                    border-color:#4ea3c8;
+                    color:#000;
+                }
+                .radio-box.active::before{
+                    background-color:#4ea3c8;
+                }
+            }
+        }
+        .btns{
+            width:r(596);
+            height:r(88);
+            background:#fa5156;
+            border-radius: r(10);
+            border-bottom:r(9) solid #ffa9ac;
+            display: block;
+            line-height:r(88);
+            text-align: center;
+            margin:0 auto;
+            font-size:r(39);
+            color:#fff;
+        }
+        .pre-text{
+            color:#2e1a21;
+            font-size:r(24);
+            line-height:r(74);
+            text-align:center;
+        }
+    }
+}

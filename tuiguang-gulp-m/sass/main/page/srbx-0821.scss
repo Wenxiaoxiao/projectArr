@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.srbx-0821{
+    background: #fbe5e3;
+    width:r(750);
+    .comon-box-1{
+        position: relative;
+        width:r(750);
+        height:r(406);
+        .qrcode{
+            position:absolute;
+            width:r(186);
+            height:r(186);
+            left:r(80);
+            top:r(172);
+            img{
+                width:r(186);
+            }
+        }
+        .shineWords{
+            font-size:r(30);
+            position: absolute;
+            top:r(190);
+            left:r(344);
+            font-weight:900;
+            color:#723326;
+            animation: my-animation .25s linear infinite alternate-reverse;
+        }
+        @keyframes my-animation {
+            from{
+                color:#723326;
+            }
+            to{
+                color:#ff7202;
+            }
+        }
+    }
+    .img-c{
+        width:r(750);
+    }
+}

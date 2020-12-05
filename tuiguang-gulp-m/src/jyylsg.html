@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"教育金+养老金+身故全方面保障年金", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/fosun-zjx.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <style>
+        .premiumBox .labeltxt{
+            width: 20%;
+        }
+        .premiumBox .box-right {
+            width: 77%;
+        }
+        .premiumBox .premium-box {
+            padding: 0.2rem;
+        }
+        .fosun-zjx {
+            background: #d5181b;
+        }
+        .fosun-zjx .premiumBox .premium-border .btns {
+            background: #ff604a;
+            box-shadow: 0 4px 0 #f3dfdf;
+        }
+        .fosun-zjx .premiumBox {
+            margin-top: -15px;
+        }
+        .fosun-zjx .img-box {
+            border-radius: 15px;
+            padding: 20px 15px;
+            background: #fff;
+            width: auto;
+            margin: 0 .26667rem 30px;
+        }
+        .fosun-zjx .img-box img:nth-child(n+2) {
+            margin-top: 40px;
+        }
+        .fosun-zjx .premiumBox .pre-text {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-container fosun-zjx">
+        <img src="@@webRoot/lib/images/jyylsg/banner.jpg" alt="" class="img-c" style="min-height:3rem">
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-title">保费测算</div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即测算保费</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <div class="img-box" id="showFixed">
+            <img data-original="@@webRoot/lib/images/jyylsg/01.png" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/jyylsg/02.png" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/jyylsg/03.png" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/jyylsg/04.png" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/jyylsg/05.png" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/jyylsg/06.png" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/jyylsg/07.png" alt="" class="img-c lazy">
+        </div>
+    </div>
+    @@include("include/tell.htm")
+    <div class="blanks" style="width: 100%;height:45px;"></div>
+    <a href="#fixedTop" class="botton-fixed">
+        <img src="@@webRoot/lib/images/fosun-zjx/btn-foot.png" alt="">
+    </a>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+        {
+            name: '为谁投保',
+            className:"min-radio",
+            type: 4,
+            id: 'target',
+            items: [{
+                value: '子女',
+                selected: true
+            }, {
+                value: '自己'
+            }, {
+                value: '配偶'
+            }, {
+                value: '父母'
+            }]
+        }, 
+        {
+            name: '性别',
+            type: 4,
+            id: 'sex',
+            items: [{
+                value: '男',
+                selected: true
+            }, {
+                value: '女'
+            }]
+        }, 
+        {
+            name: '基本保额',
+            type: 6,
+            id: 'jbbe',
+            inputItem:{
+                name:"其他金额",
+            },
+            items: [{
+                value: '100万'
+            }, {
+                value: '500万'
+            }, {
+                value: '800万',
+                selected: true
+            }, {
+                value: '1000万'
+            }]
+        }, 
+        {
+            name: '缴费方式',
+            type: 5,
+            id: 'jffs',
+            items: [
+                {
+                    value: '5年'
+                }, 
+                {
+                    value: '10年'
+                }, 
+                {
+                    value: '15年'
+                }, 
+                {
+                    value: '20年',
+                    selected:true
+                }, 
+                {
+                    value: '30年'
+                }
+            ]
+        }, 
+         {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'热销超高性价比年金-保费测算',
+        })
+        fromsFn.scrollFixed() //按钮显示隐藏
+        fromsFn.lazyImg() //按钮显示隐藏
+       
+})
+</script>
+
+</html>

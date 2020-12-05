@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"买重疾险就选它——保185种疾病，累计最高赔付1805万元", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/yswy-20200917.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+<body>
+    <div class="body-container yswy-20200917">
+        <div class="common-box-1">
+            <div class="desc">
+                <div class="tit">一份保障  全家适用</div>
+                <div class="shine-dots">
+                    <div class="shine-dot">
+                        <div class="top">185+种</div>
+                        <div class="bottom">疾病保障</div>
+                    </div>
+                    <div class="shine-dot">
+                        <div class="top">930%</div>
+                        <div class="bottom">重疾累计赔付</div>
+                    </div>
+                    <div class="shine-dot">
+                        <div class="top">1805万</div>
+                        <div class="bottom">累计最高赔付</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="premiumBox" id="showFixed">
+            <div class="nownum">目前已有<span class="setNum"></span>人测算</div>
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">免费领取保障方案<i>(原价￥169)</i></span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您重疾保障方案领取，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <img src="@@webRoot/lib/images/yswy-20200917/3.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/yswy-20200917/4.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/yswy-20200917/5.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/yswy-20200917/6.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/yswy-20200917/7.jpg" alt="" class="img-c lazy">
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/tell.htm")
+    <div class="blanks"></div>
+    <a href="#showFixed" class="botton-fixed">免费领取保障方案</a>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function() {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top;
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        function setNum(startNum){
+            var timestamp=new Date().getTime();
+            console.log(timestamp);
+            var num=Math.floor((timestamp-startNum)/(1000*5))+26848;
+            return num
+        }
+        var startTime = new Date()
+        var yy = startTime.getFullYear();
+        var mm = startTime.getMonth()+1;
+        var dd = startTime.getDay();
+        if(mm<10){
+            mm = '0'+mm
+        }
+        if(dd<10){
+            dd = '0'+dd
+        }
+        var start=new Date(yy+'/'+mm+'/'+dd).getTime()
+        console.log(start)
+        var testNum=setNum(start);
+        $('.setNum').text(testNum);
+        let ageArr = []
+        for(let i=0;i<=55;i++){
+            ageArr[i] = {}
+            ageArr[i].value = i +'岁'
+        }
+        var fromData = [
+            
+        {
+            name: '您的年龄：',
+            type: 6,
+            id: 'age',
+            items: [{
+                value: '0-17岁',
+                selected: true
+                
+            }, {
+                value: '18-30岁'
+            }, {
+                value: '31-50岁'
+            }]
+        }, 
+        {
+            name: '您的性别：',
+            type: 4,
+            id: 'sex',
+            items: [{
+                value: '男'
+            }, {
+                value: '女'
+            }]
+        }, 
+        {
+            name: '保费预算',
+            type: 6,
+            id: 'bfys',
+            items: [{
+                    value: '1-3千',
+                    selected: true
+                },
+                {
+                    value: '4-6千'
+                },
+                {
+                    value: '7千以上'
+                },
+            ]
+        },
+         {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+            desc:"您的信息将被严格保密"
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+            desc:"用于接收保费测算结果"
+        }];
+        fromsFn.startFroms(fromData, {
+            title: '买重疾险就选它——保185种疾病，累计最高赔付1805万元',
+        })
+})
+</script>
+
+</html>

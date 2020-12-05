@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"寿险管理师预约咨询", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/appointment.css">
+</head>
+
+<body>
+    <div class="body-container appointment padding">
+        <div class="box-panel">
+            <img src="@@webRoot/lib/images/appointment/img1.jpg">
+            <div class="text">恭喜！你已成功预约</div>
+            <div class="text">在约定的时间</div>
+            <div class="text">寿险管理师将准时联系您为您提供咨询服务</div>
+        </div>
+    </div>
+<script>
+$(function(){
+    $("#showPanel1").on("click", function(){
+        $("#selectPanel1").removeClass("hide");
+    });
+    $("#showPanel2").on("click", function(){
+        $("#selectPanel2").removeClass("hide");
+    });
+    $("#selectPanel1 .item").on("click", function(){
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+    $("#selectPanel2 .item").on("click", function(){
+        console.log($(this).hasClass("active"))
+        if($(this).hasClass("active")) {
+            $(this).removeClass("active");
+        }else{
+            $(this).addClass("active");
+        }
+    });
+    $(".close").on("click",function(){
+        $(".selct-panel").addClass("hide");
+        $(".bg").addClass("hide");
+    });
+});
+</script>
+</body>
+@@include("include/footer.htm")
+</html

@@ -1,0 +1,96 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.tc-0616{
+    height:100vh;
+    background:#000;
+    padding-top:r(267);
+    &>.premiumBox{
+        width:r(683);
+        height:r(654);
+        background:#fff;
+        border-radius:r(20);
+        border:1px solid #fff;
+        color:#666;
+        padding:r(48) r(75) r(48) r(67);
+        &>.premium-border{
+            .premium-title{
+                color:#000;
+                font-size:r(34);
+                text-align:center;
+                &>.d1{
+                    font-size:r(35);
+                    color:#000;
+                    font-weight: bold;
+                }
+                &>.d2{
+                    font-size:r(31);
+                }
+                &>img{
+                    width:r(93);
+                    height:r(94);
+                }
+            }
+            .premium-box{
+                .qm-change{
+                    .labeltxt{
+                        width:0;
+                        display: none;
+                    }
+                    .box-right{
+                        width:100%;
+                        input{
+                            border:1px solid #bfbfbf;
+                            border-radius:r(10);
+                        }
+                    }
+                }
+            }
+            .btns{
+                width:r(312);
+                height:r(85);
+                line-height:r(85);
+                margin:0 auto;
+                display:block;
+                background:linear-gradient(to right,#ff3333,#c00000);
+                color:#fff;
+                font-size:r(34);
+                text-align: center;
+                border-radius:r(15);
+                box-shadow:r(10) r(10) r(10) rgba(192,0,0,0.3);
+            }
+            .btns1{
+                width:r(312);
+                height:r(95);
+                line-height:r(95);
+                margin:0 auto;
+                display:block;
+                background:linear-gradient(to right,#ffba00,#ff4e00);
+                color:#fff;
+                font-size:r(40);
+                font-weight: bold;
+                text-align: center;
+                border-radius:r(15);
+                box-shadow:r(10) r(10) r(10) rgba(255,78,0,0.3);
+                margin-bottom: r(12);
+                &>img{
+                    width:r(44);
+                    height:r(44);
+                    vertical-align: middle;
+                }
+                &>span{
+                    vertical-align:middle;
+                    margin-right:r(18);
+                }
+            }
+            .pre-text{
+                font-size:r(27);
+                text-align:center;
+            }
+        }
+    }
+    &>.premiumBox1{
+        width:r(683);
+        height:r(615);
+    }
+}

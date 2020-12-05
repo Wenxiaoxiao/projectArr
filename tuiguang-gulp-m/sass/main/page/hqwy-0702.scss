@@ -1,0 +1,90 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.hqwy-0702{
+    background: #fdf2f0;
+    width:r(750);
+    padding-bottom:r(99);
+    .img-c{
+        width:r(750);
+    }
+    .premiumBox{
+        width:r(750);
+        // height:r(825);
+        background:url("../../images/hqwy-0702/bg.png") no-repeat;
+        background-size:100% 100%;
+        padding:r(120) r(40) r(94) r(53);
+        border:none;
+        margin:0 auto;
+        border-radius:0;
+        position: relative;
+        .calNum{
+            position: absolute;
+            top:r(70);
+            left:50%;
+            transform:translateX(-50%);
+            font-size:r(32);
+            &>.setNum{
+                color:#ef232c;
+            }
+        }
+        .qm-change{
+            .labeltxt{
+                color:#999;
+                font-size:r(27);
+                text-align: center;
+                white-space: nowrap;
+            }
+            .box-right{
+                white-space:nowrap;
+                .changes{
+                    border:1px solid #dbdbdb;
+                    border-radius:r(15);
+                    // text-align: center;
+                }
+                .radio-box{
+                    min-width:r(75);
+                }
+            }
+        }
+        .btns{
+            width:r(596);
+            height:r(88);
+            // background:linear-gradient(to bottom,#756ee2,#6059cb);
+            background:#ef232c;
+            border-radius: r(10);
+            border-bottom:r(9) solid #fbabaa;
+            display: block;
+            line-height:r(88);
+            text-align: center;
+            margin:0 auto;
+            font-size:r(39);
+            color:#fff;
+        }
+        .pre-text{
+            font-size:r(24);
+            color:#484848;
+        }
+    }
+    .botton-fixed.show {
+        bottom: 0;
+    }
+    .botton-fixed{
+        width:100%;
+        font-size: r(37);
+        height: r(99);
+        line-height:r(99);
+        text-align:center;
+        font-weight:bold;
+        color: #fff;
+        position: fixed;
+        left: 0;
+        bottom:r(-99);
+        background-image:linear-gradient(to bottom,#f9b512,#fd8f00);
+        transition:all 0.3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+    }
+}

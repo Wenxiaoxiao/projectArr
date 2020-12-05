@@ -1,0 +1,256 @@
+.premiumBox {
+  position: relative;
+  width: 95%;
+  color: #fff;
+  font-size: r(28);
+  padding: r(20);
+  border: 1px solid #ffae00;
+  border-radius: 5px;
+  margin: 10px auto;
+
+  select{
+    -webkit-appearance: none !important;
+    appearance:none;
+    background: url("https://bd.wts9999.com/p/lib/images/down.png") no-repeat center right;
+    background-size: auto 100%;
+    border-radius: 0.1rem;
+  }
+  input{
+    -webkit-appearance: none !important;
+    appearance:none;
+    border-radius: 0.1rem;
+  }
+  
+  .lz-radio {
+    width: 30px;
+    height: 30px;
+  }
+  .qm-change {
+    margin-bottom: r(15);
+    width: 100%;
+    min-height: r(80);
+  }
+  .premium-box{
+    padding: r(20);
+  }
+  .labeltxt {
+    width: 22%;
+    height: r(80);
+    float: left;
+    line-height: r(80);
+    color: #fff;
+    display: inline-block;
+  }
+  
+  .box-right {
+    float: right;
+    width: 76%;
+    min-height: r(80);
+    line-height: r(80);
+    &.min-radio {
+      .margin-right-20 {
+        margin-right: r(10) !important;
+      }
+    }
+  }
+  .label-line{
+    display: inline-block;
+    height: r(80);
+    line-height: r(80);
+    padding: 0 5px;
+    margin-right: 10px;
+  }
+
+  .changes {
+    width: 100%;
+    height: r(80);
+    padding-left: r(20);
+    line-height: r(55);
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #eee;
+  }
+
+
+  .btn{
+      width: 60%;
+      background-color: #fef510;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 900;
+      display: block;
+      margin: 10px auto;
+      font-size: r(34);
+      line-height: r(70);
+      color: #ff4800;
+  }
+  .pre-text{
+    font-size: 12px;
+    padding: 5px 0;
+  }
+  .qm-radio-box {
+    .radio-box {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 0 8px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: r(70);
+      min-width: r(150);
+      margin: 3px 0;
+      cursor: pointer;
+      color: #000;
+      border: 1px solid #eee;
+      font-size: r(28);
+      background-color: #fff;
+      border-radius: 3px;
+      &.active{
+          border: none;
+          color: #ffff;
+          overflow: hidden;
+          background: #ff604a;
+      }
+    }
+    .radio-show-input {
+      input {
+        padding-left: 5px;
+        width: r(150);
+        text-align: center;
+        background: transparent;
+        border: 0;
+        outline: none;
+        color: inherit;
+      }
+      input::-webkit-input-placeholder {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.activity-froms {
+    // position: relative;
+    // display: block;
+    // margin: 15px auto;
+    // width: 90%;
+    // border-radius: 10PX;
+    // overflow: hidden;
+    // background-color: #fff;
+    // box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.2);
+    > .img {
+      position: absolute;
+      height: r(179);
+      &.bg-l {
+        left: 0;
+        top: r(-27);
+      }
+      &.bg-r {
+        right: 0;
+        bottom: r(110);
+      }
+    }
+    .header {
+      text-align: center;
+      z-index: 100;
+      .title {
+        font-size: r(36);
+      }
+      .title-img{
+          width: 100%;
+      }
+    }
+    .qm-input {
+      color: #000;
+      padding: r(20) r(10);
+      font-size: r(28);
+      input,
+      select,
+      option {
+        border: 1px solid #eee;
+      }
+      .qm-change{
+          padding: 0 r(30);
+      }
+      .like-input{
+        width: r(438);
+        height: r(55);
+        border-radius: 5px;
+        padding-left: r(20);
+        line-height: r(55);
+        color: #333;
+        background-color: #fff;
+        border: none;
+        display: inline-block;
+        box-sizing: border-box;
+      }
+      .qm-input-text {
+        > span {
+          padding-right: 10px;
+          display: inline-block;
+          line-height: r(55);
+          font-size: r(28);
+        }
+        .box-right {
+          input,
+          select,
+          option {
+            width: r(438);
+            height: r(55);
+            padding-left: r(20);
+            line-height: r(55);
+            color: #333;
+          }
+        }
+      }
+      .qm-input-radio {
+        > span {
+          padding-right: 10px;
+          display: inline-block;
+          line-height: r(55);
+          font-size: r(28);
+        }
+        .box-right {
+          height: 100%;
+          line-height: r(55);
+         
+          .lz-radio-new {
+            width: r(40);
+            height: r(40);
+            padding: 0;
+            vertical-align: middle;
+            margin-right: 5px;
+            &::before {
+              width: r(45);
+              height: r(45);
+              line-height: r(45);
+              margin-top: r(-25);
+              margin-left: r(-5);
+              font-size: r(28);
+            }
+          }
+          > span {
+            margin-right: 5px;
+            display: inline-block;
+            line-height: r(66);
+          }
+        }
+      }
+    }
+    .subMitBtn {
+      width: r(506);
+      height: r(132);
+      display: block;
+      margin: r(20) auto;
+      >img{
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+    .secure_text{
+      font-size: r(24);
+      color: #999;
+      padding: 0 r(30);
+    }
+  }

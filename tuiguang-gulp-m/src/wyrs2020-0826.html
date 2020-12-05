@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"无忧人生2020plus重疾险-华少推荐", "keywords": "横琴无忧人生2020、无忧人生、重疾险、华夏常青树重疾保险、防癌险、新华多倍保", "description": "梧桐树保险网热销重疾险——无忧人生2020，保188种疾病，113种重疾确诊一次赔付最高达160%保额，75种中、轻症不分组、无间隔赔付，赔付比例远超其他产品。恶性肿瘤、心脑血管疾病均可二次赔付。18种少儿特疾保障至30岁，赔付高达200%保额。" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/wyrs2020-0826.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container wyrs2020-0826 cp-details">
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/banner.jpg" alt="" class="img-block">
+        </div>
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-title">
+                    <div class="t1">免费领取<span>重疾保障方案</span></div>
+                    <div class="t2">今日免费领取名额只剩<span>68个</span></div>
+                </div>
+                <div class="premium-box">
+                </div>
+                <button class="btns" id="subMitBtn">立即免费领取<span>（原价￥169元）</span></button>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您重疾保障方案领取，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+
+        <div class="img-box" id="showFixed">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/1.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/2.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/3.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/4.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box" style="padding-left: 0;">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/5.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/6.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/7.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/8.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/9.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/10.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/11.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/12.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/13.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs2020-0826/14.jpg" alt="" class="img-block">
+        </div>
+    </div>
+    @@include("include/tell.htm")
+    <div class="blanks" style="width: 100%;height:45px;"></div>
+    <a href="#fixedTop" class="botton-fixed">免费领取重疾保障方案</a>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+    
+</body>
+
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        var fromData = [{
+                name: '您的年龄',
+                type: 6,
+                id: 'age',
+                items: [
+                    {value: '0-17岁',selected:true}, 
+                    {value: '18-30岁'}, 
+                    {value: '31-50岁'},
+                ]
+            },
+            {
+                name: '您的性别',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }, ]
+            },
+            {
+                name: '保费预算',
+                type: 6,
+                id: 'jbbe',
+                items: [
+                    {value: '1-3千',selected:true}, 
+                    {value: '4-6千'}, 
+                    {value: '7千以上'},
+                ]
+            }, 
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData, {
+            title: '无忧人生2020plus重疾险-华少推荐',
+        })
+    })
+</script>
+
+</html>

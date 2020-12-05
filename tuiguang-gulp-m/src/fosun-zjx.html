@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"妈咪保贝少儿重大疾病保险", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/fosun-zjx.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <style>
+        .cp-details{
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-container fosun-zjx cp-details">
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/fosun-zjx/img-1.jpg" alt="" class="img-c" style="min-height:3rem">
+            <img src="@@webRoot/lib/images/fosun-zjx/img-2.jpg" alt="" class="img-c" style="min-height:3rem">
+        </div>
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-title">保费测算</div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即测算保费</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <div class="img-box" id="showFixed">
+            <img data-original="@@webRoot/lib/images/fosun-zjx/img-3.jpg" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/fosun-zjx/img-4.jpg" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/fosun-zjx/img-5.jpg" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/fosun-zjx/img-6.jpg" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/fosun-zjx/img-7.jpg" alt="" class="img-c lazy">
+            <img data-original="@@webRoot/lib/images/fosun-zjx/img-8.jpg" alt="" class="img-c lazy">
+        </div>
+    </div>
+    <div class="copyright-m">
+        <div class="copyright-w">
+            <div class="copyright-left">
+                <img src="@@webRoot/lib/images/logom.png" alt="logo" class="copyright-logo">
+                <p class="tellName">24小时客服热线</p>
+                <a class="tell" href="tel://02796755">02796755</a>
+            </div>
+        </div>
+    </div>
+    <div class="blanks" style="width: 100%;height:45px;"></div>
+    <a href="#fixedTop" class="botton-fixed">
+        <img src="@@webRoot/lib/images/fosun-zjx/btn-foot.png" alt="">
+    </a>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+        {
+            name: '宝宝年龄',
+            type: 6,
+            id: 'age',
+            items: [
+                {
+                    value: '0-3岁',
+                    selected:true
+                }, 
+                {
+                    value: '4-10岁'
+                }, 
+                {
+                    value: '11-17岁'
+                }
+            ]
+        }, 
+        {
+            name: '宝宝性别',
+            type: 6,
+            id: 'sex',
+            items: [{
+                value: '男宝',
+                selected:true
+            }, {
+                value: '女宝'
+            }, ]
+        }, 
+        {
+            name: '基本保额',
+            type: 6,
+            id: 'jbbe',
+            items: [
+                {value: '10-30万'}, 
+                {value: '40-60万'}, 
+                {value: '70-80万',selected:true}, 
+            ]
+        }, 
+        {
+            name: '缴费方式',
+            type: 5,
+            id: 'jffs',
+            items: [
+                {
+                    value: '5年'
+                }, 
+                {
+                    value: '10年'
+                }, 
+                {
+                    value: '15年'
+                }, 
+                {
+                    value: '20年',
+                    selected:true
+                }, 
+                {
+                    value: '30年'
+                }
+            ]
+        }, 
+         {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'保险研究社妈咪保贝少儿重大疾病保险保费测算',
+        })
+        fromsFn.scrollFixed() //按钮显示隐藏
+        fromsFn.lazyImg() //按钮显示隐藏
+       
+})
+</script>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"全能少儿综合险", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/qnsex.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container qnsex cp-details">
+        <div class="img-box top-img">
+            <img src="@@webRoot/lib/images/qnsex/1.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box" id="fixedTop">
+            <img src="@@webRoot/lib/images/qnsex/2.jpg" alt="" class="img-block">
+        </div>
+        <div class="premiumBox">
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即测算保费</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+
+        <div class="img-box" id="showFixed">
+            <img src="@@webRoot/lib/images/qnsex/7.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/qnsex/3.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/qnsex/4.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box" style="padding-left: 0;">
+            <img src="@@webRoot/lib/images/qnsex/5.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/qnsex/6.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/qnsex/8.jpg" alt="" class="img-block">
+        </div>
+    </div>
+    @@include("include/tell.htm")
+    <div class="blanks" style="width: 100%;height:45px;"></div>
+    <a href="#fixedTop" class="botton-fixed">立即测算保费</a>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+    
+</body>
+
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        var age = [];
+        for(var i=0;i<18;i++){
+            var obj = {};
+            if(i==5){
+                obj.selected = true;
+            }
+            obj.value = i+"岁";
+            age.push(obj);
+        }
+        var fromData = [{
+                name: '宝宝年龄',
+                type: 5,
+                id: 'age',
+                items: age
+            },
+            {
+                name: '投保方案',
+                type: 5,
+                id: 'tbfa',
+                items: [
+                    {value: '130万重疾+600万医疗',selected:true}, 
+                    {value: '100万重疾+600万医疗'}, 
+                    {value: '50万重疾+600万医疗'}, 
+                    {value: '30万重疾+600万医疗'},
+                    {value: '其他方案'}
+                ]
+            },
+            {
+                name: '宝宝性别',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }, ]
+            },
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData, {
+            title: '全能少儿综合险',
+        })
+    })
+</script>
+
+</html>

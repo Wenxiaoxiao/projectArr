@@ -1,0 +1,116 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.zzrs{
+    .img-box{
+        width: 100%;
+        position: relative;
+        .img-block{
+            width: 100%;
+            display: block;
+        }
+    }
+    .img-box2{
+        .action{
+            position: absolute;
+            display: block;
+            width: r(320);
+            height: r(80);
+            top: r(485);
+            left: r(215);
+        }
+    }
+    .img-box3{
+        .action{
+            top: r(382);
+        }
+    }
+    
+    .premiumBox {
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        background: #23305c;
+        margin: 0;
+        .premium-border{
+            padding: r(17);
+            background:url("../../images/zzrs-0108/zzrs-13.png") no-repeat;
+            background-size: 100% 100%;
+            border-radius: 0;
+            overflow: hidden;
+            .premium-box{
+                padding: r(27);
+                padding-top: r(180);
+                text-align: center;
+                .btns{
+                    width: r(513);
+                    height: r(100);
+                    margin: r(30) auto 0;
+                    display: block;
+                    img{
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+
+            .qm-change{
+                background: #fff;
+                height: r(80) !important;
+                border-radius: 5px;
+                overflow: hidden;
+                margin-bottom: r(20);
+                border: 1px solid #ccc;
+                .labeltxt{
+                    width: 30%;
+                    color: #000;
+                    height: r(76) !important;
+                    line-height: r(76);
+                    font-size: r(30);
+                }
+                .box-right{
+                    width: 68%;
+                }
+                .changes{
+                    border: none;
+                     height: r(76) !important;
+                }
+            }
+        }
+        .btnDiv{
+            padding:0 r(27); 
+        }
+        .pre-text{
+            padding:r(50);
+            padding-top: r(20);
+            font-size: r(26);
+            color: #333;
+        }
+        #subMitBtn{
+            display: block;
+            width: 100%;
+            height: r(90);
+            line-height: r(55);
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            
+        }
+    }  
+    .btnfix{
+        display: block;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        height: 45px;
+        line-height: 45px;
+        width: 100%;
+        text-align: center;
+        font-size: .45333rem;
+        background: #efd398;
+        color: #734b05;
+    } 
+}

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @@include("include/header.htm",{ "title":"国家保险寿险管理师风险测评", "keywords": "填写信息，全面测评自身潜在风险！获取专业风险分析报告书！", "description":
+    "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/essential-information.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body style="background-color: #ffbd5d;">
+    <div class="essential-information body-container">
+        <img src="@@webRoot/lib/images/essential-information/bgi.jpg" alt="" class="bg-img">
+        <div class="title">
+            <p class="p1">风险分析信息完善</p>
+            <p class="p2">填写信息后，国家寿险管理师将根据填写的信息全面测评用户潜在家庭风险，帮您做好风险管理</p>
+        </div>
+        <div class="titles">
+            <div class="line-left"></div>
+            <span>基本信息</span>
+            <div class="line-right"></div>
+        </div>
+        <div class="en-box m">
+            <div class="gender-content">
+                <ul>
+                    <li class="cl cl-items clearfix" data-name="我的性别" data-code="sex" data-type='1'>
+                        <span class="en-title" style="float:left;">我的性别：</span>
+                        <div class="en-center" style="float:right;width:60%;margin-top: 0;">
+                            <span class="en-li li-2">男</span>
+                            <span class="en-li li-2">女</span>
+                        </div>
+                    </li>
+                    <li class="cl cl-items clearfix" data-name="我的年龄" data-code="age" data-type='2'>
+                        <label class="en-title" style="float:left;">我的年龄：</label>
+                        <input class="inp" type="number" placeholder="请输入您的年龄（数字）">
+                    </li>
+                    <li class="cl cl-items" data-name="我的工作环境" data-code="work" data-type='1'>
+                        <span class="en-title">我的工作环境：</span>
+                        <div class="en-center">
+                            <span class="en-li li-3">室内轻体力</span>
+                            <span class="en-li li-3">室内重脑力</span>
+                            <span class="en-li li-3">户外轻体力</span>
+                            <span class="en-li li-3">户外重体力</span>
+                            <span class="en-li li-3">高风险作业</span>
+                            <span class="en-li li-3">家庭主妇</span>
+                            <span class="en-li li-3">其他</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="titles">
+            <div class="line-left"></div>
+            <span>家庭结构</span>
+            <div class="line-right"></div>
+        </div>
+        <div class="en-box m">
+            <div class="family-content">
+                <ul>
+                    <li class="cl cl-items" data-name="婚育情况" data-code="marriage" data-type='1'>
+                        <span class="en-title">婚育情况：</span>
+                        <div class="en-center" style="float:right;width:70%;margin-top: 0;">
+                            <span class="en-li li-3">已婚</span>
+                            <span class="en-li li-3">未婚</span>
+                            <span class="en-li li-3">单身</span>
+                        </div>
+                    </li>
+                    <li class="cl cl-items" data-name="有几个小孩需要抚养" data-code="childNum" data-type='1'>
+                        <p class="en-title">有几个小孩需要抚养：</p>
+                        <div class="en-center">
+                            <span class="en-li li-4">无</span>
+                            <span class="en-li li-4">1个</span>
+                            <span class="en-li li-4">2个</span>
+                            <span class="en-li li-4">2个以上</span>
+                        </div>
+                    </li>
+                    <li class="cl cl-items" data-name="有几位老人需要赡养" data-code="olderNum" data-type='1'>
+                        <p class="en-title">有几位老人需要赡养：</p>
+                        <div class="en-center">
+                            <span class="en-li li-5">无</span>
+                            <span class="en-li li-5">1位</span>
+                            <span class="en-li li-5">2位</span>
+                            <span class="en-li li-5">3位</span>
+                            <span class="en-li li-5">4位</span>
+                        </div>
+                    </li>
+                    <li class="cl cl-items" data-name="给谁买保险" data-code="insuranceRelationships" data-type='3'>
+                        <p class="en-title">给谁买保险（可多选）：</p>
+                        <div class="en-check-box">
+                            <span class="en-li li-4">自己</span>
+                            <span class="en-li li-4">配偶</span>
+                            <span class="en-li li-4">子女</span>
+                            <span class="en-li li-4">父母</span>
+                        </div>
+                    </li>
+                    <li class="cl cl-items" data-name="被保险人是否有社保" data-code="hasSocial" data-type='1'>
+                        <p class="en-title">被保险人是否有社保：</p>
+                        <div class="en-center">
+                            <span class="en-li li-3">都有</span>
+                            <span class="en-li li-3">部分有</span>
+                            <span class="en-li li-3">都无</span>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="titles">
+            <div class="line-left"></div>
+            <span>资产情况</span>
+            <div class="line-right"></div>
+        </div>
+        <div class="en-box m">
+            <ul>
+                <li class="cl-items" data-name="家庭主要收入来源" data-code="incomeSource" data-type='1'>
+                    <p class="en-title">家庭主要收入来源：</p>
+                    <div class="en-center">
+                        <span class="en-li li-3">工资</span>
+                        <span class="en-li li-3">投资理财所得</span>
+                        <span class="en-li li-3">不稳定收入</span>
+                    </div>
+                </li>
+                <li class="cl-items" data-name="家庭年收入" data-code="income" data-type='1'>
+                    <p class="en-title">家庭年收入：</p>
+                    <div class="en-center">
+                        <span class="en-li li-2">30万以内</span>
+                        <span class="en-li li-2">30-50万</span>
+                        <span class="en-li li-2">50-100万</span>
+                        <span class="en-li li-2">100万以上</span>
+                    </div>
+                </li>
+                <li class="cl-items" data-name="每月开支" data-code="mothExpenses" data-type='1'>
+                    <p class="en-title">每月开支：</p>
+                    <div class="en-center">
+                        <span class="en-li li-2">0-3千</span>
+                        <span class="en-li li-2">3-5千</span>
+                        <span class="en-li li-2">5-10千</span>
+                        <span class="en-li li-2">1万元以上</span>
+                    </div>
+                </li>
+                <li class="cl-items" data-name="家庭资产" data-code="deposit" data-type='1'>
+                    <p class="en-title">家庭资产：</p>
+                    <div class="en-center">
+                        <span class="en-li li-2">30万以内</span>
+                        <span class="en-li li-2">30-50万</span>
+                        <span class="en-li li-2">50-100万</span>
+                        <span class="en-li li-2">100万以上</span>
+                    </div>
+                </li>
+                <li class="cl-items" data-name="家庭负债" data-code="debt" data-type='1'>
+                    <p class="en-title">家庭负债：</p>
+                    <div class="en-center">
+                        <span class="en-li li-3">无</span>
+                        <span class="en-li li-3">30万以内</span>
+                        <span class="en-li li-3">30-50万</span>
+                        <span class="en-li li-2">50-100万</span>
+                        <span class="en-li li-2">100万以上</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="titles">
+            <div class="line-left"></div>
+            <span>健康情况</span>
+            <div class="line-right"></div>
+        </div>
+        <div class="life m">
+            <p class="en-title">我的身体健康状况</p>
+            <div class="nav margin-bottom-10">
+                <div class="nav-ul cl-items clearfix" data-name="我的身体健康状况-吸烟" data-code="smoke" data-type='1'>
+                    <span class="en-title">吸烟：</span>
+                    <div class="en-center" style="float:right;width:80%;margin-top: 0;">
+                        <span class="en-li li-3">从不</span>
+                        <span class="en-li li-3">偶尔</span>
+                        <span class="en-li li-3">经常</span>
+                    </div>
+                </div>
+                <div class="nav-ul cl-items clearfix" data-name="我身体健康状况-喝酒" data-code="drink" data-type='1'>
+                    <span class="en-title">喝酒：</span>
+                    <div class="en-center" style="float:right;width:80%;margin-top: 0;">
+                        <span class="en-li li-3">从不</span>
+                        <span class="en-li li-3">偶尔</span>
+                        <span class="en-li li-3">经常</span>
+                    </div>
+                </div>
+                <div class="nav-ul cl-items clearfix" data-name="我身体健康状况-锻炼" data-code="exercise" data-type='1'>
+                    <span class="en-title">锻炼：</span>
+                    <div class="en-center" style="float:right;width:80%;margin-top: 0;">
+                        <span class="en-li li-3">从不</span>
+                        <span class="en-li li-3">偶尔</span>
+                        <span class="en-li li-3">经常</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-lis show-po">
+                <p class="en-title">出行（可多选）：</p>
+                <div class="cl-items show-po" data-name="我身体健康状况-出行" data-code="journey" data-type='3'>
+                    <div class="en-check-box">
+                        <span class="en-li li-3">步行</span>
+                        <span class="en-li li-3">公共交通</span>
+                        <span class="en-li li-3">开车</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-lis">
+                <p class="en-title">既往病史（可多选）：</p>
+                <div class="cl-items " data-name="我身体健康状况-既往病史" data-code="healthCondition" data-type='3'>
+                    <div class="en-check-box">
+                        <span class="en-li li-3">身体健康</span>
+                        <span class="en-li li-3">家族遗传病</span>
+                        <span class="en-li li-3">2年内住院</span>
+                        <span class="en-li li-3">三高</span>
+                        <span class="en-li li-3">甲状腺疾病</span>
+                        <span class="en-li li-3">乳房肿块</span>
+                        <span class="en-li li-3">心脏病</span>
+                        <span class="en-li li-3">乙肝</span>
+                        <span class="en-li li-3">不清楚</span>
+                    </div>
+                </div>
+            </div>
+            <p class="en-title show-po hide">配偶的身体健康状况</p>
+            <div class="nav margin-bottom-10 show-po">
+                <div class="nav-ul cl-items clearfix show-po hide" data-name="配偶的身体健康状况-吸烟" data-code="fsmoke"
+                    data-type='1'>
+                    <span class="en-title">吸烟：</span>
+                    <div class="en-center" style="float:right;width:80%;margin-top: 0;">
+                        <span class="en-li li-3">从不</span>
+                        <span class="en-li li-3">偶尔</span>
+                        <span class="en-li li-3">经常</span>
+                    </div>
+                </div>
+                <div class="nav-ul cl-items clearfix show-po hide" data-name="配偶的身体健康状况-喝酒" data-code="fdrink"
+                    data-type='1'>
+                    <span class="en-title">喝酒：</span>
+                    <div class="en-center" style="float:right;width:80%;margin-top: 0;">
+                        <span class="en-li li-3">从不</span>
+                        <span class="en-li li-3">偶尔</span>
+                        <span class="en-li li-3">经常</span>
+                    </div>
+                </div>
+                <div class="nav-ul cl-items clearfix show-po hide" data-name="配偶的身体健康状况-锻炼" data-code="fexercise"
+                    data-type='1'>
+                    <span class="en-title">锻炼：</span>
+                    <div class="en-center" style="float:right;width:80%;margin-top: 0;">
+                        <span class="en-li li-3">从不</span>
+                        <span class="en-li li-3">偶尔</span>
+                        <span class="en-li li-3">经常</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-lis show-po hide">
+                <p class="en-title">出行（可多选）：</p>
+                <div class="cl-items show-po hide" data-name="配偶的身体健康状况-出行" data-code="fjourney" data-type='3'>
+                    <div class="en-check-box">
+                        <span class="en-li li-3">步行</span>
+                        <span class="en-li li-3">公共交通</span>
+                        <span class="en-li li-3">开车</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-lis show-po hide">
+                <p class="en-title">既往病史（可多选）：</p>
+                <div class="cl-items show-po hide" data-name="配偶的身体健康状况-既往病史" data-code="partnerHealthCondition"
+                    data-type='3'>
+                    <div class="en-check-box">
+                        <span class="en-li li-3">身体健康</span>
+                        <span class="en-li li-3">家族遗传病</span>
+                        <span class="en-li li-3">2年内住院</span>
+                        <span class="en-li li-3">三高</span>
+                        <span class="en-li li-3">甲状腺疾病</span>
+                        <span class="en-li li-3">乳房肿块</span>
+                        <span class="en-li li-3">心脏病</span>
+                        <span class="en-li li-3">乙肝</span>
+                        <span class="en-li li-3">不清楚</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="cl-items hide" data-name="partnerHealthCondition" data-code="sex" data-type='1'>
+                <p class="en-title">配偶的身体健康状况：</p>
+                <div class="en-center" >
+                    <span class="en-li li-3">身体健康</span>
+                    <span class="en-li li-3">家族遗传病</span>
+                    <span class="en-li li-3">2年内住院</span>
+                    <span class="en-li li-3">三高</span>
+                    <span class="en-li li-3">甲状腺疾病</span>
+                    <span class="en-li li-3">乳房肿块</span>
+                    <span class="en-li li-3">心脏病</span>
+                    <span class="en-li li-3">乙肝</span>
+                    <span class="en-li li-3">不清楚</span>
+                </div>
+            </div> -->
+
+        </div>
+        <div class="btn">立即了解我的风险</div>
+    </div>
+    <div id="modal">
+        <div class="mask"></div>
+        <div class="cover">
+            <img class="close" src="@@webRoot/lib/images/essential-information/del.png" alt="del">
+            <img class="logo" src="@@webRoot/lib/images/essential-information/logo.png" alt="logo">
+            <div class="text">
+                <p class="padding-left-20 padding-right-20">国家寿险规划师会给出</p>
+                <p class="padding-left-20 padding-right-20">您的风险测评报告及保险配置建议</p>
+                <p class="padding-left-20 padding-right-20">请填写真实的联系方式！</p>
+            </div>
+            <input class="inp1" id="name" type="text" placeholder="请输入您的称呼">
+            <input class="inp1" id="mobileTell" type="number" placeholder="请填写您的联系方式">
+            <div class="confirm">确认</div>
+        </div>
+    </div>
+</body>
+@@include("include/footer.htm")
+@@include("include/tell.htm")
+<script src="@@webRoot/lib/js/jquery.cookie.js"></script>
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        var mainData = { detail: [] };
+        // 单选
+        $(".en-center").on('click', '.en-li', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+        // 多选
+        $(".en-check-box").on('click', '.en-li', function () {
+            var name = $(this).parents('.cl-items').attr('data-code');
+            var value = $(this).text();
+            var isActive = $(this).hasClass('active');
+            if (name === 'insuranceRelationships' && value === '配偶' && !isActive) {
+                $('.show-po').removeClass('hide');
+            }
+            if (name === 'insuranceRelationships' && value === '配偶' && isActive) {
+                $('.show-po').addClass('hide');
+            }
+            $(this).toggleClass('active');
+        })
+
+        // 第一次提交-页面按钮
+        $(".btn").click(function () {
+            var isOver = true;
+            var detail = [];
+            $(".cl-items").each(function () {
+                var type = $(this).attr('data-type');
+                var name = $(this).attr('data-name');
+                var code = $(this).attr('data-code');
+                var value = getValue($(this), type);
+                if ($.isArray(value)) {
+                    value = value.join(",");
+                }
+                if(code == "name"){
+                    if(!value){
+                        isOver = false;
+                        $.layerMsg(name + '尚未填写！');
+                        var top = $(this).offset().top;
+                        $('body,html').animate({ scrollTop: top }, 1000);
+                        return false;
+                    }
+                    return true;
+                }
+                if (value) {
+                    detail.push({
+                        key: name,
+                        value: value,
+                    })
+                } else if ($(this).hasClass('hide')) {
+                    detail.push({
+                        key: name,
+                        value: '',
+                    })
+                } else if (code == "age") {
+                    isOver = false;
+                    $.layerMsg(name + "尚未填写或者输入了非数字");
+                    var top = $(this).offset().top;
+                    $('body,html').animate({ scrollTop: top }, 1000);
+                    return false;
+                } else {
+                    isOver = false;
+                    $.layerMsg(name + '尚未填写！');
+                    var top = $(this).offset().top;
+                    $('body,html').animate({ scrollTop: top }, 1000);
+                    return false;
+                }
+            })
+
+            console.log(mainData);
+            if (!isOver) return;
+            mainData.detail = detail;
+            $('#modal').show();
+            // mainData.sxUserDetail.lifeCondition={
+            //     smoke:mainData.sxUserDetail.smoke,
+            //     drink:mainData.sxUserDetail.drink,
+            //     exercise: mainData.sxUserDetail.exercise,
+            //     journey:mainData.sxUserDetail.journey,
+            // };
+        })
+
+        // 获取取值结果
+        function getValue(dom, type) {
+            var value;
+            if (type == 1) {
+                value = ''
+                var valueDom = $(dom).find('.en-center .en-li.active');
+                value = $(valueDom).attr('data-value') ? $(valueDom).attr('data-value') : $(valueDom).text();
+            } else if (type == 2) {
+                value = ''
+                value = $(dom).find('.inp').val();
+            } else if (type == 3) {
+                value = [];
+                $(dom).find('.en-check-box .en-li.active').each(function (i, v) {
+                    value.push($(this).text())
+                })
+            }
+            return value;
+        }
+        // 关闭弹窗
+        $(".close").click(function () {
+            $('#modal').hide();
+        })
+
+        // 提交信息
+        $(".confirm").click(function () {
+            var tell = $.trim($("#mobileTell").val());
+            var username = $.trim($("#name").val());
+            if(username==""){
+                return $.layerMsg("请输入您的称呼");
+            }
+            if (!tell || !$.regular().isPhone(tell)) {
+                return $.layerMsg("请输入常见的手机号");
+            } 
+            fromsFn.submitData(
+                document.title,
+                username,
+                tell,
+                JSON.stringify(mainData.detail),
+                -1,
+                function(){
+                    $("input").val("");
+                    window.location.href = "./successful-submission.html";
+                }
+            );
+        })
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,165 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+body{
+    background-color: #75daff;
+    
+}
+.botton-fixed{
+    background-color: #fb8231 !important;
+}
+.premiumBox .changes{
+    color: #878787;
+}
+.premiumBox .qm-radio-box .radio-box.active:before{
+    background-color: #fb8231 !important;
+}
+.bjx-0514{
+  
+    
+    .btns{
+        background-color: #fb8231 !important;
+        box-shadow: none !important;
+    }
+   
+    .title{
+        color:#fff;
+        text-align: center;
+        font-size: r(36);
+        font-weight: bold;
+        margin: r(18) 0;
+    }
+    .banner-box{
+        overflow: hidden;
+       
+        img{
+            width: 100%;
+           
+        }
+    }
+    .cs-bg{
+        
+        width: 90%;
+        margin:0 auto;
+        .amount {
+            margin-top: r(10);
+            font-size: r(26);
+            line-height: r(26);
+            color: #000000;
+            text-align: center;
+            span {
+                color: #ff4e3c;
+            }
+        }
+        .premiumBox {
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: #ffffff;
+            color: #000000;
+            margin: 0 auto r(20);
+            padding: r(40);
+            .premium-box{
+                padding-right: 0;
+                padding-left: 0;
+            }
+            .btns{
+                width: 8rem; 
+                height: 1.33333rem;
+                line-height: 1.33333rem;
+                font-size: r(34);
+                border-radius: 5px;
+                margin: 0 auto .13333rem;
+                display: block;
+                text-align: center;
+                background: #fd3636;
+                -webkit-box-shadow: 0 4px 0 #fc8b8b;
+                box-shadow: 0 4px 0 #fc8b8b;
+                color: #fff
+            }
+            .labeltxt{
+                color: #000000;
+                width: 23%;
+            }
+            .box-right{
+                width: 75%;
+                .radio-box{
+                    background: #fff;
+                    border: solid 1px #dcdcdc;
+                    border-radius: r(10);
+                    padding: 0 r(7);
+                    color:#878787;
+                }
+                .active{
+                    border: 1px solid #ffd6bf;
+                    color:#fb8231; 
+                    background: transparent;
+                }
+                input {
+                    background-color: #ffffff;
+                    border-radius: r(10);
+                   
+                }
+                .radio-box{
+                    
+                    border-radius: r(10);
+                    padding: 0 r(4);
+                    min-width: r(145);
+                }
+            }
+            .pre-text {
+                margin-top: r(20);
+                color: #5e5e5e;
+                font-size: r(24);
+            }
+        }
+    }
+    .wrap {
+        margin: r(22) r(23) 0;
+        box-shadow: 0px 0px 13px 0px rgba(254, 103, 29, 0.39);
+        border-radius: r(8);
+        .ct-box-01{
+            border-radius: r(8);
+            background: #ffffff;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        .ct-box-02{
+            border-radius: r(8);
+            background: #fdf6ed;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .ct-box-03{
+        margin-top: r(62);
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+.botton-fixed{
+    width: 100%;
+    font-size: r(36);
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: r(-95);
+    background-color:rgb(240,65,87);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    &.show{
+        bottom: 0;
+    }
+}

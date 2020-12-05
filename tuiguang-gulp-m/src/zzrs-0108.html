@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"自在人生A款养老年金保险-梧桐树保险网", 
+    "keywords": "招商信诺自在人生，自在人生A款，养老年金保险，养老保险，年金险", 
+    "description": "硬核养老年金保险，首选招商信诺自在人生A款，专注养老。保证领取20年，活多久，领多久，收益高，让您的老年生活自在无忧，如果罹患重疾还可豁免保费，延续养老关爱。" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/zzrs-0108.css">
+	<script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container zzrs">
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-1.jpg" alt="" class="img-block">
+        </div>
+        <div class="premiumBox" id="formData">
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <div class="btnDiv">
+                    <span class="btns" id="subMitBtn"><img src="./lib/images/zzrs-0108/zzrs-14.png" alt=""></span>
+                </div>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，我们不会泄露给任何第三方或作为其他用途。
+                </p>
+            </div>
+            
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-2.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-3.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-4.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box img-box2">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-5.jpg" alt="" class="img-block">
+            <a href="#formData" class="action"></a>
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-6.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-7.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-8.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-9.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-10.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box img-box2 img-box3">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-11.jpg" alt="" class="img-block">
+            <a href="#formData" class="action"></a>
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/zzrs-0108/zzrs-12.jpg" alt="" class="img-block">
+        </div>
+        @@include("include/tell.htm")
+        <div class="blanks" style="width: 100%;height:45px;"></div>
+        <a href="#formData" class="btnfix">在线预约咨询</a>
+    </div>
+    
+    
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function() {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+        function scrollFixed() {
+            var showFixedHeight = $("#formData").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        var fromData = [
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData, {
+            title:'自在人生A款养老年金保险',
+            msg:'恭喜您预约成功!'
+        })
+    })
+</script>
+
+</html>

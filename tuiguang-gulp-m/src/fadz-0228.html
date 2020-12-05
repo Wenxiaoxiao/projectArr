@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"专业、高效保障方案咨询", "keywords": "", "description":"" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/fadz-1119.css">
+    <link rel="stylesheet" href="@@webRoot/lib/css/swiper.min.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <script src="@@webRoot/lib/js/swiper-3.4.2.jquery.min.js"></script>
+    <style>
+        .fadz-1119{
+            padding-bottom: 10px;
+        }
+        .titles{
+            padding-bottom: 10px;
+        }
+        .linq{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="body-container fadz-1119">
+        <div class="banner-box">
+            <img src="@@webRoot/lib/images/fadz-1119/022801.jpg">
+            <div class="linq clearfix">
+                <div class="left">已有<span>200225</span>人咨询成功</div>
+                <div class="right swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="item swiper-slide">黄**咨询保障方案成功</div>
+                        <div class="item swiper-slide">李**咨询保障方案成功</div>
+                        <div class="item swiper-slide">赵**咨询保障方案成功</div>
+                        <div class="item swiper-slide">谢**咨询保障方案成功</div>
+                        <div class="item swiper-slide">周**咨询保障方案成功</div>
+                        <div class="item swiper-slide">刘**咨询保障方案成功</div>
+                        <div class="item swiper-slide">钱**咨询保障方案成功</div>
+                        <div class="item swiper-slide">王**咨询保障方案成功</div>
+                        <div class="item swiper-slide">黄**咨询保障方案成功</div>
+                        <div class="item swiper-slide">吴**咨询保障方案成功</div>
+                        <div class="item swiper-slide">孙**咨询保障方案成功</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ct-box" id="showFixed"></div>
+        <div class="cs-bg" id="fixedTop">
+            <div class="premiumBox" id="premiumdw">
+                <div class='tops'>
+                    <p class="titles">限时免费咨询</p>
+                </div>
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <div class="btnbox">
+                        <span class="btns" id="subMitBtn">立即免费咨询</span>
+                    </div>
+                    <div class="info">安全声明：您的信息将被严格保密，您提供的个人信息授权我公司用于本次咨询，我们不会泄露给任何第三方或其他用途。</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    @@include("include/tell.htm")
+    @@include("include/footer.htm")
+    <!-- <div class="blanks" style="width: 100%;"></div>
+    <a href="#fixedTop" class="botton-fixed show"><img src="@@webRoot/lib/images/fadz-1119/8.jpg" alt=""></a> -->
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        // scrollFixed();
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            autoplay: 3000,
+            loop:true,
+        });
+        var fromData = [
+        {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        },
+        {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'专业、高效保障方案咨询',
+            msg: 1
+        })
+        // 每分钟+3人
+        var _n= parseInt((new Date().getTime()- new Date("2019-11-17").getTime())/1000)+1;
+        $(".left span").text(_n);
+    })
+</script>
+ 
+</html>

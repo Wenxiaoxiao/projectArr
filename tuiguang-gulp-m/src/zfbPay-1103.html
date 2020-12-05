@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"账单详情", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/zfbPay-1103.css">
+</head>
+
+<body>
+    <div class="body-container zfbPay-1103">
+        <div class="box">
+            <div class="pic">
+                <img src="@@webRoot/lib/images/pay-1103/kt.png" alt="">
+            </div>
+            <div class="title">研财学堂</div>
+            <div class="price">
+                <img src="@@webRoot/lib/images/pay-1103/alprice.png" alt="">
+            </div>
+            <div class="orderInfo">
+                <div class="item">
+                    <div class="left">当前状态</div>
+                    <div class="right">支付成功</div>
+                </div>
+                <div class="item">
+                    <div class="left">商品</div>
+                    <div class="right">稳定+开源+股票+基金+保险</div>
+                </div>
+                <div class="item">
+                    <div class="left">商户全称</div>
+                    <div class="right">研财教育科技（武汉）有限公司 </div>
+                </div>
+                <div class="item">
+                    <div class="left">支付时间</div>
+                    <div class="right time"></div>
+                </div>
+                <div class="item">
+                    <div class="left">支付方式</div>
+                    <div class="right">零钱</div>
+                </div>
+                <div class="item">
+                    <div class="left">交易单号</div>
+                    <div class="right num1"></div>
+                </div>
+                <div class="item">
+                    <div class="left">商户单号</div>
+                    <div class="right num2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bar"></div>
+        <div class="box">
+            <div class="info">
+                <div class="item">
+                    <div class="left">发起群收款</div>
+                    <div class="right">
+                        <img src="@@webRoot/lib/images/pay-1103/more.png" alt="">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left">在此商户的交易账单</div>
+                    <div class="right">
+                        <img src="@@webRoot/lib/images/pay-1103/more.png" alt="">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left">评价</div>
+                    <div class="right">
+                        <span>未评价</span>
+                        <img src="@@webRoot/lib/images/pay-1103/more.png" alt="">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left">对订单有疑惑</div>
+                    <div class="right">
+                        <img src="@@webRoot/lib/images/pay-1103/more.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include("include/footer.htm")
+
+</body>
+
+<script>
+    $(function () {
+        var o = {
+            "y": new Date().getFullYear(),
+            "m": new Date().getMonth() > 9 ? new Date().getMonth() + 1 : "0" + new Date().getMonth() * 1 + 1, //月份 
+            "d": new Date().getDate() > 10 ? new Date().getDate() : "0" + new Date().getDate(), //日 
+            "h": new Date().getHours() > 10 ? new Date().getHours() : "0" + new Date().getHours(), //小时 
+            "f": new Date().getMinutes() > 10 ? new Date().getMinutes() : "0" + new Date().getMinutes(), //分 
+            "s": new Date().getSeconds() > 10 ? new Date().getSeconds() : "0" + new Date().getSeconds(), //秒 
+        };
+        function randomString(len, chars) {
+            var chars = chars || "0123456789ABCDEFGHIJKLMNOPQR_STUVWXTZabcdefghiklmnopqrstuvwxyz";
+            var string_length = len || 8;
+            var randomstring = '';
+            for (var i = 0; i < string_length; i++) {
+                var rnum = Math.floor(Math.random() * chars.length);
+                randomstring += chars.substring(rnum, rnum + 1);
+            }
+            return randomstring;
+        }
+        var time = o.y + "-" + o.m + "-" + o.d + " " + o.h + ":" + o.f + ":" + o.s;
+        $(".time").html(time);
+        var num1 = "4200000" + randomString(3, '0123456789') + o.y + o.m + o.d + randomString(8, '0123456789');
+        $(".num1").html(num1)
+        var num2 = randomString(2, 'abcdefghiklmnopqrstuvwxyz')+"_" +randomString(22);
+        $(".num2").html(num2)
+    })
+</script>
+
+</html>

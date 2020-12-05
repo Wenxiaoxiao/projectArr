@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+    <head lang="en">
+        <meta charset="utf-8" />
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="expires" content="0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="viewport"
+            content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" type="text/css" href="@@webRoot/lib/css/main.css?v=@@time" />
+
+        <title>全能少儿保险组合</title>
+
+        <script src="@@webRoot/lib/js/jquery.min.js"></script>
+        <script src="@@webRoot/lib/js/flexible.js"></script>
+        <script src="@@webRoot/lib/js/global.js"></script>
+        <link rel="stylesheet" href="@@webRoot/lib/css/page/tuiguang-wmrs.css">
+    </head>
+
+    <body>
+        <div class="body-container tuiguang-wmrs cp-details">
+            <div class="img-box" id="showFixed">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/1.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box" id="fixedTop">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/ewm.png" alt="" class="erweima">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/2.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/3.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/4.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/ewm.png" alt="" class="erweima erweima01">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/5.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/6.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/7.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/8.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/9.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/10.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/11.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/12.jpg" alt="" class="img-block">
+            </div>
+            <div class="img-box">
+                <img src="@@webRoot/lib/images/tuiguang-wmrs/13.jpg" alt="" class="img-block">
+            </div>
+
+            @@include("include/tell.htm")
+        <div class="blanks" style="width: 100%;height:45px;"></div>
+        <a href="#fixedTop" class="botton-fixed">
+            <span class="left">即日起至8月15日<br>成功测算保费即<i>送儿童疫苗保险</i>一份</span>
+            <span class="right">立即预约</span>
+        </a>
+        <script src="@@webRoot/lib/js/layer.js"></script>
+    </body>
+    <script>
+        $(function () {
+            scrollFixed() //按钮显示隐藏
+
+            function scrollFixed() {
+                var showFixedHeight = $("#showFixed").offset().top
+                console.log(showFixedHeight)
+                $(window).on("scroll", function () {
+                    if ($(this).scrollTop() > showFixedHeight) {
+                        $(".botton-fixed").addClass("show")
+                    } else {
+                        $(".botton-fixed").removeClass("show")
+                    }
+                })
+            }
+        })
+    </script>
+
+</html>

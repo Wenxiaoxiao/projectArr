@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"咨询更多保险问题", "keywords": "保险专家咨询服务", "description": "恭喜您！获得保险专家咨询" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/tc-0616.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container tc-0616">
+        <div class="premiumBox premiumBox1">
+            <div class="premium-border">
+                <div class="premium-title">
+                    <div class="d1">咨询更多保险问题</div>
+                    <div class="d2">我们将给你更全面 更官方的回答</div>
+                </div>
+                <div class="premium-box">
+                </div>
+                <span class="btns btns1" id="subMitBtn"><span>咨询更多</span><img src="@@webRoot/lib/images/goright.png"/></span>
+                <p class="pre-text">温馨提示：请耐心等待电话接听。</p>
+            </div>
+        </div>
+    </div>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function() {
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+        {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+            desc:'输入您的姓名'
+        },
+        {
+            name: '您的电话',
+            type: 2,
+            id: 'mobile',
+            desc:'输入您的电话'
+        }
+        ];
+        fromsFn.startFroms(fromData,{
+            title:'咨询更多保险问题',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+})
+</script>
+
+</html>

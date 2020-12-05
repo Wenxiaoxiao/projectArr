@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"四大险种搭配咨询", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/xzdp-0617.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container xzdp-0617">
+        <img src="@@webRoot/lib/images/xzdp-0617/1.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/xzdp-0617/2.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/xzdp-0617/3.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/xzdp-0617/4.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/xzdp-0617/5.png" alt="" class="img-c">
+        <div class="premiumBox">
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即咨询</span>
+            </div>
+        </div>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+        {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+            desc:'输入您的姓名'
+        },
+        {
+            name: '您的电话',
+            type: 2,
+            id: 'mobile',
+            desc:'输入您的电话'
+        }];
+        fromsFn.startFroms(fromData,{
+            title:'四大险种搭配咨询',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+})
+</script>
+
+</html>

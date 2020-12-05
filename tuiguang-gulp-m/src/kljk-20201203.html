@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"昆仑健康保重大疾病险", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/kljk-20201203.css" type="text/css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container kljk-20201203 cp-details">
+        <div class="img-box common-box-1">
+            <div class="top-content-wrapper">
+                <div class="content-box">
+                    <div class="content-item">
+                        <div class="item-img"><img src="@@webRoot/lib/images/kljk-20201203/icon1.png"/></div>
+                        <div class="item-desc">保<span>195种</span>高发<br/>重/中/轻症一辈子</div>
+                    </div>
+                    <div class="content-item">
+                        <div class="item-img"><img src="@@webRoot/lib/images/kljk-20201203/icon2.png"/></div>
+                        <div class="item-desc"><span>70岁</span>前确诊重疾<br/>赔付高达<span>200%</span>保额</div>
+                    </div>
+                    <div class="content-item">
+                        <div class="item-img"><img src="@@webRoot/lib/images/kljk-20201203/icon3.png"/></div>
+                        <div class="item-desc">可选癌症津贴<br/>最高<span>90%</span>基本保额</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-title">
+                <div class="top-title">0元测保费</div>
+                <div class="bottom-setNum">目前已有<span class="setNum"></span>人测算保费</div>
+            </div>
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <button class="btns" id="subMitBtn">立即测算保费</button>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您重疾保障方案领取，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <div class="img-box" id="showFixed">
+            <img src="@@webRoot/lib/images/kljk-20201203/2.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/kljk-20201203/3.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/kljk-20201203/4.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/kljk-20201203/5.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/kljk-20201203/6.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/kljk-20201203/7.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/kljk-20201203/8.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/kljk-20201203/9.jpg" alt="" class="img-block">
+        </div>
+        @@include("include/tell.htm")
+        <div class="blanks"></div>
+        <a href="#fixedTop" class="botton-fixed">立即测算保费</a>
+    </div>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+    
+</body>
+
+<script>
+$(function () {
+    var fromsFn = $.fromsFn();
+    scrollFixed();
+
+    function scrollFixed() {
+        var showFixedHeight = $("#showFixed").offset().top
+        console.log(showFixedHeight)
+        $(window).on("scroll", function () {
+            if ($(this).scrollTop() >= showFixedHeight) {
+                $(".botton-fixed").addClass("show")
+            } else {
+                $(".botton-fixed").removeClass("show")
+            }
+        })
+    }
+    $(".lz-readys").remove();
+    var age = [];
+    for(var i=0;i<51;i++){
+        var obj = {};
+        obj.value = i+"岁";
+        age.push(obj);
+    }
+    var fromData = [{
+            name: '您的年龄',
+            type: 5,
+            id: 'age',
+            items: age
+        },
+        {
+            name: '您的性别',
+            type: 6,
+            id: 'sex',
+            items: [{
+                value: '男',
+                selected: true
+            }, {
+                value: '女'
+            },]
+        },
+        {
+            name: '保障额度',
+            type: 6,
+            id: 'count',
+            items: [{
+                value: '30万',
+                selected: true
+            }, {
+                value: '40万'
+            },{
+                value: '50万'
+            }]
+        },
+        {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+            desc:'信息将被严格保密'
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+            desc:'用于精准接收重疾保障方案'
+        },
+    ];
+    fromsFn.startFroms(fromData, {
+        title: '昆仑健康保重大疾病险',
+    })
+
+    function setNum(startNum){
+        var timestamp=new Date().getTime();
+        console.log(timestamp);
+        var num=Math.floor((timestamp-startNum)/(1000*5))+26848;
+        return num
+    }
+    var startTime = new Date()
+    var yy = startTime.getFullYear();
+    var mm = startTime.getMonth()+1;
+    var dd = startTime.getDay();
+    if(mm<10){
+        mm = '0'+mm
+    }
+    if(dd<10){
+        dd = '0'+dd
+    }
+    var start=new Date(yy+'/'+mm+'/'+dd).getTime()
+    console.log(start)
+    var testNum=setNum(start);
+    $(".setNum").html(testNum);
+})
+</script>
+
+</html>

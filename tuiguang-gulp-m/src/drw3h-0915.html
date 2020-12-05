@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"达尔文3号重疾险-梧桐树保险网", "keywords": "达尔文3号,重疾险,重大疾病保险,多次赔付重疾险,信泰人寿",
+    "description": "达尔文3号重疾险,轻中重疾累计最高可赔11次,60岁前重疾赔180%,高发轻中症2次赔付,买保险上梧桐树保险网,精选好保险，理赔更无忧。" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/drw3h-0915.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container drw3h-0915 cp-details">
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/drw3h-0915/banner.jpg" alt="" class="img-block">
+        </div>
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-title">
+                    <div class="t1">测一测<span>保障全面的重疾险</span></div>
+                    <div class="t2">需要多少钱</div>
+                </div>
+                <div class="premium-box">
+                </div>
+                <button class="btns" id="subMitBtn">免费测算保费<span>（原价￥169元）</span></button>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次保费测算及投保，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+
+        <div class="img-box" id="showFixed">
+            <img src="@@webRoot/lib/images/drw3h-0915/1.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/drw3h-0915/2.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/drw3h-0915/3.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/drw3h-0915/4.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box" style="padding-left: 0;">
+            <img src="@@webRoot/lib/images/drw3h-0915/5.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/drw3h-0915/6.jpg" alt="" class="img-block">
+        </div>
+    </div>
+    @@include("include/tell.htm")
+    <div class="blanks" style="width: 100%;height:45px;"></div>
+    <a href="#fixedTop" class="botton-fixed">
+        <div class="button zoomAni">
+            立即预约免费测算
+            <img class="pointer" src="@@webRoot/lib/images/pointer.png" alt="">
+        </div>
+    </a>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+
+</body>
+
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        var fromData = [{
+            name: '您的年龄',
+            type: 6,
+            id: 'age',
+            items: [
+                { value: '0-17岁', selected: true },
+                { value: '18-30岁' },
+                { value: '31-50岁' },
+            ]
+        },
+        {
+            name: '您的性别',
+            type: 6,
+            id: 'sex',
+            items: [{
+                value: '男',
+                selected: true
+            }, {
+                value: '女'
+            },]
+        },
+        {
+            name: '基本保额',
+            type: 6,
+            id: 'jbbe',
+            items: [
+                {
+                    value: '5-20万'
+                },
+                {
+                    value: '21-40万',
+                    selected: true
+                },
+                {
+                    value: '41-55万'
+                },
+            ]
+        },
+        {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+        },
+        ];
+        fromsFn.startFroms(fromData, {
+            title: '达尔文3号重疾险-梧桐树保险网',
+        })
+    })
+</script>
+
+</html>

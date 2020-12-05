@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"免费1对1量身定制", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/lsdz-0421.css?v=@@time">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+
+</head>
+
+<body style="background-color: #fff0d9;">
+    <div class="body-container lsdz-0421 cp-details">
+        <img src="@@webRoot/lib/images/lsdz-0421/1.png" class="img-c">
+        <img src="@@webRoot/lib/images/lsdz-0421/2.png" class="img-c">
+        <div class="wrapper">
+            <div class="premiumBox" id="fixedTop">
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <span class="btns" id="subMitBtn">立即定制</span>
+                    <p class="pre-text">
+                        安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+        {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            },
+            {
+                name: '您的性别',
+                type: 4,
+                id: 'sex',
+                items: [{
+                    value: '男'
+                }, {
+                    value: '女'
+                }]
+            },
+            {
+                name: '您的年龄',
+                type: 2,
+                id: 'age',
+            },
+            {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            }, ];
+        fromsFn.startFroms(fromData,{
+            title:'免费1对1量身定制',
+        })
+       
+})
+</script>
+
+</html>

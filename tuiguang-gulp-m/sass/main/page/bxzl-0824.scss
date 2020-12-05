@@ -1,0 +1,89 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.bxzl-0824{
+    background: #ffd38c;
+    width:r(750);
+    .img-c{
+        width:r(750);
+    }
+    .blank{
+        height:r(100);
+    }
+    .common-box-1{
+        height:r(460);
+        width:r(750);
+        position: relative;
+        .img-c{
+            width:r(750);
+        }
+        .qrcode_target{
+            position: absolute;
+            width:r(162);
+            height:r(162);
+            left:r(74);
+            top:r(36);
+        }
+    }
+    .swiper-comment{
+        width:r(750);
+        height:r(724);
+        overflow: hidden;
+        position: relative;
+        &>.img-c{
+            width:r(750);
+            height:r(724);
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        &>.comment-wrapper{
+            width:r(710);
+            // height:r(559);
+            height:285px;
+            position: absolute;
+            left:r(20);
+            top:r(112);
+            padding:r(0) r(36);
+            overflow: hidden;
+            &>ul{
+                overflow-y:auto;
+                position: relative;
+                &>li{
+                    // height:r(191);
+                    height:95px;
+                    padding-top:8px;
+                    border-bottom:1px solid #eee6e5;
+                    &>span{
+                        display: block;
+                        font-size:r(25);
+                    }
+                    &>span:nth-child(1){
+                        color:#723326;
+                        line-height:r(63);
+                        font-weight: bold;
+                    }
+                    &>span:nth-child(2){
+                        line-height:r(40);
+                        color:#333;
+                    }
+                }
+            }
+        }
+    }
+    .common-box-2{
+        height:r(320);
+        width:r(750);
+        position: relative;
+        .img-c{
+            width:r(750);
+        }
+        .qrcode_target{
+            position: absolute;
+            width:r(207);
+            height:r(207);
+            left:r(40);
+            top:r(43);
+        }
+    }
+}

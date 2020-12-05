@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"一对一电话医生咨询服务", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/addedService.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="serviceMask"></div>
+    <div class="serviceMaskContent">
+        <div class="content">
+            <img class="headImg" src="@@webRoot/lib/images/dhys-1118/8.png" alt="">
+            <div class="input qm-change">
+                <div class="box-right" name="领取人姓名" id="name" data-type="2">
+                        <img src="@@webRoot/lib/images/dhys-1118/12.png">
+                        <input class="changes" id="mobile" type="text" placeholder="领取人姓名">
+                </div>
+            </div>
+
+            <div class="input qm-change">
+                <div class="box-right" name="领取人手机号" id="mobile" data-type="3">
+                        <img src="@@webRoot/lib/images/dhys-1118/11.png">
+                        <input class="changes" id="mobile" type="text" placeholder="领取人手机号">
+                </div>
+            </div>
+            <div class="btn" id="subMitBtn"><span>免费领取</span></div>
+        </div>
+        <div class="close">
+            <img src="@@webRoot/lib/images/dhys-1118/10.png" alt="">
+        </div>
+    </div>
+    <div class="body-container service">
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/dhys-1118/1.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/dhys-1118/2.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/dhys-1118/3.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/dhys-1118/4.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/dhys-1118/5.jpg" alt="" class="img-block">
+        </div>
+    
+        <div class="blanks" style="width: 100%;height:45px;"></div>
+        <div class="botton-fixed">
+            <div class="left"><span>¥0元</span><i>原价¥599元</i></div>
+            <div class="right">免费领取</div>
+        </div>
+    </div>
+    @@include("include/footer.htm")
+</body>
+
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        //关闭的点击事件
+        $(".close img").click(function(){
+            $("input").val("");
+            $(".serviceMask,.serviceMaskContent").fadeOut();
+        })
+
+        //免费领取的点击事件
+        $(".botton-fixed .right").click(function(){
+            $(".serviceMask,.serviceMaskContent").fadeIn();
+        })
+        var fromData = [{
+                name: '领取人姓名',
+                type: 2,
+                id: 'name',
+            },
+            {
+                name: '领取人手机号',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData, {
+            title: '一对一电话医生咨询服务',
+            msg: '领取成功!请保持电话畅通。我们将为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        },function(){
+            $("input").val("");
+            $(".serviceMask,.serviceMaskContent").fadeOut();
+        })
+
+    })
+</script>
+
+</html>

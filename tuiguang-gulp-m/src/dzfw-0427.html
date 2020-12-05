@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"买保险一定要咨询梧桐树保险网", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/dzfw-0427.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <style>
+        .botton-fixed span{
+            font-size: 0.24rem;
+        }
+        .wts-txsh.cp-details {
+            background-color: #3062f0;
+        }
+        .wts-txsh .premiumBox{
+            background:url(@@webRoot/lib/images/dzfw-0427/3.jpg) no-repeat;
+            background-size: 100% 100%;
+            border-radius: 10px;
+            color: #000;
+            margin: 0;
+            
+        }
+        
+        .wts-txsh .premiumBox .labeltxt{
+            color: #000;
+        }
+        .wts-txsh .premium-box{
+            padding: 0;
+        }
+        .premium-title{
+            text-align: center;
+            font-size: 0.5rem;
+            line-height: 2;
+            color: #fff;
+            font-weight: 900;
+        }
+        .img-box {
+        }
+
+        .wts-txsh .activity-froms {
+            margin-bottom: 0.4rem;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            background: #fff9f2;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .wts-txsh .activity-froms .form-title {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -0.7rem;
+            font-size: 0.8rem;
+            color: #fff;
+            background: #ff7a5b;
+            width: 6rem;
+            margin: auto;
+            text-align: center;
+            line-height: 1.4rem;
+            height: 1.4rem;
+            border-radius: 5px;
+        }
+
+        .wts-txsh .activity-froms .box-right_li {
+            background: #fff;
+            padding: .23rem .5rem;
+        }
+
+        .wts-txsh .activity-froms .box-right_li.active {
+            background: #fff url(@@webRoot/lib/images/dzfw-0427/active.png) no-repeat;
+            background-position: right bottom;
+            background-size: 0.5rem;
+            border: 1px solid #ffe4e9;
+            color: inherit;
+        }
+
+        .wts-txsh .activity-froms input,
+        .wts-txsh .activity-froms select {
+            background: #fff;
+            height: 1.1rem !important;
+            border-radius: 5px;
+        }
+
+        .wts-txsh #aqsm {
+            color: #000;
+        }
+
+        .top-img {
+            padding: 0;
+        }
+
+        .wts-txsh #subMitBtn {
+            width: 100%;
+            height: 1.3rem;
+            line-height: 1.3rem;
+            border-radius: 0.1rem;
+            background:#1366ff;
+            margin-top: 0.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-container wts-txsh cp-details">
+        <div class="img-box top-img">
+            <img src="@@webRoot/lib/images/dzfw-0427/banner.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box" id="showFixed">
+            <img src="@@webRoot/lib/images/dzfw-0427/1.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/dzfw-0427/2.jpg" alt="" class="img-block">
+        </div>
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即测算保费</span>
+            </div>
+        </div>
+    </div>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        var fromData = [
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, 
+            {
+                name: '您的性别',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }, ]
+            },
+            {
+                name: '您的年龄',
+                type: 2,
+                id: 'age'
+            },
+            {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData, {
+            title: '买保险一定要咨询梧桐树保险网',
+        })
+    })
+</script>
+
+</html>

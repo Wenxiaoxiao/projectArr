@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"保险应该怎么买？", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/bxzmx-0421.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container bxzmx-0421">
+        <img src="@@webRoot/lib/images/bxzmx-0421/_01.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/bxzmx-0421/_02.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/bxzmx-0421/_03.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/bxzmx-0421/_04.jpg" alt="" class="img-c">
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-title">保费测算</div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即测保费</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <img src="@@webRoot/lib/images/bxzmx-0421/_05.jpg" alt="" class="img-c">
+        <div class="blanks"></div>
+        <a href="#fixedTop" class="botton">免费咨询你适合买哪种类型</a>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function () {
+
+        var fromsFn = $.fromsFn();
+
+        var fromData = [
+            {
+                name: '被保人年龄',
+                type: 2,
+                id: 'age'
+            },
+            {
+                name: '被保人性别',
+                type: 4,
+                id: 'sex',
+                items: [{
+                    value: '男'
+                }, {
+                    value: '女'
+                }]
+            },
+            {
+                name: '基本保额',
+                type: 5,
+                id: 'jbbe',
+                items: [{
+                    value: '20万'
+                }, {
+                    value: '40万'
+                }, {
+                    value: '50万',
+                    selected: true
+                }, {
+                    value: '100万'
+                }]
+            },
+            {
+                name: '缴费方式',
+                type: 5,
+                id: 'jffs',
+                items: [
+                    {
+                        value: '5年'
+                    },
+                    {
+                        value: '10年'
+                    },
+                    {
+                        value: '15年'
+                    },
+                    {
+                        value: '20年',
+                        selected: true
+                    },
+                    {
+                        value: '30年'
+                    }
+                ]
+            },
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },];
+        fromsFn.startFroms(fromData, {
+            title: '保险应该怎么买？',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+    })
+</script>
+
+</html>

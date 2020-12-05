@@ -1,0 +1,43 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.azylx-1{
+    position: relative;
+    min-height: 100vh;
+    padding-top: r(700);
+    padding-bottom: r(20);
+    .banner{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: r(1334);
+    }
+    .premiumBox{
+        background-color: #fff;
+        color: #000;
+    }
+    .labeltxt{
+        color: #000;
+    }
+    .btns{
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+        font-size: r(40);
+        text-align: center;
+        color: red;
+        background-color: #fed11f;
+        font-weight: 900;
+        line-height: r(70);
+        border-radius: 10px;
+    }
+    .premium-border{
+        border: 1px solid red;
+        border-radius: 10px;
+        padding: r(20);
+    }
+    .premium-box{
+        padding: 0;
+    }
+}

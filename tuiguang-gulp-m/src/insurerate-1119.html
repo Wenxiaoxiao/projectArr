@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"最值得看的，2020年重疾险推荐度排名报告！", "keywords": "重疾险，保险排行，梧桐树重疾险，2020年重疾险", "description":"对比100+重疾险，结合5个维度全面分析，帮您获得精准保障" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/insurerate-1119.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container insurerate-1119">
+        <div class="banner-box">
+            <img src="@@webRoot/lib/images/insurerate-1119/banner.jpg" alt="">
+        </div>
+        <div class="cs-bg">
+            <div class="ct_01">
+                <div class="rate">
+                    <img src="@@webRoot/lib/images/insurerate-1119/rate.png" alt="">
+                    <span class="showpop"></span>
+                    <span class="showpop1"></span>
+                </div>
+                <img src="@@webRoot/lib/images/insurerate-1119/img1.png" alt="">
+                <div class="ct_01_box">
+                    <img src="@@webRoot/lib/images/insurerate-1119/img2.png" alt="">
+                </div>
+                <div class="rate_box_1">
+                    <span class="showpop_btn a1"></span>
+                    <span class="showpop_btn a2"></span>
+                    <img src="@@webRoot/lib/images/insurerate-1119/img3.png" alt="">
+                </div>
+                <div class="rate_box_2">
+                    <span class="showpop_btn a1"></span>
+                    <span class="showpop_btn a2"></span>
+                    <span class="showpop_btn a3"></span>
+                    <img src="@@webRoot/lib/images/insurerate-1119/img4.png" alt="">
+                </div>
+                <div class="rate_box_3">
+                    <span class="showpop_btn a1"></span>
+                    <span class="showpop_btn a2"></span>
+                    <span class="showpop_btn a3"></span>
+                    <img src="@@webRoot/lib/images/insurerate-1119/img5.png" alt="">
+                </div>
+                <div class="rate_box_4">
+                    <span class="showpop_btn a1"></span>
+                    <span class="showpop_btn a2"></span>
+                    <span class="showpop_btn a3"></span>
+                    <img src="@@webRoot/lib/images/insurerate-1119/img6.png" alt="">
+                </div>
+                <div class="rate_box_5">
+                    <span class="showpop_btn a1"></span>
+                    <span class="showpop_btn a2"></span>
+                    <img src="@@webRoot/lib/images/insurerate-1119/img8.png" alt="">
+                </div>
+                <div class="rate_box_6">
+                    <span class="showpop_btn a1"></span>
+                    <span class="showpop_btn a2"></span>
+                    <img src="@@webRoot/lib/images/insurerate-1119/img9.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="pop">
+            <div class="premiumBox" id="fixedTop">
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <span class="btns" id="subMitBtn"></span>
+                </div>
+                <span class="close_pop"></span>
+            </div>
+            <img class="ok" src="@@webRoot/lib/images/insurerate-1119/success.png">
+        </div>
+    </div>
+    @@include("include/footer.htm")
+    <a href="#fixedTop" class="botton-fixed showpop_btn">查看2020最新重疾险排名权威报告</a>
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function () {
+        // 底部固定按钮
+        scrollFixed();
+        function scrollFixed() {
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= 800) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            }
+        ];
+        fromsFn.startFroms(fromData,{
+            title:'2020年重疾险推荐度排名报告',
+            msg: '-1'
+        },function() {
+            $(".premiumBox").hide();
+            $(".ok").fadeIn(300,function() {
+                setTimeout(function() {
+                    $(".pop,.ok").fadeOut(300,function() {
+                        $(".premiumBox").show();
+                    });
+                },3000)
+            })
+        })
+
+        // 关闭弹窗
+        $(".pop").click(function(e) {
+            var _t= $(".premiumBox");
+            if(_t.has(e.target).length==0&&!_t.is(e.target)) {
+                $(".pop").fadeOut();
+            }
+        })
+        $(".close_pop").click(function() {
+            $(".pop").fadeOut();
+        })
+        // 弹窗
+        $(".showpop,.showpop1,.showpop_btn").click(function() {
+            $(".pop").fadeIn();
+        })
+        $(".qm-change").eq(0).prepend('<img class="icon_name" src="@@webRoot/lib/images/insurerate-1119/icon_img1.png">');
+        $(".qm-change").eq(1).prepend('<img class="icon_tel" src="@@webRoot/lib/images/insurerate-1119/icon_img2.png">');
+    })
+</script>
+ 
+</html>

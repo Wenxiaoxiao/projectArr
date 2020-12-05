@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"1分钱抢购高级经纪人服务", "keywords": "高级经纪人服务", "description": "高级经纪人服务" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/tc-0616.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container tc-0616">
+        <div class="premiumBox" id="showFixed">
+            <div class="premium-border">
+                <div class="premium-title">
+                    <img src="@@webRoot/lib/images/gongxix.png"/>
+                    <div>高级经纪人服务</div>
+                </div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即提交</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密。
+                </p>
+            </div>
+        </div>
+    </div>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+$(function() {
+    var fromsFn = $.fromsFn();
+
+    var fromData = [
+    {
+        name: '您的姓名',
+        type: 2,
+        id: 'name',
+        desc:'输入您的姓名'
+    },
+    {
+        name: '您的电话',
+        type: 2,
+        id: 'mobile',
+        desc:'输入您的电话'
+    }
+    ];
+    fromsFn.startFroms(fromData,{
+        title:'1分钱抢购高级经纪人服务',
+        msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+    })
+})
+</script>
+
+</html>

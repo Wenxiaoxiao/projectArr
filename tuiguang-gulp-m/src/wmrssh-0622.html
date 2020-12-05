@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"无忧人生2020重疾险", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/wmrssh-0508.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container wmrssh-0508">
+        <div class="banner top-img">
+            <img src="@@webRoot/lib/images/wmrssh-0622/banner.png" alt="" class="img-c">
+        </div>
+
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-title1">测一测保障全面的重疾险需要多少钱</div>
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">免费测算保费</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或者其他用途。
+                </p>
+            </div>
+        </div>
+
+        <div class="img-box" id="showFixed">
+            <img src="@@webRoot/lib/images/wmrssh-0622/1.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrssh-0622/2.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrssh-0622/3.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrssh-0622/4.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrssh-0622/5.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrssh-0622/6.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrssh-0622/7.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrssh-0622/8.png" alt="" class="img-block">
+        </div>
+        <div class="blanks" style="width: 100%;height:55px;"></div>
+        @@include("include/tell.htm")
+        <a href="#fixedTop" class="botton-fixed1">免费测算保费</a>
+    </div>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed1").addClass("show")
+                } else {
+                    $(".botton-fixed1").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        var fromData = [{
+                name: '被保人年龄',
+                type: 6,
+                id: 'age',
+                items: [{
+                        value: '0-17岁'
+                    },
+                    {
+                        value: '18-35岁',
+                        selected: true
+                    },
+                    {
+                        value: '36-55岁'
+                    }
+                ]
+            },
+            {
+                name: '基本保额',
+                type: 6,
+                id: 'jbbe',
+                items: [{
+                        value: '5-20万'
+                    },
+                    {
+                        value: '21-50万'
+                    },
+                    {
+                        value: '51-83万',
+                        selected: true
+                    },
+                ]
+            },
+            {
+            name: '交费',
+            type: 5,
+            id: 'jffs',
+            items: [
+                {
+                    value: '5年'
+                }, 
+                {
+                    value: '10年'
+                }, 
+                {
+                    value: '15年'
+                }, 
+                {
+                    value: '20年',
+                    selected:true
+                }, 
+                {
+                    value: '30年'
+                }
+            ]
+            },
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+                desc:'您的信息将被严格保密'
+            },
+            {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData, {
+            title: '无忧人生2020重疾险',
+        })
+        //初始化数据
+        function setNum(startNum){
+            var timestamp=new Date().getTime();
+            console.log(timestamp);
+            var num=Math.floor((timestamp-startNum)/(1000*5))+26848;
+            return num
+        }
+        var startTime = new Date()
+        var yy = startTime.getFullYear();
+        var mm = startTime.getMonth()+1;
+        var dd = startTime.getDate();
+        if(mm<10){
+            mm = '0'+mm
+        }
+        if(dd<10){
+            dd = '0'+dd
+        }
+        var start=new Date(yy+'/'+mm+'/'+dd).getTime()
+        console.log(start)
+        var testNum=setNum(start);
+        $(".premium-title1").after('<span class="fromNumber">目前已有'+testNum+'人测算</span>')
+    })
+</script>
+
+</html>

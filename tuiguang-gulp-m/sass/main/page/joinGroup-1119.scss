@@ -1,0 +1,320 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.wts-introduce-m1{
+    width:r(611);
+    height:r(250);
+    border-radius:r(5);
+    &>img{
+        width:r(611);
+        height:r(250);
+        border-radius:r(5);
+    }
+}
+.box-joinGroup-1119{
+    background:#fff;
+    width:r(750);
+    margin:0 auto;
+    .hidemodal{
+        display:none;
+    }
+    .showmodal{
+        display:block;
+    }
+    .notclick{
+        pointer-events: none;
+    }
+    .modal_joingroup{
+        width:r(750);
+        margin:0 auto;
+        height:100%;
+        background:rgba(0,0,0,0.8);
+        z-index: 99;
+        position: fixed;
+        .form_joingroup{
+            width:r(611);
+            height:r(689);
+            background:url("../../images/joinGroup-1119/modal.png") no-repeat;
+            background-size:100% 100%;
+            margin:r(250) auto;
+            overflow: hidden;
+            .phone_check{
+                height:r(310);
+                width:r(532);
+                margin:0 auto;
+                margin-top:r(280);
+                .phone{
+                    height:r(74.1);
+                    margin-top:r(32.5);
+                    border-bottom:r(1) solid #d2d2d2;
+                    .icon{
+                        float:left;
+                        width:r(41.6);
+                        height:100%;
+                        background:url("../../images/joinGroup-1119/phone.png") center no-repeat;
+                        background-size:r(24.7) r(37.7);
+                    }
+                    .phone-input{
+                        width:r(455);
+                        float:left;
+                        height:100%;
+                        line-height:r(78);
+                        &>input{
+                            font-size:r(36.4);
+                            border:none;
+                            line-height:r(70);
+                            text-indent:r(5);
+                        }
+                    }
+                }
+                .check{
+                    height:r(71.4);
+                    margin-top:r(32.5);
+                    border-bottom:r(1) solid #d2d2d2;
+                    .icon{
+                        float:left;
+                        width:r(41.6);
+                        height:100%;
+                        background:url("../../images/joinGroup-1119/check.png") center no-repeat;
+                        background-size:r(31.2) r(36.4);
+                    }
+                    .check-input{
+                        width:r(488.8);
+                        float:left;
+                        height:100%;
+                        line-height:r(78);
+                        &>input{
+                            font-size:r(36.4);
+                            width:r(226.2);
+                            border: none;
+                            float:left;
+                            line-height:r(70);
+                            text-indent:r(5);
+                        }
+                        &>span{
+                            color:#4187ff;
+                            font-size:r(26);
+                            cursor: pointer;
+                            width:r(260);
+                            float:left;
+                            text-align:center;
+                        }
+                    }
+                }
+                .btn3{
+                    width:r(531.7);
+                    height:r(104);
+                    background:#3c84ff;
+                    margin-top:r(19.5);
+                    border-radius: r(10);
+                    font-size: r(41.6);
+                    text-align: center;
+                    line-height:r(104);
+                    color:#fff;
+                    cursor: pointer;
+                }
+            }
+            .tips{
+                font-size:r(21);
+                color:#999;
+                text-align: center;
+                padding:0 r(13);
+            }
+        }
+    }
+    .part1{
+        height:r(452);
+        width:r(750);
+        position: relative;
+        .box-center{
+            position: absolute;
+            background:#ffdb3c;
+            width:r(614);
+            min-height:r(384);
+            left:50%;
+            transform: translateX(-50%);
+            top:r(52);
+            border-radius:r(10);
+            .content-box-center{
+                width:r(587);
+                height:r(357);
+                margin:r(13);
+                border-radius:r(10);
+                background:#fff;
+                position: relative;
+                .content-wrapper{
+                    padding:r(0) r(46);
+                    width:100%;
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
+                    text-align: center;
+                }
+                .d1{
+                    font-size:r(30);
+                    color:#333;
+                    font-weight:bold;
+                }
+                .d2{
+                    color:#fd4374;
+                    font-size:r(44);
+                    font-weight:bold;
+                }
+                .d3{
+                    font-size:r(26);
+                    color:#333;
+                }
+            }
+        }
+        &>img{
+            height:r(452);
+            width:r(750);
+        }
+    }
+    .part2{
+        height:r(1242);
+        width:r(750);
+        background:url("../../images/joinGroup-1119/2.png") no-repeat;
+        background-size:100% 100%;
+        position: relative;
+        padding-top:r(50);
+        .liveTitle{
+            color:#fff;
+            width:r(550);
+            margin:0 auto;
+            font-size:r(24);
+            &>div{
+                text-align: center;
+            }
+        }
+        .liveWords{
+            margin-top:r(15);
+            font-size:r(30);
+            text-align:center;
+        }
+        .liveQrCode{
+            width:r(400);
+            height:r(400);
+            background:url("../../images/joinGroup-1119/ercode1.png") #fff center no-repeat;
+            background-size:100% 100%;
+            border-radius: r(14);
+            margin:0 auto;
+            margin-top:r(222);
+            padding-top:r(150);
+            &>img{
+                width:r(400);
+                height:r(400);
+                border-radius: r(14);
+                position: absolute;
+                z-index: 1;
+                top:r(400);
+            }
+            .btn{
+                width:r(340);
+                height:r(103);
+                margin:0 auto;
+                cursor: pointer;
+                &>img{
+                    width:100%;
+                    height:100%;
+                }
+            }
+        }
+    }
+    .part3{
+        height:r(1097);
+        width:r(750);
+        background:url("../../images/joinGroup-1119/3.png") no-repeat;
+        background-size:100% 100%;
+        position: relative;
+        padding-top:r(95);
+        .dakas{
+            height:r(962);
+            width:r(706);
+            margin:0 auto;
+            .daka{
+                width:r(342);
+                height:r(481);
+                position: relative;
+                .btn1{
+                    width:r(342);
+                    height:r(70);
+                    position: absolute;
+                    bottom:0;
+                    left:0;
+                    cursor: pointer;
+                    &>img{
+                        width:100%;
+                        height:100%;
+                    }
+                }
+            }
+            .daka-left{
+                float:left;
+            }
+            .daka-right{
+                float:right;
+            }
+        }
+    }
+    .part4{
+        height:r(686);
+        width:r(750);
+        background:url("../../images/joinGroup-1119/4.png") no-repeat;
+        background-size:100% 100%;
+        position: relative;
+    }
+    .part5{
+        height:r(234);
+        width:r(750);
+    }
+    .botton-fixed{
+        height:r(234);
+        width:r(750);
+        background:#4a83e3;
+        color:#fff;
+        text-align: center;
+        font-size:r(31);
+        padding-top:r(27);
+        position: fixed;
+        left: 0;
+        bottom: r(-234);
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        left: 50%;
+        transform: translateX(-50%);
+        &.show{
+            bottom:0;
+        }
+        .footwords1{
+            font-size:r(28);
+            &>img{
+                width:r(34);
+                height:r(28);
+            }
+            .regionName{
+                font-size:r(28);
+            }
+            .s1{
+                font-size:r(22);
+            }
+        }
+        .footwords2{
+            color:#ffef3e;
+            font-weight:bold;
+        }
+        .footbtn{
+            width:r(579);
+            height:r(98);
+            margin:0 auto;
+            margin-top:r(10);
+            &>img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+}

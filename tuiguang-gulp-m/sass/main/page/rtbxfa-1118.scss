@@ -1,0 +1,185 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.rtbxfa-1118{
+    .banner-box{
+        width: 100%;
+        position: relative;
+        img{
+            width: 100%;
+            display: block;
+        }
+        .linq{
+            position: absolute;
+            bottom: 0.4rem;
+            width: 100%;
+            line-height: 0.8rem;
+            background: rgba(0,0,0,0.4);
+            font-size: 0.3rem;
+            padding: 0.1rem;
+            color: #fff;
+
+            .left{
+                float: left;
+                border-right: 1px solid #666;
+                padding-right: 0.1rem;
+                span{
+                    color: #fe771d;
+                }
+            }
+            .swiper-container{
+                height: 0.8rem;
+            }
+            .right{
+                float: right;
+                .item{
+                    line-height: 0.8rem;
+                }
+            }
+        }
+    }
+    .wrap{
+        .ct-box{
+            width: 100%;
+            position: relative;
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+    .premiumBox{
+        background: #ff771f;
+        border: none;
+        .tops{
+            text-align: center;
+            .titles{
+                font-size: 0.52rem;
+                font-weight: 800;
+                span{
+                    font-size: 0.3rem;
+                    color: #fcc908;
+                    text-decoration:line-through;
+                    font-weight: 100;
+                }
+            }
+            .time{
+                font-size: 0.4rem;
+                margin: 0.15rem 0;
+                span{
+                    display: inline-block;
+                    height: 0.4rem;
+                    line-height: 0.4rem;
+                    background: #fff;
+                    color: #ea0021;
+                    font-size: 0.3rem;
+                    padding: 0 0.1rem;
+                    border-radius: 0.1rem;
+                    margin: 0 0.1rem;
+                }
+            }
+        }
+        .premium-border{
+            border-radius: 5px;
+            background: #fff;
+            .btnbox{
+                background: #fff;
+                padding-bottom: 0.6rem;
+                .btns{
+                    width: 8rem;
+                    height: 1.33333rem;
+                    line-height: 1.33333rem;
+                    font-size: .66667rem;
+                    border-radius: 5px;
+                    margin: 0 auto .13333rem;
+                    display: block;
+                    text-align: center;
+                    background: #fd3636;
+                    -webkit-box-shadow: 0 4px 0 #fc8b8b;
+                    box-shadow: 0 4px 0 #fc8b8b;
+                    color: #fff;
+                }
+            }
+        }
+        .labeltxt{
+            color: #000;
+        }
+        .changes{
+            border-radius: 4px;
+        }
+        .qm-radio-box .radio-box{
+            padding: 0 6px;
+            min-width: 2rem;
+            &.active{
+                border-color: #ff771f;
+            }
+            &.active::after{
+                display: none;
+            }
+            &.active::before{
+                display: none;
+            }
+        }
+    }
+    .ct-box{
+        position: relative;
+        .dw{
+            display: block;
+            position: absolute;
+            // background: rgba(0,0,0,0.4);
+        }
+        .dw2{
+            right: 0.55rem;
+            width: 1.8rem;
+            height: 2.3rem;
+            top: 4.8rem;
+        }
+        .dw3{
+            right: 1.55rem;
+            width: 1.8rem;
+            height: 3.3rem;
+            top: 4.9rem;
+        }
+        .dw4{
+            left: 0.55rem;
+            width: 8.8rem;
+            height: 1.3rem;
+            top: 10.7rem;
+        }
+        .dw5{
+            right: .55rem;
+            width: 1.8rem;
+            height: 3.3rem;
+            top: 4.9rem;
+        }
+    }
+    .wrap{
+        padding-bottom: 0.2rem;
+    }
+    
+}
+.blanks{
+    height: r(138);
+}
+.botton-fixed{
+    width: 100%;
+    font-size: r(36);
+    height: r(138);
+    line-height: r(138);
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: r(-138);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    img{
+        width: 100%;
+    }
+    &.show{
+        bottom: 0;
+    }
+}

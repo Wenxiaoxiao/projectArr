@@ -1,0 +1,100 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.course-code-box{
+    background-color: #fff;
+    padding-bottom: r(30);
+    .process-last{
+        font-size: r(36);
+        padding-top: r(30);
+        .last-p1{
+            color: #fb5c22;
+            height: r(56);
+            line-height: r(56);
+            width: r(197);
+            background-color: #ffe4da;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: r(28);
+            -webkit-border-radius: r(28);
+            -moz-border-radius: r(28);
+            -ms-border-radius: r(28);
+            -o-border-radius: r(28);
+        }   
+        .last-p2{
+            color: #000;
+            text-align: center;
+            padding: r(15) 0;
+            span{
+                color: #4b41b6;
+            }
+        }
+        .tip-icon{
+            text-align: center;
+            s{
+                width: 0;
+                height:0;
+                border-width:r(20) r(16);
+                border-style: solid;
+                border-color: #4b41b6 #fff #fff #fff; 
+                background-color: #4b41b6;
+                display: inline-block;
+                margin: 0 r(5)
+            }
+        }
+        .eq-code{
+            width: r(352);
+            height: r(352);
+            margin: 0 auto r(100);
+            >img{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .course-linked{
+        width: r(690);
+        margin: 0 auto;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        background-color: #f0efff;
+        padding: 0 r(25) r(30);
+        position: relative;
+        border: 1px solid transparent;
+        .p-title{
+            font-size: r(38);
+            width: r(240);
+            height: r(70);
+            line-height: r(70);
+            color: #fff;
+            text-align: center;
+            background-color: #4b41b6;
+            margin: 0 auto;
+            border-radius: r(35);
+            -webkit-border-radius: r(35);
+            -moz-border-radius: r(35);
+            -ms-border-radius: r(35);
+            -o-border-radius: r(35);
+            margin-top: r(-35);
+            margin-bottom: r(35);
+        }
+        .text-p{
+            font-size: r(30);
+            color: #000;
+            span{
+                color: #fb5c22;
+            }
+        }
+    }
+    .img-box{
+        width: 100%;
+        >img{
+            display: block;
+            width: 100%;
+        }
+    }
+}

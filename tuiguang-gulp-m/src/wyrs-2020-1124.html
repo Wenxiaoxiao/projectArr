@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"达尔文3号重疾险免费测试保费", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/wyrs-2020-1124.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container wyrs-2020-1124 cp-details">
+        <div class="img-box common-box-1">
+            <div class="top-tit"></div>
+            <div class="top-content">
+                <div><img src="@@webRoot/lib/images/wyrs-2020-1124/chosed.png"/><span>累计最高赔付达<span>11次</span>，最高赔付<span>486.75万</span></span></div>
+                <div><img src="@@webRoot/lib/images/wyrs-2020-1124/chosed.png"/><span>60岁前重疾赔<span>180%</span>，高发轻中症可<span>2次</span>赔</span></div>
+                <div><img src="@@webRoot/lib/images/wyrs-2020-1124/chosed.png"/><span>恶性肿瘤、特定心脑血管疾病<span>2次</span>赔</span></div>
+            </div>
+        </div>
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-title"><span class="yuan"></span>测一测买一份终身型的重疾险需要多少钱？<span class="yuan"></span></div>
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <button class="btns" id="subMitBtn">免费获取报价</button>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的信息仅用于本次测算保费，我们不会泄露给任何第三方或其它用途。
+                </p>
+            </div>
+        </div>
+        <div class="img-box" id="showFixed">
+            <img src="@@webRoot/lib/images/wyrs-2020-1124/2.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs-2020-1124/3.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs-2020-1124/4.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs-2020-1124/5.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs-2020-1124/6.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs-2020-1124/7.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wyrs-2020-1124/8.jpg" alt="" class="img-block">
+        </div>
+        <br/>
+        @@include("include/tell.htm")
+        <div class="blanks"></div>
+        <a href="#fixedTop" class="botton-fixed">免费获取报价</a>
+    </div>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+    
+</body>
+
+<script>
+$(function () {
+    var fromsFn = $.fromsFn();
+    scrollFixed();
+
+    function scrollFixed() {
+        var showFixedHeight = $("#showFixed").offset().top
+        console.log(showFixedHeight)
+        $(window).on("scroll", function () {
+            if ($(this).scrollTop() >= showFixedHeight) {
+                $(".botton-fixed").addClass("show")
+            } else {
+                $(".botton-fixed").removeClass("show")
+            }
+        })
+    }
+    $(".lz-readys").remove();
+    var age = [];
+    for(var i=0;i<51;i++){
+        var obj = {};
+        obj.value = i+"岁";
+        age.push(obj);
+    }
+    var fromData = [{
+            name: '您的年龄',
+            type: 5,
+            id: 'age',
+            items: age
+        },
+        {
+            name: '性别',
+            type: 6,
+            id: 'sex',
+            items: [{
+                value: '男',
+                selected: true
+            }, {
+                value: '女'
+            },]
+        },
+        {
+            name: '姓名',
+            type: 2,
+            id: 'name',
+            desc:'信息将被严格保密'
+        }, {
+            name: '电话',
+            type: 3,
+            id: 'mobile',
+            desc:'用于接收测算结果'
+        },
+    ];
+    fromsFn.startFroms(fromData, {
+        title: '达尔文3号重疾险免费测试保费',
+    })
+})
+</script>
+
+</html>

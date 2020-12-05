@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.hqwyrs-0514{
+    position: relative;
+    min-height: 100vh;
+    padding-top: r(750);
+    padding-bottom: r(20);
+    .banner{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: r(901);
+    }
+    .premiumBox{
+        background-color: #fff;
+        color: #000;
+    }
+    .labeltxt{
+        color: #000;
+    }
+    .btns{
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        font-size: r(40);
+        text-align: center;
+        color: #fff;
+        background-color: #f85856;
+        font-weight: 900;
+        line-height: r(90);
+        border-radius: 5px;
+    }
+    .premium-border{
+        border-radius: 10px;
+        padding: r(20);
+    }
+    .premium-box{
+        padding: 0;
+    }
+}

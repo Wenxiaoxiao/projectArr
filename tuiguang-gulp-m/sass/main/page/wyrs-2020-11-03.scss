@@ -1,0 +1,99 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.wyrs-2020-11-03{
+    background: #ffced2;
+    &.cp-details{
+        margin: 0 auto;
+    }
+    .img-box{
+        width: 100%;
+        position: relative;
+        .img-block{
+            width: 100%;
+            display: block;
+        }
+    }
+    .common-box-1{
+        width:r(750);
+        height:r(816);
+        position: relative;
+        .title-bg{
+            position: absolute;
+            width:r(614);
+            height:r(150);
+            background:url("../../images/wyrs-2020-11-03/tit.png") no-repeat;
+            background-size: r(614) r(150);
+            top:r(80);
+            left:r(68);
+        }
+    }
+    .premiumBox{
+        position: relative;
+        border:none;
+        width:r(750);
+        height:r(856);
+        background:url("../../images/wyrs-2020-11-03/bg.png") no-repeat;
+        background-size: r(750) r(856);
+        color: #333;
+        font-size: .37333rem;
+        padding:r(84) r(40) r(0) r(40);
+        margin: 0 auto;
+        border-radius:r(0);
+        .premium-border{
+            .premium-box{
+                padding-bottom:r(0);
+            }
+            .pre-text{
+                font-size: r(18);
+                line-height:r(24);
+                text-align: center;
+                color: #c2c2c2;
+            }
+        }
+        .labeltxt{
+            color: #333;
+            width:24%;
+        }
+        .box-right{
+            width:74%;
+        }
+    }
+
+    #subMitBtn{
+        display: block;
+        width:r(580);
+        font-size: r(46);
+        height:r(85);
+        line-height:r(85);
+        text-align: center;
+        color: #fff;
+        border-radius:r(50);
+        background: linear-gradient(to bottom,#ff5f6b,#f0323f);
+        margin:0 auto;
+    }
+    .blanks{
+        height:r(119);
+    }
+    .botton-fixed{
+        width: 100%;
+        font-size: r(44);
+        font-weight: bold;
+        height:r(119);
+        line-height:r(119);
+        text-align: center;
+        color: #fff;
+        position: fixed;
+        left: 0;
+        bottom: r(-119);
+        background: linear-gradient(to bottom,#ff5f6b,#f0323f);
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        &.show{
+            bottom: 0;
+        }
+    }
+}

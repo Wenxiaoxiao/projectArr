@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"无忧人生2020专家解读", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/wyrs-0622.css?v=@@time">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <style>
+       
+    </style>
+</head>
+
+<body id="bg">
+    <div class="body-container wyrs-0622 cp-details">
+        <img src="@@webRoot/lib/images/wyrs-0622/b1.jpg" class="img-c">
+        <img src="@@webRoot/lib/images/wyrs-0622/b2.jpg" class="img-c">
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">点击咨询</span>
+                <p class="tip">
+                   温馨提示：请耐心等待电话接听
+                </p>
+            </div>
+        </div>
+    </div>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+         {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'无忧人生2020专家解读',
+        })
+       
+})
+</script>
+
+</html>

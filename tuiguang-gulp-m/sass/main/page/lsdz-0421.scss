@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.lsdz-0421 {
+    background: #fff0d9;
+    position: relative;
+    .img {
+        display: block;
+        width: 100%;
+    }
+    .wrapper{
+        width:r(750);
+        height:r(841);
+        background: url("../../images/lsdz-0421/infobox.png") no-repeat;
+        background-size:100% 100%;
+        position: absolute;
+        top:r(620);
+        left:0;
+    }
+    .premiumBox{
+        width: r(670);
+        height: r(800);
+        padding: 0;
+        margin: 0 auto;
+        border: none;
+        margin-top: r(40);
+        padding-top:r(80);
+        color: #666;
+    }
+    .pre-text{
+        color: #999;
+        margin-top: 10px;
+    }
+    .xin{
+        position: absolute;
+        left: r(-25);
+        top: r(-35);
+        width: r(67);
+    }
+    .labeltxt{
+        color: #000;
+    }
+    .btns{
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        font-size: r(40);
+        text-align: center;
+        color: #fff;
+        background-color: #f85856;
+        font-weight: 900;
+        line-height: r(90);
+        border-radius: 5px;
+    }
+    .premium-border{
+        border-radius: 10px;
+        padding: r(20);
+    }
+    .premium-box{
+        padding: 0;
+    }
+    .showFixed{
+        margin-top:r(175);
+    }
+    .shengming{
+        font-size:r(22);
+        color:#7c7c7c;
+        text-align: center;
+        height:r(84);
+        line-height:r(60);
+    }
+    .botton-fixed{
+        display: none;
+        width:r(750);
+        height: 110px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        font-size: r(40);
+        font-weight: 900;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(to bottom ,#f9b512,#fd8f00);
+        background: -o-linear-gradient(to bottom ,#f9b512,#fd8f00);
+        background: -ms-linear-gradient(to bottom , #f9b512,#fd8f00);
+        background: -moz-linear-gradient(to bottom ,#f9b512,#fd8f00);
+        background: -webkit-linear-gradient(to bottom ,#f9b512,#fd8f00);
+        line-height: 110px;
+        font-weight: 900;
+    }
+}

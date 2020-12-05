@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"华少推荐-2020热销完美人生重疾险", "keywords":
+    "完美人生重疾险、完美人生守护典藏版重疾险、2020热销重疾险、2020网红重疾险", "description":
+    "梧桐树保险网，十四年专业好平台，买多重赔付重疾险，华少推荐完美人生守护重疾险典藏版，保障全赔付高，高性价比，2020热销爆款重疾险。" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/wmrs-0831.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container wmrs-0831">
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrs-0831/1.jpg" alt="" class="img-block">
+        </div>
+
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即免费领取<i>原价(¥169)</i></span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您重疾保障方案领取，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+
+        <div class="img-box" id="showFixed">
+            <img src="@@webRoot/lib/images/wmrs-0831/2.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrs-0831/3.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrs-0831/4.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrs-0831/5.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrs-0831/6.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrs-0831/7.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrs-0831/8.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrs-0831/9.jpg" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/wmrs-0831/10.jpg" alt="" class="img-block">
+        </div>
+        @@include("include/tell.htm")
+        <a href="#fixedTop" class="botton-fixed">免费领取重疾保障方案</a>
+
+    </div>
+ 
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        var fromData = [{
+                name: '您的年龄',
+                type: 6,
+                id: 'age',
+                items: [{
+                        value: '0-17岁',
+                        selected: true
+                    },
+                    {
+                        value: '18-30岁'
+                    },
+                    {
+                        value: '31-50岁'
+                    }
+                ]
+            },
+            {
+                name: '您的性别',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }, ]
+            },
+            {
+                name: '保费预算',
+                type: 6,
+                id: 'bfys',
+                items: [{
+                        value: '1-3千',
+                        selected: true
+                    },
+                    {
+                        value: '4-6千'
+                    },
+                    {
+                        value: '7千以上'
+                    },
+                ]
+            },
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData, {
+            title: '华少推荐-2020热销完美人生重疾险',
+        })
+    })
+</script>
+
+</html>

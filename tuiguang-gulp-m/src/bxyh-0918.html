@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"买保险你是不是也有很多困惑？现在0元领取适合你的保险方案！", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/bxyh-0918.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+<body>
+    <div class="body-container bxyh-0918">
+        <img src="@@webRoot/lib/images/bxyh-0918/1.jpg" alt="" class="img-c lazy">
+        <img src="@@webRoot/lib/images/bxyh-0918/2.jpg" alt="" class="img-c lazy">
+        <div class="common-box-1">
+            <div class="tit"><div class="text"><span>0元</span>您将获得</div><i></i></div>
+            <div class="modules">
+                <div class="module module-1">
+                    资深保险顾问<br/>1V1专业解答
+                </div>
+                <div class="module module-2">
+                    终身保险知识<br/>咨询服务
+                </div>
+                <div class="module module-3">
+                    量身定制<br/>保险方案
+                </div>
+                <div class="module module-4">
+                    理赔协助<br/>办理服务
+                </div>
+            </div>
+        </div>
+        <div class="premiumBox" id="showFixed">
+            <div class="premium-border">
+                <div class="premium-title"></div>
+                <div class="nownum"><img src="@@webRoot/lib/images/bxyh-0918/laba.png"/>截止目前已有<span class="setNum"></span>人领取方案</div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即领取</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+
+        <img src="@@webRoot/lib/images/bxyh-0918/5.jpg" alt="" class="img-c lazy">
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/tell.htm")
+    <div class="blanks"></div>
+    <a href="#showFixed" class="botton-fixed">立即领取</a>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function() {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top;
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        function setNum(startNum){
+            var timestamp=new Date().getTime();
+            console.log(timestamp);
+            var num=Math.floor((timestamp-startNum)/(1000*5))+26848;
+            return num
+        }
+        var startTime = new Date()
+        var yy = startTime.getFullYear();
+        var mm = startTime.getMonth()+1;
+        var dd = startTime.getDay();
+        if(mm<10){
+            mm = '0'+mm
+        }
+        if(dd<10){
+            dd = '0'+dd
+        }
+        var start=new Date(yy+'/'+mm+'/'+dd).getTime()
+        console.log(start)
+        var testNum=setNum(start);
+        $('.setNum').text(testNum);
+        let ageArr = []
+        for(let i=0;i<=55;i++){
+            ageArr[i] = {}
+            ageArr[i].value = i +'岁'
+        }
+        var fromData = [
+        {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+            desc:"您的信息将被严格保密"
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+            desc:"用于接收保费测算结果"
+        }];
+        fromsFn.startFroms(fromData, {
+            title: '买保险你是不是也有很多困惑？现在0元领取适合你的保险方案！',
+        })
+})
+</script>
+
+</html>

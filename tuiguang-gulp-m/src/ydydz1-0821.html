@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"重疾险一对一免费量身定制", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/ydydz1-0821.css">
+</head>
+
+<body>
+    <div class="body-container ydydz1-0821">
+        <img src="@@webRoot/lib/images/ydydz1-0821/1.jpg" alt="" class="img-c">
+        <div class="comon-box-1" id="showFixed">
+            <div class="qrcode">
+                <img alt="" class="qrcode_target">
+            </div>
+            <img src="@@webRoot/lib/images/ydydz1-0821/2.gif" alt="" class="img-c">
+        </div>
+        <img src="@@webRoot/lib/images/ydydz1-0821/3.jpg" alt="" class="img-c">
+        <div class="comon-box-2">
+            <img src="@@webRoot/lib/images/ydydz1-0821/4.jpg" alt="" class="img-c">
+            <a href="#showFixed">0元定制保险方案</a>
+        </div>
+        <img src="@@webRoot/lib/images/ydydz1-0821/5.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/ydydz1-0821/6.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/ydydz1-0821/7.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/ydydz1-0821/8.jpg" alt="" class="img-c">
+        @@include("include/tell.htm")
+        <div class="blank"></div>
+        <a href="#showFixed" class="botton-fixed">
+            <span class="left">添加微信后即<span>送防癌险一份</span></span>
+            <span class="right">立即添加</span>
+        </a>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+$(function() {
+    scrollFixed();
+    function scrollFixed() {
+        var showFixedHeight = $("#showFixed").offset().top
+        $(window).on("scroll", function () {
+            if ($(this).scrollTop() > showFixedHeight) {
+                $(".botton-fixed").addClass("show")
+            } else {
+                $(".botton-fixed").removeClass("show")
+            }
+        })
+    };
+    //二维码轮询
+    var qrcodeList = ['./lib/images/ydydz1-0821/qrcode/1.jpg','./lib/images/ydydz1-0821/qrcode/2.jpg',
+    './lib/images/ydydz1-0821/qrcode/3.jpg','./lib/images/ydydz1-0821/qrcode/4.jpg',
+    './lib/images/ydydz1-0821/qrcode/5.jpg','./lib/images/ydydz1-0821/qrcode/6.jpg',
+    './lib/images/ydydz1-0821/qrcode/7.jpg','./lib/images/ydydz1-0821/qrcode/8.jpg',
+    './lib/images/ydydz1-0821/qrcode/9.jpg','./lib/images/ydydz1-0821/qrcode/10.jpg'];
+    var index = Math.floor(Math.random()*10);
+    $(".qrcode_target").attr("src",qrcodeList[index]);
+})
+</script>
+
+</html>

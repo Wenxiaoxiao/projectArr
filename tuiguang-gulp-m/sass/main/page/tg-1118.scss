@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.tg-1118{
+    background: #819fff;
+    width:r(750);
+    .img-c{
+        width:r(750);
+    }
+    .premiumBox{
+        width:r(750);
+        border:none;
+        border-radius: 0;
+        margin: 0 auto;
+        padding-bottom: 0;
+        .premium-border{
+            width:100%;
+            background:#fff;
+            position: relative;
+            padding: 30px;
+            border-radius: 6px;
+            position: relative;
+            padding-top: 60px;
+            .topImg{
+                position: absolute;
+                width: 100%;
+                top: -0.7rem;
+                left: 0;
+                img{
+                    width: 100%;
+                    display: block;
+                }
+            }
+            .premium-box{
+                .qm-change{
+                    .labeltxt{
+                        color:#000;
+                    }
+                    .box-right{
+                        color:#000;
+                    }
+                    .radio-box.active{
+                        background: #6e91ff;
+                    }
+                }
+            }
+            .btns{
+                width:r(600);
+                height:r(80);
+                background:#6e91ff;
+                border-radius: r(40);
+                display: block;
+                line-height:r(80);
+                text-align: center;
+                margin:0 auto;
+                font-size:r(40);
+                font-weight: bold;
+                color:#fff;
+            }
+            .pre-text{
+                color:#666666;
+                padding:r(20);
+                font-size:r(24);
+            }
+        }
+    }
+}
+.botton-fixed{
+    width: 100%;
+    font-size: r(36);
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: r(-95);
+    background: #5058f1;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    &.show{
+        bottom: 0;
+    }
+}

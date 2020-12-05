@@ -1,0 +1,72 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.wyrs-0731{
+    background: #c0fffe;
+    width:r(750);
+    .img-c{
+        width:r(750);
+    }
+    .premiumBox{
+        width:r(750);
+        min-height:r(695);
+        background:url("../../images/wyrs-0731/2.png") no-repeat;
+        background-size:100% 100%;
+        padding:r(100) r(40) r(90) r(53);
+        border:none;
+        margin:0 auto;
+        border-radius:0;
+        .qm-change{
+            .labeltxt{
+                color:#999;
+                font-size:r(27);
+                text-align: right;
+            }
+            .box-right{
+                .radio-box{
+                    min-width: r(75);
+                }
+            }
+        }
+        .btns{
+            width:r(584);
+            height:r(73);
+            background:url("../../images/wyrs-0731/btn.png") no-repeat;
+            background-size:100% 100%;
+            display: block;
+            line-height:r(88);
+            text-align: center;
+            margin:0 auto;
+            font-size:r(39);
+            color:#fff;
+        }
+        .pre-text{
+            color:#11afaa;
+            width:r(626);
+            margin:0 auto;
+            margin-top:r(10);
+        }
+    }
+    .blanks{
+        height:r(113);
+    }
+    .botton-fixed{
+        width:r(750);
+        height:r(113);
+        position: fixed;
+        z-index:1;
+        left:50%;
+        transform: translateX(-50%);
+        bottom: r(-113);
+        background:url("../../images/wyrs-0731/fixbtn.png") no-repeat;
+        background-size:100% 100%;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        &.show{
+            bottom: 0;
+        }
+    }
+}

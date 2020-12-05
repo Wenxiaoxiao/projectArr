@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"1v1预约保险规划师", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/tg-1118.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+<body>
+    <div class="body-container tg-1118">
+        <img src="@@webRoot/lib/images/tg-1118/2.png" alt="" class="img-c">
+        <div class="premiumBox">
+            <div class="premium-border">
+                <div class="topImg"><img src="@@webRoot/lib/images/tg-1118/5.png" alt=""></div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">查看保险配置方案</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您预约，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <img src="@@webRoot/lib/images/tg-1118/3.png" id="showFixed" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/tg-1118/20.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/tg-1118/21.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/tg-1118/4.png" alt="" class="img-c">
+    </div>
+    </div>
+    @@include("include/tell.htm")
+    <div class="blanks" style="width: 100%;height:45px;"></div>
+    <a href="#showFixed" class="botton-fixed">查看保险配置方案</a>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function() {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        var fromData = [
+        {
+                name: '您的性别',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }, ]
+            },
+            {
+                name: '姓名',
+                type: 2,
+                id: 'name',
+            },
+            
+            {
+                name: '电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData, {
+            title: '1v1预约保险规划师',
+        })
+})
+</script>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"如意人生守护（英雄版）重大疾病保险", "keywords":
+    "倍吉星重疾保险，倍吉星重大疾病保险，梧桐树倍吉星重大疾病保险，复星联合倍吉星重大疾病保险", "description":
+    "倍吉星重大疾病保险——多次赔付重疾保险里程碑，重疾不分组三次递增赔付。" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/bjx-0514.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container bjx-0514">
+        <div class="banner-box">
+            <img src="@@webRoot/lib/images/bjx-0514/bg.jpg">
+        </div>
+        <div class="title">
+            这样一份全方位保障的<br>
+            多次赔付重疾险保费是多少呢？
+        </div>
+        <div class="cs-bg" id="showFixed">
+            <!-- <div class="premiumBox">
+                <div class="info">安全声明:您的信息将被严格保密，您的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。</div>
+            </div> -->
+            <!-- <p class="amount">目前有<span>0</span>人已测算成功</p> -->
+            <div class="premiumBox" id="fixedTop">
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <span class="btns" id="subMitBtn">立即测算保费</span>
+                    <p class="pre-text">
+                        安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ 
+    @@include("include/footer.htm")
+    <!-- <div class="blanks" style="width: 100%;height:45px;"></div> -->
+    <a href="#fixedTop" class="botton-fixed">立即测算保费</a>
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixed) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        let ageArr = []
+        for(let i=0;i<=55;i++){
+            ageArr[i] = {}
+            ageArr[i].value = i +'岁'
+        }
+        var fromData = [
+            {
+                name: '性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }]
+            },
+            {
+                name: '承保年龄:',
+                type: 5,
+                id: 'age',
+                items: ageArr
+            },
+            {
+                name: '基本保额:',
+                type: 5,
+                id: 'jbbe',
+                items: [{
+                    value: '10万'
+                }, {
+                    value: '20万'
+                },
+                {
+                    value: '30万'
+                },
+                {
+                    value: '40万'
+                },
+                {
+                    value: '50万'
+                },
+                {
+                    value: '其他'
+                },
+            ]
+            },
+            {
+                name: '您的姓名:',
+                type: 2,
+                id: 'name',
+                desc:'您的信息将被严格保密'
+            }, {
+                name: '您的电话:',
+                type: 3,
+                id: 'mobile',
+                desc:'用于接收保费测算结果'
+            },];
+        fromsFn.startFroms(fromData, {
+            title: '如意人生守护（英雄版）重大疾病保险',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+        // 每分钟+3人
+        var _n = parseInt((new Date().getTime() - new Date("2019-11-04").getTime()) / 1000 / 20) + 10000;
+        $(".amount span").text(_n);
+    })
+</script>
+
+</html>

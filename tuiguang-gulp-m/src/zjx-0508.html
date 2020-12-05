@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"一份保障全面的重疾险需要多少钱？", "keywords": "重疾险 重大疾病保险 重疾险怎么买", "description": "重疾险保障的不同，价格上也会有所差异立即咨询梧桐树保险网，让您看懂保单，不迷糊！买对保险，不花冤枉钱！" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/zjx-0429.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container zjx-0429">
+        <div class="banner">
+            <img src="@@webRoot/lib/images/zjx-0429/banner.png" alt="" class="img-c">
+            <a href="#showFixed" class="bannerbtn">
+                <img src="@@webRoot/lib/images/zjx-0429/bannerbtn.png" class="img-c"/>
+            </a>
+            <div class="calNum">目前已有<span class="setNum"></span>人测算</div>
+        </div>
+        <div class="premiumBox" id="showFixed">
+            <div class="premium-border">
+                <div class="premium-title">0元测保费</div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即测算</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <img src="@@webRoot/lib/images/zjx-0429/1.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/zjx-0429/2.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/zjx-0429/3.png" alt="" class="img-c">
+        <a href="#showFixed" class="botton-fixed">
+            免费获取方案
+        </a>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+        {
+            name: '您的年龄',
+            type: 2,
+            id: 'age'
+        }, 
+        {
+            name: '您的性别',
+            type: 4,
+            id: 'sex',
+            items: [{
+                value:'男'
+            }, {
+                value:'女'
+            }]
+        }, 
+        {
+            name: '保额',
+            type: 5,
+            id: 'jbbe',
+            items: [{
+                value: '20万'
+            }, {
+                value: '40万'
+            }, {
+                value: '50万',
+                selected:true
+            }, {
+                value: '100万'
+            }]
+        }, 
+        {
+            name: '交费',
+            type: 5,
+            id: 'jffs',
+            items: [
+                {
+                    value: '5年'
+                }, 
+                {
+                    value: '10年'
+                }, 
+                {
+                    value: '15年'
+                }, 
+                {
+                    value: '20年',
+                    selected:true
+                }, 
+                {
+                    value: '30年'
+                }
+            ]
+        }, 
+        {
+            name: '手机号码',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'一份保障全面的重疾险需要多少钱？',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+    
+        //初始化数据
+        function setNum(startNum){
+            var timestamp=new Date().getTime();
+            console.log(timestamp);
+            var num=Math.floor((timestamp-startNum)/(1000*5))+26848;
+            return num
+        }
+        var startTime = new Date()
+        var yy = startTime.getFullYear();
+        var mm = startTime.getMonth()+1;
+        var dd = startTime.getDate();
+        if(mm<10){
+            mm = '0'+mm
+        }
+        if(dd<10){
+            dd = '0'+dd
+        }
+        var start=new Date(yy+'/'+mm+'/'+dd).getTime()
+        console.log(start)
+        var testNum=setNum(start);
+        $(".setNum").html(testNum);
+        scrollFixed() //按钮显示隐藏
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() > showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+})
+</script>
+
+</html>

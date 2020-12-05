@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("include/header.htm",{ "title":"成功提交", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/successful-submission.css">
+</head>
+
+<body>
+    <div class="successful-submission body-container" style="background: url('@@webRoot/lib/images/successful-submission/bgi.jpg');">
+        <div class="center">
+            <img src="@@webRoot/lib/images/successful-submission/logo.png" alt="">
+            <p>恭喜！</p>
+            <p>您的信息已经成功提交！</p>
+            <p class="p1">我们正根据您的信息，加急为您分析风险，尽快为您生成风险分析报告。</p>
+            <p class="p2">并赠送</p>
+            <p class="p2">价值21万元保障大礼包</p>
+            <p class="p2">24小时家庭医生服务</p>
+            <div class="btn">OK</div>
+        </div>
+    </div>
+</body>
+@@include("include/footer.htm")
+<script>
+$(function(){
+    $('.btn').click(function(){
+        if($.tools().isWeiXin()){
+            WeixinJSBridge.invoke('closeWindow',{},function(res){});
+        }else{
+            window.opener = null;
+            window.open("about:blank", "_self");
+            window.close();
+        }
+    })
+})
+</script>
+</html>

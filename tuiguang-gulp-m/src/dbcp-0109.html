@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"免费测评_专家一对一讲解 科学投保超划算", "keywords": "免费测评,保险公司,保险产品,投保攻略,点击预约咨询,梧桐树保险网", "description":"免费测评来自各大保险公司千余种保险产品，专家一对一讲解，科学投保超划算！" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/dbcp-0109.css">
+    <link rel="stylesheet" href="@@webRoot/lib/css/swiper.min.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <script src="@@webRoot/lib/js/swiper-3.4.2.jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="body-container dbcp-0109">
+        <div class="banner-box">
+            <img src="@@webRoot/lib/images/dbcp-0109/1.jpg">
+        </div>
+        <div class="ct-box" id="showFixed"></div>
+        <div class="cs-bg" id="fixedTop">
+            <div class="premiumBox" id="premiumdw">
+                <div class="premium-box">
+                </div>
+                <div class="btnbox">
+                    <span class="btns" id="subMitBtn">免费预约保险专家</span>
+                </div>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您预约保险专家，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="ct-box">
+                <img src="@@webRoot/lib/images/dbcp-0109/2.jpg" alt="">
+            </div>
+            <div class="ct-box">
+                <img src="@@webRoot/lib/images/dbcp-0109/3.jpg" alt="">
+            </div>
+        </div>
+        
+
+    </div>
+    <!-- @@include("include/tell.htm") -->
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+    <div class="blanks" style="width: 100%;"></div>
+        <a href="#fixedTop" class="botton-fixed">免费预约保险专家</a>
+</body>
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        var fromData = [
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            },
+            {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },];
+        fromsFn.startFroms(fromData, {
+            title: '免费测评_专家一对一讲解 科学投保超划算',
+            msg: 1
+        })
+    })
+</script>
+
+</html>

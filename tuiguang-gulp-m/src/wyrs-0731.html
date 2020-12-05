@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"华少推荐-横琴无忧重疾险", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/wyrs-0731.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container wyrs-0731">
+        <img src="@@webRoot/lib/images/wyrs-0731/1.jpg" alt="" class="img-c">
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn"></span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <img src="@@webRoot/lib/images/wyrs-0731/3.png" alt="" class="img-c" id="showFixed">
+        <img src="@@webRoot/lib/images/wyrs-0731/4.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/wyrs-0731/5.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/wyrs-0731/6.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/wyrs-0731/7.png" alt="" class="img-c">
+        @@include("include/tell.htm")
+        <div class="blanks"></div>
+        <a href="#fixedTop" class="botton-fixed"></span></a>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+        var fromsFn = $.fromsFn();
+
+        scrollFixed();
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        var age = [];
+        for (var i = 0; i < 56; i++) {
+            var obj = {};
+            if (i == 5) {
+                obj.selected = true;
+            }
+            obj.value = i + "岁";
+            age.push(obj);
+        }
+        var fromData = [
+        {
+            name: '年龄：',
+            type: 5,
+            id: 'age',
+            items:age
+            },
+            {
+                name: '性别：',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }]
+            },
+            {
+                name: '保额：',
+                type: 6,
+                id: 'jbbe',
+                items: [{
+                    value: '10万'
+                }, {
+                    value: '20万'
+                },
+                {
+                    value: '30万'
+                },
+                {
+                    value: '50万'
+                }
+            ]
+            },
+            {
+                name: '姓名：',
+                type: 2,
+                id: 'name',
+                desc:'您的信息将被严格保密'
+            }, {
+                name: '电话：',
+                type: 3,
+                id: 'mobile',
+                desc:'用于接收保费测算结果'
+            },];
+        fromsFn.startFroms(fromData,{
+            title:'华少推荐-横琴无忧重疾险',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+})
+</script>
+
+</html>

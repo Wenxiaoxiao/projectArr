@@ -1,0 +1,122 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.service{
+    .img-box{
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .botton-fixed{
+        position: fixed;
+        width: r(750);
+        margin-left:r(-375);
+        left: 50%;
+        height: 90px;
+        bottom: 0;
+        text-align: center;
+        background: #fff;
+        .left{
+            width: 67%;
+            float: left;
+            span{
+                color: #ff6e01;
+                line-height: 90px;
+                font-size: r(38);
+                vertical-align: middle;
+                
+            }
+            i{
+                color: #999;
+                line-height: 90px;
+                margin-left: r(20);
+                vertical-align: middle;
+                text-decoration:line-through;
+            }
+        }
+        .right{
+            float: left;
+            width: 33%;
+            line-height: 90px;
+            color: #fff;
+            background: #116ef9;
+            font-size: r(38);
+            text-align: center;
+        }
+    }
+}
+.serviceMask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 100;
+    display: none;
+}
+.serviceMaskContent{
+    display: none;
+    width:100%;
+    top: 20%;
+    position: fixed;
+    left: 0;
+    padding: 0 r(60);
+    z-index: 101;
+    .content{
+        width: 100%;
+        background: #fff;
+        text-align: center;
+        padding: r(50);
+        position: relative;
+        padding-top: r(120);
+        border-radius: 5px;
+        .headImg{
+            width: 94%;
+            position: absolute;
+            left: 3%;
+            top: r(-40);
+        }
+        .input{
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: r(20) 0;
+            text-align: center;
+            margin-top: r(30);
+            img{
+                height:r(50);
+                vertical-align: middle;
+            }
+            input{
+                vertical-align: middle;
+                width: r(400);
+                border: none;
+                margin-left: r(20);
+                font-size: r(30);
+                line-height: r(50);
+
+            }
+        }
+        .btn{
+            margin-top: r(50);
+            span{
+                display: inline-block;
+                color: #fff;
+                font-size: r(48);
+                padding: r(20) r(45);
+                background: #ed492d;
+                border-radius: 5px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    .close{
+        text-align: center;
+        margin-top: r(40);
+        img{
+            width: r(110);
+        }
+    }
+}

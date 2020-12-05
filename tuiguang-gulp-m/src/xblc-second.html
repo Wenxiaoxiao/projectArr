@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"研财学堂-0元抢购", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/xblc-1015.css">
+</head>
+<body>
+    <div class="body-container xblc-second">
+        <div class="title">恭喜您报名成功！</div>
+        <div class="sub_title">请务必添加老师微信，否则无法上课</div>
+        <div class="content_desc">
+            <div class="desc_title">请添加老师微信，入群学习</div>
+            <div class="way_one way_item">
+                <div class="way_tit">方法一</div>
+                <div class="way_desc">截图保存二维码，在微信中扫码添加</div>
+                <div class="way_action">
+                    <img src="@@webRoot/lib/images/xblc-1015/qrcode.jpg"/>
+                </div>
+            </div>
+            <img src="@@webRoot/lib/images/xblc-1015/sub_line.png" class="divider"/>
+            <div class="way_two way_item">
+                <div class="way_tit">方法二</div>
+                <div class="way_desc">复制微信号，在微信中搜索添加</div>
+                <div class="way_action copy" onclick="copytext('cptar')">点此复制</div>
+                <input id="cptar" class="txtcss" value="V588271"/>
+            </div>
+        </div>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+</body>
+<script>
+/*点击复制微信号*/
+function copytext(id) {
+    var selectedText, element = document.getElementById(id);
+    if (element.nodeName === 'INPUT' || element.nodeName === 'TEXTAREA') {
+        var isReadOnly = element.hasAttribute('readonly');
+        if (!isReadOnly) {
+            element.setAttribute('readonly', '');
+        }
+        element.select();
+        element.setSelectionRange(0, element.value.length);
+        if (!isReadOnly) {
+            element.removeAttribute('readonly');
+        }
+        selectedText = element.value;
+    }
+    // $(".copy_btn").css({
+    //     'background-color': '#000000',
+    //     'color': '#ffffff'
+    // });
+    //判断是否为Uc浏览器
+    var u = navigator.userAgent;
+    if (u.indexOf('Linux') > -1) {
+        layer.open({
+            content: '已复制微信号'
+            ,skin: 'msg'
+            ,time: 1 //2秒后自动关闭
+        });
+        setTimeout(function(){
+            window.location.href = 'weixin://';
+        },1500)
+    } else {
+        try {
+            if (document.execCommand('copy', false, null)) {
+                layer.open({
+                    content: '已复制微信号'
+                    ,skin: 'msg'
+                    ,time: 1 //2秒后自动关闭
+                });
+                setTimeout(function(){
+                    window.location.href = 'weixin://';
+                },1500)
+            }
+        } catch (e) {
+            $("#target").focus();
+            layer.open({
+                content: '请长按后复制！'
+                ,skin: 'msg'
+                ,time: 1 //2秒后自动关闭
+            });
+            // window.location.href = 'weixin://';
+        }
+    }
+}
+</script>
+
+</html>

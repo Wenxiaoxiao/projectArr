@@ -1,0 +1,53 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.zydz-0304{
+    background: #fff;
+    &.cp-details{
+        margin: 0 auto;
+    }
+    .img-box{
+        width: 100%;
+        position: relative;
+        .img-block{
+            width: 100%;
+            display: block;
+        }
+    }
+    .premiumBox{
+        position: relative;
+        border:none;
+        width: 95%;
+        color: #333;
+        font-size: .37333rem;
+        padding:0;
+        margin: 0 auto;
+        .labeltxt{
+            color: #333;
+        }
+        .beginTime{
+            width: 100%;
+            height: 1.06667rem;
+            padding-left: .26667rem;
+            line-height: .73333rem;
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #eee;
+        }
+    }
+
+    #subMitBtn{
+        display: block;
+        width: 100%;
+        font-size: r(36);
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        color: #fff;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: #ff6100;
+    }
+}

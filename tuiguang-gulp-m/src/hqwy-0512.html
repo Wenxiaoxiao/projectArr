@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"横琴无忧人生2020", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/hqwy2020-0426.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container hqwy2020-0426 cp-details">
+        <div class="img-box top-img">
+            <img src="@@webRoot/lib/images/hqwy2020-0426/1.png" alt="" class="img-block">
+        </div>
+
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-title">测一测多少钱</div>
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即免费测算</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+
+        <div class="img-box" id="showFixed">
+            <img src="@@webRoot/lib/images/hqwy2020-0426/2.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy2020-0426/3.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy2020-0426/4.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy2020-0426/6.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy2020-0426/7.png" alt="" class="img-block">
+        </div>
+    </div>
+    @@include("include/tell.htm")
+    <div class="blanks" style="width: 100%;height:45px;"></div>
+    <a href="#fixedTop" class="botton-fixed">立即预约</a>
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+    
+</body>
+
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        var age = [];
+        for(var i=0;i<56;i++){
+            var obj = {};
+            if(i==5){
+                obj.selected = true;
+            }
+            obj.value = i+"岁";
+            age.push(obj);
+        }
+        var fromData = [{
+                name: '被保人年龄',
+                type: 5,
+                id: 'age',
+                items: age
+            },
+            {
+                name: '被保人性别',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }, ]
+            },
+            {
+                name: '基本保额',
+                type: 6,
+                id: 'jbbe',
+                items: [
+                    {value: '10万'}, 
+                    {value: '20万'}, 
+                    {value: '30万'}, 
+                    {value: '40万'},
+                    {value: '50万',selected:true},
+                    {value: '其他金额'}
+                ]
+            }, 
+            {
+            name: '缴费方式',
+            type: 5,
+            id: 'jffs',
+            items: [
+                {
+                    value: '趸交'
+                },
+                {
+                    value: '5年',
+                    selected:true
+                },
+                {
+                    value: '10年'
+                }, 
+                {
+                    value: '15年'
+                }, 
+                {
+                    value: '20年'
+                }, 
+                {
+                    value: '30年'
+                }
+            ]
+        },
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData, {
+            title: '无忧人生2020',
+        })
+    })
+</script>
+
+</html>

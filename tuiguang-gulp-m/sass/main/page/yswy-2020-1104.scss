@@ -1,0 +1,183 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.yswy-2020-1104{
+    background: #fffaf1;
+    width:r(750);
+    .img-c{
+        width:r(750);
+    }
+    .common-box-1{
+        width:r(750);
+        height:r(899);
+        background:url('../../images/yswy-2020-1104/2.png') no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        .desc{
+            width:r(709);
+            height:r(306);
+            background: #fff;
+            border:r(2) solid #ffa74b;
+            border-radius:r(10);
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            bottom:r(0);
+            text-align: center;
+            .tit{
+                width:r(709);
+                height:r(120);
+                padding-top:r(30);
+                img{
+                    width:r(526);
+                    height:r(60);
+                }
+            }
+            .shine-dots{
+                width:r(647);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin:0 auto;
+                height:r(120);
+                &>.shine-dot{
+                    width:r(198);
+                    height:r(120);
+                    box-shadow:0 0 r(5) rgba(250,159,65,0.3);
+                    border-radius:r(20);
+                    overflow: hidden;
+                    .top{
+                        height:r(69);
+                        color: #fff;
+                        font-size: r(34);
+                        font-weight: bold;
+                        line-height:r(68);
+                        background-image: linear-gradient(to bottom,#fb9f41,#ff5204);
+                    }
+                    .bottom{
+                        color: #3c3b3b;
+                        height:r(51);
+                        line-height:r(50);
+                        font-size: r(25);
+                    }
+                }
+            }
+        }
+    }
+    .premiumBox{
+        width:r(750);
+        min-height: r(888);
+        margin:0 auto;
+        border:none;
+        border-radius: 0;
+        overflow: hidden;
+        position: relative;
+        padding-top:r(40);
+        .premium-border{
+            width:r(724);
+            min-height:r(793);
+            position: relative;
+            padding-top:r(22);
+            .premium-title{
+                width:r(473);
+                height:r(108);
+                position: absolute;
+                left:50%;
+                transform: translateX(-50%);
+                top:0;
+                background:url('../../images/yswy-2020-1104/bg.png') no-repeat;
+                background-size: 100% 100%;
+                div{
+                    width:r(473);
+                    font-size: r(48);
+                    text-align: center;
+                    line-height: r(108);
+                    color: #873000;
+                    font-weight: bold;
+                }
+            }
+            .premium-box-wrapper{
+                background:#ffffff;
+                width:r(724);
+                min-height:r(774);
+                border:r(2) solid #ffb56b;
+                border-radius:r(10);
+                padding-bottom:r(30);
+            }
+            .premium-box{
+                width:r(724);
+                min-height:r(470);
+                padding:r(120) r(42) r(0) r(42);
+                .qm-change{
+                    margin-bottom:r(8);
+                    min-height: r(70);
+                    .labeltxt{
+                        color:#000;
+                        white-space: nowrap;
+                    }
+                    .box-right{
+                        color:#000;
+                        .radio-box{
+                            min-width:r(75);
+                        }
+                    }
+                }
+            }
+            .btns{
+                animation: commonScale 1s infinite ease-in-out;
+                width:r(583);
+                height:r(100);
+                background-color: #3866ff;
+                box-shadow: 0 2px 3px rgba(56,102,255, 0.2);
+                border-radius: r(50);
+                line-height:r(100);
+                display: block;
+                text-align: center;
+                margin:0 auto;
+                font-size:r(42);
+                font-weight: bold;
+                color:#fff;
+                margin-top:r(40);
+                &>i{
+                    font-size: r(26);
+                    font-weight: normal;
+                    text-decoration: line-through;
+                    display: inline-block;
+                    margin-left:r(10);
+                }
+            }
+            .pre-text{
+                color:#666666;
+                padding:r(0);
+                font-size:r(20);
+                width:r(583);
+                margin:0 auto;
+                margin-top:r(20);
+            }
+        }
+    }
+}
+.blanks{
+    height:r(100);
+}
+.botton-fixed{
+    width: 100%;
+    font-size: r(36);
+    height:r(100);
+    line-height:r(100);
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom:r(-100);
+    background:#3866ff;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    &.show{
+        bottom: 0;
+    }
+}

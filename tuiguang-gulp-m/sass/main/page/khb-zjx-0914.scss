@@ -1,0 +1,180 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.khb-zjx-0914{
+    background: #f6f6f6;
+    width:r(750);
+    .img-c{
+        width:r(750);
+    }
+    .common-box-1{
+        width:r(750);
+        height:r(875);
+        padding-top:r(39);
+        background:url('../../images/khb-zjx-0914/1.jpg') no-repeat;
+        background-size: 100% 100%;
+        .sub-tit{
+            width:r(396);
+            height:r(66);
+            border:r(2) solid #ed9580;
+            color: #f0411d;
+            font-size: r(34);
+            font-weight: bold;
+            line-height: r(66);
+            text-align: center;
+            border-radius:r(30) 0 r(30) r(0);
+            margin:0 auto;
+        }
+        .tit{
+            position: relative;
+            height:r(70);
+            margin:0 auto;
+            text-align: center;
+            &>.span1{
+                font-size:r(60);
+                font-weight: bold;
+                background: linear-gradient(to bottom,#ff7d41,#f14826);
+                -webkit-background-clip: text;
+                color: transparent;
+                display: block;
+                position: absolute;
+                top:0;
+                width:100%;
+                z-index: 1;
+            }
+            &>.span2{
+                font-size:r(60);
+                font-weight: bold;
+                color: #fff;
+                position: absolute;
+                width:100%;
+                display: block;
+                top:r(5);
+                left:0;
+            }
+        }
+        .desc{
+            width:r(671);
+            height:r(203);
+            background:#fff;
+            border-bottom:r(6) solid rgba(240,65,29, 0.5);
+            border-radius:r(20);
+            margin:0 auto;
+            margin-top:r(440);
+            padding:r(20) r(30);
+            .desc-item{
+                height:r(50);
+                line-height:r(50);
+                img{
+                    width:r(28);
+                    height:r(29);
+                    vertical-align: middle;
+                }
+                .txt{
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-size: r(30);
+                    color: #333333;
+                    .red{
+                        color: #f0411d;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    .premiumBox{
+        background:url('../../images/khb-zjx-0914/2.jpg') no-repeat;
+        background-size: 100% auto;
+        width:r(750);
+        height: r(953);
+        padding:r(185) r(60) r(27);
+        margin:0 auto;
+        border:none;
+        border-radius: 0;
+        overflow: hidden;
+        .premium-border{
+            width:100%;
+            background:#ffffff;
+            position: relative;
+            .premium-title{
+                width: r(426);
+                height:r(90);
+                line-height:r(90);
+                font-size:r(58);
+                color:#fff;
+                background:#ff7a5b;
+                position: absolute;
+                left:50%;
+                transform: translateX(-50%);
+                top:r(-38);
+                text-align: center;
+                font-weight: bold;
+                border-radius:r(10);
+            }
+            .premium-box{
+                .qm-change{
+                    margin-bottom:r(8);
+                    min-height: r(70);
+                    .labeltxt{
+                        color:#000;
+                        white-space: nowrap;
+                    }
+                    .box-right{
+                        color:#000;
+                        .radio-box{
+                            min-width:r(75);
+                        }
+                    }
+                }
+            }
+            .btns{
+                width:r(602);
+                height:r(100);
+                background-image: linear-gradient(to bottom,#f74800,#e20b00);
+                box-shadow: 0 2px 3px rgba(226,11,0, 0.2);
+                border-radius: r(50);
+                line-height:r(100);
+                display: block;
+                text-align: center;
+                margin:0 auto;
+                font-size:r(42);
+                font-weight: bold;
+                color:#fff;
+                &>i{
+                    font-size: r(26);
+                    font-weight: normal;
+                    text-decoration: line-through;
+                    display: inline-block;
+                    margin-left:r(10);
+                }
+            }
+            .pre-text{
+                color:#666666;
+                padding:r(0);
+                font-size:r(20);
+            }
+        }
+    }
+}
+.botton-fixed{
+    width: 100%;
+    font-size: r(36);
+    height:110px;
+    line-height:110px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom:-110px;
+    background-image: linear-gradient(to bottom,#f74800,#e20b00);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    &.show{
+        bottom: 0;
+    }
+}

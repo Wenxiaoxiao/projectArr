@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"超过性价比-无忧人生2020", "keywords":
+    "重疾险，无忧人生", "description":
+    "梧桐树重大疾病保险，横琴无忧人生2020" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/wyrs-0804.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <script>
+        (function (w, d, t, s, q, m, n) { if (w.utq) return; q = w.utq = function () { q.process ? q.process(arguments) : q.queue.push(arguments); }; q.queue = []; m = d.getElementsByTagName(t)[0]; n = d.createElement(t); n.src = s; n.async = true; m.parentNode.insertBefore(n, m); })(window, document, 'script', 'https://image.uc.cn/s/uae/g/0s/ad/utracking.js'); utq('set', 'convertMode', true); utq('set', 'trackurl', 'huichuan.sm.cn/lp');
+        utq('track', 'FormSubmit', '528405');
+    </script>
+</head>
+
+<body>
+    <div class="body-container wyrs-0804">
+
+        <div>
+            <img src="@@webRoot/lib/images/wyrs-0804/b1.jpg" alt="">
+        </div>
+        <div class="cs-bg">
+            <!-- <div class="premiumBox">
+                <div class="info">安全声明:您的信息将被严格保密，您的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。</div>
+            </div> -->
+            <div class="premiumBox" id="fixedTop">
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <span class="btns" id="subMitBtn">立即测算保费</span>
+                    <p class="pre-text">
+                        安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="@@webRoot/lib/images/wyrs-0804/b2.jpg" alt="">
+            </div>
+            <div>
+                <img src="@@webRoot/lib/images/wyrs-0804/b3.jpg" alt="">
+            </div>
+            <div>
+                <img src="@@webRoot/lib/images/wyrs-0804/b4.jpg" alt="">
+            </div>
+        </div>
+        @@include("include/tell.htm")
+        <div class="blanks" style="width: 100%;height:45px;"></div>
+        <a href="#fixedTop" class="botton-fixed">立即测算保费</a>
+        @@include("include/footer.htm")
+        @@include("include/from.htm")
+</body>
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        var fromData = [
+            {
+                name: '被保人年龄',
+                type: 6,
+                id: 'age',
+                items: [{
+                    value: '0-17岁',
+                    active: true
+                }, {
+                    value: '18-30岁'
+                }, {
+                    value: '31-50岁'
+                }]
+            },
+            {
+                name: '性别',
+                type: 4,
+                id: 'sex',
+                items: [{
+                    value: '男'
+                }, {
+                    value: '女'
+                }]
+            },
+            {
+                name: '基本保额',
+                type: 6,
+                id: 'jbbe',
+                items: [{
+                    value: '10万',
+                    active: true
+                }, {
+                    value: '20万'
+                }, {
+                    value: '30万',
+                },
+                {
+                    value: '50万',
+                }]
+            },
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+                placeholder: '11111'
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },];
+        fromsFn.startFroms(fromData, {
+            title: '超过性价比-无忧人生2020',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+        // fromsFn.setFroms({
+        //     title:'保险研究社倍吉星重大疾病保险保费测算。',
+        //     selects:[
+        //         {
+        //             id:'ages',
+        //             section:'0-50',
+        //             name:'岁'
+        //         }
+        //     ],
+        //     msg:'您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        // })
+        // fromsFn.shareWx('倍吉星递增多次不分组重疾险保费测算。','https://bx.wts999.com/m/lib/images/logo-3.jpg','倍吉星重大疾病保险——多次赔付重疾保险里程碑，重疾不分组三次递增赔付。','wx3bbb18bc95bc7cff')
+
+    })
+</script>
+
+</html>

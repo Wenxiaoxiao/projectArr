@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"无忧人生2020重大疾病保险", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/wyrs-0519.css?v=@@time">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <style>
+       
+    </style>
+</head>
+
+<body style="background-color: #ad0002;">
+    <div class="body-container wyrs-0519 cp-details">
+        <img src="@@webRoot/lib/images/wyrs-0519/1.jpg" class="img-c">
+        <img src="@@webRoot/lib/images/wyrs-0519/2.jpg" class="img-c">
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <img src="@@webRoot/lib/images/wyrs-0519/icon-1.png" alt="" class="xin">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">点击测算保费</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+    </div>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+        {
+            name: '性别',
+            type: 6,
+            id: 'sex',
+            items: [{
+                value: '男',
+                selected: true
+            }, {
+                value: '女'
+            }]
+        }, 
+        {
+            name: '承保年龄',
+            type: 5,
+            id: 'age',
+            items: fromsFn.getAges(0,55)
+        }, 
+        {
+                name: '基本保额',
+                type: 5,
+                id: 'jbbe',
+                items: [
+                    {value: '5万'}, 
+                    {value: '10万'}, 
+                    {value: '20万'}, 
+                    {value: '30万'}, 
+                    {value: '40万'},
+                    {value: '50万',selected:true},
+                    {value: '其他'},
+                ]
+            },
+         {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'无忧人生2020重大疾病保险',
+        })
+       
+})
+</script>
+
+</html>

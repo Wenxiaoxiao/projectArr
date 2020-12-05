@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"中国寿险管理师预约咨询服务", "keywords": "", "description": "预约方便的时间，与寿险管理师进行1对1交流，每日限量5人！" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/appointment.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container appointment">
+        <div class="title">寿险管理师预约咨询</div>
+        <img src="@@webRoot/lib/images/appointment/img.png" class="img">
+        <div class="text-box">
+            <div>预约自己方便的时间</div>
+            <div>寿险管理师将在约定时间联系你</div>
+            <div>不占用其他时间，不打扰用户</div>
+        </div>
+        <div class="form">
+            <div class="input-box">
+                <input type="text" placeholder="姓  名" id="name" class="iosInput">
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="联系方式" id="mobile" class="iosInput">
+            </div>
+            <div class="input-box select" id="showPanel2">
+                <input type="text" readonly placeholder="想购买的保险（可多选）" id="insuranceTypes">
+            </div>
+            <div class="input-box select" id="showPanel1">
+                <input type="text" readonly placeholder="预约时间" id="appointTime">
+            </div>
+            <div class="button" id="submit">立即预约咨询</div>
+        </div>
+         <!-- 预约时间 -->
+        <div class="selct-panel hide" id="selectPanel1">
+            <div class="text">预约时间<div class="close"></div></div>
+            <div class="text1">预约日期</div>
+            <div class="list list2 date">
+                <div class="item active" d="0">今天</div>
+                <div class="item" d="1">明天</div>
+                <div class="item" d="2">后天</div>
+            </div>
+            <div class="text1">预约时间</div>
+            <div class="list time">
+                <div class="item active" start="9" end="12">上午09:00--12:00</div>
+                <div class="item" start="12" end="14">中午12:00--14:00</div>
+                <div class="item" start="14" end="19">下午14:00--19:00</div>
+                <div class="item" start="19" end="23">晚上19:00--23:00</div>
+            </div>
+            <div class="button">确定</div>
+        </div>
+        <!-- 想购买的保险 -->
+        <div class="selct-panel hide" id="selectPanel2">
+            <div class="text">想购买的保险<div class="close"></div></div>
+            <div class="list">
+                <div class="item active">重疾险</div>
+                <div class="item">医疗险</div>
+                <div class="item">意外险</div>
+                <div class="item">寿险</div>
+                <div class="item">年金险</div>
+                <div class="item">其他</div>
+            </div>
+            <div class="button">确定</div>
+        </div>
+        <div class="bg hide"></div>
+    </div>
+
+</body>
+@@include("include/footer.htm")
+<script>
+$(function(){
+    var fromsFn = $.fromsFn();
+    var params = {
+        url: location.href,
+        appointTime:"",//开始时间
+        appointEndTime:"",//截止时间
+        insuranceTypes:[],//预约险种
+        mobile:"",//手机号
+        name:"",//姓名
+    };
+    // 解决ios键盘顶起页面问题
+    var timer;
+    $(".iosInput").on("focus",function(){
+        window.clearTimeout(timer);
+    });
+    $(".iosInput").on("blur",function(){
+        timer = window.setTimeout(function(){
+            $(window).scrollTop(0);
+        },100);
+    });
+    // 预约时间 弹框
+    $("#showPanel1").on("click", function(){
+        $("#selectPanel1").removeClass("hide");
+        $(".bg").removeClass("hide");
+    });
+    // 预约时间 点击
+    $("#selectPanel1 .item").on("click", function(){
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+    // 预约时间 保存
+    $("#selectPanel1 .button").on("click", function(){
+        var dateIndex = $("#selectPanel1 .date .active").attr("d");
+        var startH = $("#selectPanel1 .time .active").attr("start");
+        var endH = $("#selectPanel1 .time .active").attr("end");
+        var date = new Date();
+        date.setDate(date.getDate() + dateIndex*1);
+        date.setHours(startH);
+        date.setMinutes(0);
+        date.setSeconds(0);
+        params.appointTime = date;
+        date = new Date(date);
+        date.setHours(endH);
+        params.appointEndTime = date;
+        params.appointTimeText = date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+$("#selectPanel1 .time .active").text();
+        $("#appointTime").val($("#selectPanel1 .date .active").text()+$("#selectPanel1 .time .active").text());
+        hidePanel();
+    });
+    // 想购买的保险 弹框
+    $("#showPanel2").on("click", function(){
+        $("#selectPanel2").removeClass("hide");
+        $(".bg").removeClass("hide");
+    });
+    // 想购买的保险 点击
+    $("#selectPanel2 .item").on("click", function(){
+        console.log($(this).hasClass("active"))
+        if($(this).hasClass("active")) {
+            $(this).removeClass("active");
+        }else{
+            $(this).addClass("active");
+        }
+    });
+    // 想购买的保险 保存
+    $("#selectPanel2 .button").on("click", function(){
+        var arr = [];
+        $("#selectPanel2 .active").each(function(){
+            arr.push($(this).text());
+        });
+        params.insuranceTypes = arr;
+        $("#insuranceTypes").val(arr.join("，"));
+        hidePanel();
+    });
+    $("#submit").on("click",function(){
+        params.name = $.trim($("#name").val());
+        params.mobile = $.trim($("#mobile").val());
+        if(!params.name) {
+            return $.layerMsg("请输入姓名");
+        }
+        if(params.name.length > 10) {
+            return $.layerMsg("姓名最多可以输入10个字符");
+        }
+        if(!params.mobile) {
+            return $.layerMsg("请输入联系方式");
+        }
+        if(!$.regular().isPhone(params.mobile)) {
+            return $.layerMsg("请输入正确格式的手机号");
+        }
+        if(!params.insuranceTypes.length) {
+            return $.layerMsg("请选择想购买的保险");
+        }
+        if(!params.appointTime) {
+            return $.layerMsg("请选择预约时间");
+        }
+        fromsFn.submitData(
+            document.title,
+            params.name,
+            params.mobile,
+            JSON.stringify([{
+                key:"预约险种类型",
+                value:params.insuranceTypes.join(","),
+            },{
+                key:"预约时间",
+                value:params.appointTimeText,
+            }]),
+            -1,
+            function(){
+                $("input").val("");
+                location.href = "./appointmentComplete.html";
+            }
+        );
+    });
+    $(".close").on("click",function(){
+        hidePanel();
+    });
+    function hidePanel(){
+        $(".selct-panel").addClass("hide");
+        $(".bg").addClass("hide");
+    }
+});
+</script>
+</html>

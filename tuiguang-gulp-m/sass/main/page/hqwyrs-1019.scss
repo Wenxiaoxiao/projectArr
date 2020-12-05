@@ -1,0 +1,197 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+$pageColor:#0273f3;
+$fontColor: #ffe545;
+.hqwyrs-1019{
+    background: #f1e2b9;
+    width:r(750);
+
+    .banner{
+        position: relative;
+        .banner-bac{
+            width: 100%;
+            vertical-align: middle;
+        }
+    }
+    .pageContent{
+        padding-bottom: 2px;
+    }
+    .box{
+        width: 716px;
+        position: relative;
+        border-radius: 10px;
+        background-color: #ffffff;
+        padding-top: 110px;
+        margin: 30px auto;
+        padding-bottom: 30px;
+        .box-title{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 400px;
+            height: 90px;
+            margin-left: -200px;
+            background-image: linear-gradient(to bottom, #febf60 , #fb712e);
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            text-align: center;
+            .p6{
+                font-size: 36px;
+                color: #fff;
+                line-height: 60px;
+                font-weight: 900;
+            }
+            .p13{
+                font-size: 44px;
+                line-height: 90px;
+                color: #fff;
+            }
+        }
+        .box-title-1{
+            width: 600px;
+            height: 135px;
+            margin-left: -300px;
+        }
+        .img-box{
+            position: relative;
+        }
+        .img-1{
+            width: 645px;
+        }
+        .b-p-2{
+            font-size: 28px;
+            position: absolute;
+            left: 26%;
+            color: #ff7000;
+        }
+        .p7{
+            top: 4%;
+        }
+        .p8{
+            top: 31%;
+        }
+        .p9{
+            top: 55%;
+        }
+        .p10{
+            top: 84%;
+        }
+        .img-2{
+            width: 564px;
+            margin-bottom: 80px;
+        }
+        .b-p-3{
+            font-size: 26px;
+            position: absolute;
+            width: 250px;
+            text-align: center;
+        }
+        
+        .p11{
+            top: 29%;
+            left: 3%;
+        }
+        .p12{
+            top: 31%;
+            left: 63%;
+        }
+        .p13{
+            top: 102%;
+            left: 5%;
+        }
+        .p14{
+            top: 102%;
+            left: 63%;
+        }
+        .img-box-2{
+            padding-bottom: 100px;
+        }
+        .p-b-4{
+            font-size: 28px;
+            position: absolute;
+            width: 400px;
+        }
+        .img-3{
+            width: 645px;
+        }
+        .p15{
+            font-size: 30px;
+            color: #ff6348;
+            font-weight: 900;
+        }
+        .p16{
+            font-size: 26px;
+            color: #626160;
+        }
+        .p17{
+            left: 39%;
+            top: 7%;
+        }
+        .p18{
+            left: 5%;
+            top: 28%;
+            text-align: right;
+        }
+        .p19{
+            left: 39%;
+            top: 54%;
+        }
+        .p20{
+            left: 5%;
+            top: 82%;
+            text-align: right;
+        }
+    }
+    .box-1{
+        padding-top: 200px;
+        
+    }
+    .premiumBox{
+        border: none;
+        background-color: #fff;
+        color: #333;
+        border-radius: 10px;
+    }
+    .premium-title{
+        width: 95%;
+        height: 70px;
+        line-height: 70px;
+        border-radius: 70px;
+        background-image: linear-gradient(to bottom, #f7c35d , #fd702e);
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 10px;
+        .yuan{
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 6px;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+    }
+    .premium-title-1{
+        font-size: r(36);
+    }
+    .premium-border{
+        .labeltxt{
+            color: #333;
+        }
+        .btns{
+            display: block;
+            width: 80%;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 80px;
+            text-align: center;
+            margin: 5px auto 20px;
+            font-size: 38px;
+            font-weight: 900;
+            background-color: #ff604a;
+            color: #fff;
+        }
+    }
+}

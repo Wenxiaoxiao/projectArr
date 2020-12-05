@@ -1,0 +1,101 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.qnbk-0820{
+    background: #fff6f5;
+    width:r(750);
+    .comon-box-1{
+        position: relative;
+        width:r(750);
+        height:r(780);
+        .qrcode{
+            position:absolute;
+            width:r(300);
+            height:r(300);
+            left:r(70);
+            top:r(270);
+            img{
+                width:r(300);
+            }
+        }
+        .shineWords{
+            font-size:r(36);
+            position: absolute;
+            top:r(496);
+            right:r(86);
+            font-weight:900;
+            color:#000;
+            animation: my-animation .25s linear infinite alternate-reverse;
+        }
+        @keyframes my-animation {
+            from{
+                color:#000;
+            }
+            to{
+                color:#ff7202;
+            }
+        }
+    }
+    .comon-box-2{
+        width:r(750);
+        height:r(841);
+        position: relative;
+        .qrcode{
+            position:absolute;
+            width:r(321);
+            height:r(321);
+            left:r(68);
+            bottom:r(177);
+            img{
+                width:r(321);
+            }
+        }
+    }
+    .img-c{
+        width:r(750);
+    }
+    .blank{
+        height:r(100);
+    }
+    .botton-fixed{
+        width:r(750);
+        height:r(100);
+        line-height:r(100);
+        position: fixed;
+        background:#ff943e;
+        z-index:1;
+        left:50%;
+        transform: translateX(-50%);
+        bottom: r(-100);
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        font-size:0;
+        &>span{
+            display:inline-block;
+            height:r(100);
+            text-align:center;
+        }
+        &>.left{
+            color:#fff2b1;
+            font-size:r(26);
+            width:r(503);
+            &>span{
+                color:#fff;
+                font-size:r(30);
+            }
+        }
+        &>.right{
+            width:r(247);
+            background:#fe4731;
+            color:#fff;
+            font-size:r(34);
+            font-weight: bold;
+        }
+        &.show{
+            bottom: 0;
+        }
+    }
+}

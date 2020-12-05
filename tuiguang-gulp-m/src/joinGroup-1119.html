@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"你可以在群里和众多人谈论保险，深入了解保险后再买保险，保险小白变保险专家", "keywords": "", "description":"你可以在群里和众多人谈论保险，深入了解保险后再买保险，保险小白变保险专家" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/joinGroup-1119.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+<body>
+    <div class="box-joinGroup-1119">
+        <!-- 弹窗 -->
+        <div class="modal_joingroup hidemodal">
+            <div class="form_joingroup">
+                <div class="phone_check">
+                    <div class="phone">
+                        <div class="icon"></div>
+                        <div class="phone-input">
+                            <input placeholder="请输入您的手机号" class="phoneinput"/>
+                        </div>
+                    </div>
+                    <div class="check">
+                        <div class="icon"></div>
+                        <div class="check-input">
+                            <input placeholder="请输入验证码" class="checkinput"/>
+                            <span class="getCheckNum">获取验证码<span class="countdown_checknum"></span></span>
+                        </div>
+                    </div>
+                    <div class="btn3">验证加群</div>
+                </div>
+                <div class="tips">您的问题解答后可免费领取家庭医生1年+重疾就医绿通服务1年+防癌险1份</div>
+            </div>
+        </div>
+        <div class="part1">
+            <div class="box-center">
+                <div class="content-box-center">
+                    <div class="content-wrapper">
+                        <div class="d1 liveheader-title"></div>
+                        <div class="d2">加保险科普群，看群内保险大咖权威解答</div>
+                        <div class="d3">你可以在群里和众多人谈论保险，深入<br/>了解保险后再买保险，保险小白变保险专家</div>
+                    </div>
+                </div>
+            </div>
+            <img src="@@webRoot/lib/images/joinGroup-1119/1.png" alt=""/>
+        </div>
+        <div class="part2">
+            <div class="liveTitle"><div>保险大咖建500个保险投保科普群，避踩坑、</div><div>优保障、免费解答问题，不营销、不推荐产品</div></div>
+            <div class="liveWords"><b style="color:#2577ff;"><span class="regionName">湖北</span>群</b>开始建立，今天加群，限时发福利，<b style="color:#fd4374;">送</b>：</div>
+            <div class="liveQrCode" id="showFixed">
+                <img class="liveQrCode_img hidemodal" src="@@webRoot/lib/images/joinGroup-1119/qr_code.png"/>
+                <div class="btn add-group-btn"><img src="@@webRoot/lib/images/joinGroup-1119/btn.png" alt=""></div>
+            </div>
+        </div>
+        <div class="part3">
+            <div class="dakas">
+                <div class="daka daka-left">
+                    <div class="btn1 add-group-btn">
+                        <img src="@@webRoot/lib/images/joinGroup-1119/btn1.png" alt="">
+                    </div>
+                </div>
+                <div class="daka daka-right">
+                    <div class="btn1 add-group-btn">
+                        <img src="@@webRoot/lib/images/joinGroup-1119/btn1.png" alt="">
+                    </div>
+                </div>
+                <div class="daka daka-left">
+                    <div class="btn1 add-group-btn">
+                        <img src="@@webRoot/lib/images/joinGroup-1119/btn1.png" alt="">
+                    </div>
+                </div>
+                <div class="daka daka-right">
+                    <div class="btn1 add-group-btn">
+                        <img src="@@webRoot/lib/images/joinGroup-1119/btn1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part4"></div>
+        <div class="part5"></div>
+        <div class="botton-fixed">
+            <div class="footwords1"><img src="@@webRoot/lib/images/joinGroup-1119/concat.png" alt="" >&nbsp;<span class="regionName">湖北</span><b>保险科普群</b><span class="s1">开始建立，今天限时发福利，加群，送： </span></div>
+            <div class="footwords2">家庭医生1年 + 重疾就医绿通服务1年 + 防癌险1份</div>
+            <div class="footbtn add-group-btn"><img src="@@webRoot/lib/images/joinGroup-1119/btn2.png" alt=""></div>
+        </div>
+    </div>
+    @@include("include/footer.htm")
+</body>
+<script type="text/javascript">
+console.log(window.innerHeight);
+//高度
+console.log($('.modal_joingroup'));
+$(".modal_joingroup")[0].style.height = window.innerHeight+'px';
+$(function () {
+    //获取用户搜索的关键词
+    let keyword = $.tools().getKeyWords();
+    if(keyword){
+        $(".liveheader-title").html(keyword);
+    }
+    scrollFixed();
+    function scrollFixed() {
+        var showFixedHeight = $("#showFixed").offset().top
+        console.log(showFixedHeight)
+        $(window).on("scroll", function () {
+            if ($(this).scrollTop() >= showFixedHeight) {
+                $(".botton-fixed").addClass("show")
+            } else {
+                $(".botton-fixed").removeClass("show");
+            }
+        })
+    }
+    //获取省份
+    $.ajax({
+        url: 'http://ip-api.com/json/?lang=zh-CN',
+        data : {},
+        type : "GET",
+        success : function(res) {
+            let regionName = res.regionName.split("省")[0];
+            sessionStorage.setItem('regionName',regionName);
+            $('.regionName').html(regionName);
+        },
+        error : function(err) {
+            console.log(err);
+        }
+    });
+    //点击出现弹窗
+    $(".add-group-btn").on("click",function(){
+        //console.log('出现弹窗');//showmodal hidemodal
+        $(".modal_joingroup").addClass("showmodal");
+    })
+    //点击遮罩 弹窗消失
+    $("div.modal_joingroup").on("click",function(e){
+        if($(e.target).hasClass("modal_joingroup")){
+            $(".modal_joingroup").removeClass("showmodal");
+            $(".modal_joingroup").addClass("hidemodal");
+        }
+    })
+    //获取验证码
+    $('.getCheckNum').on("click",function(){
+        let phoneVal = $(".phoneinput").val(),checkVal = $(".checkinput").val();
+        if(!$.regular().isPhone(phoneVal)){
+            $.layerMsg('您输入的不是正确的手机号码！');
+            return false;
+        }
+        let regionName = sessionStorage.getItem('regionName');
+        let CONTENT = [{key:'省份',value:regionName}];
+        //plan,name,mobile,content,layerMsg,callback
+        $.fromsFn().submitData1('','申请加入保险攻略群','',phoneVal,JSON.stringify(CONTENT),'',function(successMsg){
+            console.log("successMsg",successMsg);//开始倒计时
+            //将开始倒计时的 开始时间，倒计时应该结束的时间 ，倒计时的 数字数值 存在 storage里
+            let startTime = new Date().valueOf(),endTime = new Date().valueOf()+5*60*1000;
+            sessionStorage.setItem("startTime",startTime);
+            sessionStorage.setItem("endTime",endTime);
+            sessionStorage.setItem("three_hundred",300);
+            $(".countdown_checknum").html('(300)');
+            $(".getCheckNum")[0].style.color = "#ccc";//颜色
+            $(".getCheckNum").addClass("notclick");//不可点击
+            countdown();
+        });//得到验证码
+    })
+    //倒计时
+    function countdown(){
+        //五分钟后重新获取
+        let three_hundred = sessionStorage.getItem("three_hundred"),startTime = sessionStorage.getItem('startTime'),endTime = sessionStorage.getItem('endTime');
+        setTimeout(function(){
+            three_hundred--;
+            sessionStorage.setItem("three_hundred",three_hundred);
+            $(".countdown_checknum").html('('+three_hundred+')');
+            if(new Date().valueOf() < endTime && three_hundred>=1){//当前时间小于应该结束的时间 且 倒计时的数字数值 大于 1
+                countdown();
+            }
+            else{
+                $(".countdown_checknum").html('');
+                $(".getCheckNum")[0].style.color = "#4187ff";
+                $(".getCheckNum").removeClass("notclick");
+            }
+        },1000)
+    }
+    //验证加群
+    $(".btn3").on("click",function(){
+        let phoneVal = $(".phoneinput").val(),checkVal = $(".checkinput").val();
+        if(!$.regular().isPhone(phoneVal)){
+            $.layerMsg('您输入的不是正确的手机号码！')
+            return false;
+        }
+        if(checkVal.split(" ").join("") === ''){
+            $.layerMsg('请输入验证码！')
+            return false;
+        }
+        //判断验证码是否正确
+        $.ajax({
+            url: window.location.origin+'/source/checkSms.do',
+            //url:'http://dy1.wtshb99.cn'+'/source/checkSms.do',
+            data : {code:checkVal},
+            type : "GET",
+            success : function(res) {
+                console.log(res);
+                if (result.success == 1) {
+                    $(".liveQrCode_img").removeClass("hidemodal");
+                    $(".liveQrCode_img").addClass("showmodal");
+                    //关闭弹窗
+                    $(".modal_joingroup").removeClass("showmodal");
+                    $(".modal_joingroup").addClass("hidemodal");
+                    var layerHtml=
+                        '<div class="wts-introduce-m1">'
+                        +'  <img src="./lib/images/layer-m-bac1.png" alt="">'
+                        +'</div>';
+                    setTimeout(function(){
+                        layer.open({
+                            type: 1,
+                            area: ['450px','192px'], //宽高
+                            shadeClose:true,
+                            content: layerHtml,
+                            cancel: function(){
+                                layer.close(layer.index);
+                            }
+                        });
+                    },1000)
+                    //两秒后自动关闭
+                    setTimeout(function(){
+                        //关闭layer
+                        layer.closeAll();
+                        
+                    },3000)
+                }
+                else{
+                    $.layerMsg('您输入的验证码有误！');
+                }
+            },
+            error : function(err) {
+                //console.log(err);
+                $.layerMsg('服务器走神了！')
+            }
+        });
+    })
+})
+</script>
+</html>

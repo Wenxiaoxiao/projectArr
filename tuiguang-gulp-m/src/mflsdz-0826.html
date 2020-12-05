@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"华少推荐-买保险上梧桐树", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/mflsdz-0826.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container mflsdz-0826">
+        <img src="@@webRoot/lib/images/mflsdz-0826/1.png" alt="" class="img-c">
+        <div class="premiumBox-wrapper" id="showFixed">
+            <img src="@@webRoot/lib/images/mflsdz-0826/2.png" alt="" class="bg">
+            <div class="premiumBox">
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <span class="btns" id="subMitBtn">立即预约</span>
+                    <p class="pre-text">
+                        安全声明：您的信息将被严格保密，您提供的个人信息
+                        授权仅用于我司保险顾问致电为您提供保险相关服务，
+                        我们不会泄露给任何第三方或者其他用途。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img src="@@webRoot/lib/images/mflsdz-0826/3.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/mflsdz-0826/4.png" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/mflsdz-0826/5.png" alt="" class="img-c">
+        @@include("include/tell.htm")
+        <div class="blank"></div>
+        <a href="#showFixed" class="botton-fixed">
+           立即预约
+        </a>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+$(function() {
+    scrollFixed();
+    function scrollFixed() {
+        var showFixedHeight = $("#showFixed").offset().top
+        $(window).on("scroll", function () {
+            if ($(this).scrollTop() > showFixedHeight) {
+                $(".botton-fixed").addClass("show")
+            } else {
+                $(".botton-fixed").removeClass("show")
+            }
+        })
+    };
+    var fromsFn = $.fromsFn();
+    let ageArr = []
+    for(let i=0;i<=55;i++){
+        ageArr[i] = {}
+        ageArr[i].value = i +'岁'
+    }
+    var fromData = [
+    {
+        name: '您的姓名:',
+        type: 2,
+        id: 'name',
+        desc:'您的信息将被严格保密'
+    },
+    {
+        name: '您的性别:',
+        type: 6,
+        id: 'sex',
+        items: [{
+            value: '男',
+            selected: true
+        }, {
+            value: '女'
+        }]
+    },
+    {
+        name: '您的年龄:',
+        type: 5,
+        id: 'age',
+        items: ageArr
+    },{
+        name: '您的电话:',
+        type: 3,
+        id: 'mobile',
+        desc:'用于接收产品分析'
+    },];
+    fromsFn.startFroms(fromData,{
+        title:'华少推荐-买保险上梧桐树',
+        msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+    })
+})
+</script>
+
+</html>

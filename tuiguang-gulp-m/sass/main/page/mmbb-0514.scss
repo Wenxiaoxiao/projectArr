@@ -1,0 +1,110 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.mmbb-0514{
+    background: url('../../images/mmbb-0514/bg.png');
+    background-size:r(750) r(1743);
+    width:r(750);
+    height:r(1743);
+    overflow: hidden;
+    .toptxt{
+        width:r(502);
+        height:r(168);
+        &>img{
+            width:100%;
+        }
+        margin-top:r(59);
+        margin-left:r(125);
+    }
+    .tips{
+        font-size:r(34);
+        text-align:center;
+        color:#fff;
+        font-weight:bold;
+        height:r(71);
+        line-height:r(71);
+    }
+    ._btn{
+        width:r(481);
+        height:r(78);
+        background: url('../../images/mmbb-0514/btn.png');
+        background-size:r(481);
+        height:r(78);
+        color:#fff;
+        font-size:r(37);
+        text-align:center;
+        line-height:r(70);
+        font-weight:bold;
+        margin:0 auto;
+        display:block;
+    }
+    .readMe-box{
+        background:#b94ac7;
+        border:r(12) solid #b94ac7;
+        width:r(664);
+        margin:0 auto;
+        margin-top:r(39);
+        border-radius:r(15);
+        .wrapper{
+            width:100%;
+            height:100%;
+            background:#fff;
+            padding:r(30) r(40);
+            border-radius:r(15);
+            line-height:r(46);
+            font-size:r(24);
+            font-weight:bold;
+            &>li{
+                padding-left:r(43);
+                position: relative;
+                &>img{
+                    width:r(24);
+                    height:r(24);
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
+                    left:0;
+                }
+                &>.pink{
+                    color:#fb31af;
+                }
+            }
+        }
+    }
+    .mmbb-title{
+        font-size:r(38);
+        font-weight:bold;
+        color:#fff;
+        text-align:center;
+        line-height:r(48);
+        margin-top:r(27);
+        margin-bottom:r(18);
+    }
+    .premiumBox{
+        background:#fff;
+        color:#575757;
+        border:1px solid #fff;
+        border-radius:r(15);
+        .labeltxt{
+            color:#575757;
+        }
+        .btns{
+            background:#fb31af;
+            color:#fff;
+            font-size:r(37);
+            font-weight:bold;
+            width:r(604);
+            height:r(87);
+            line-height:r(87);
+            display:block;
+            margin:0 auto;
+            text-align:center;
+        }
+        .premium-box{
+            padding:r(0) r(30);
+        }
+        .pre-text{
+            text-align:center;
+        }
+    }
+}

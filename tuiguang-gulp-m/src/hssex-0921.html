@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"华少推荐-2020超牛少儿险", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/hssex-0907.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container hssex-0907">
+        <img src="@@webRoot/lib/images/hssex-0907/1.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/hssex-0907/2.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/hssex-0907/3.jpg" alt="" class="img-c">
+        <div class="premiumBox-wrapper" id="showFixed">
+            <div class="hasNum">今日仅剩免费名额<span class="setNum"></span>个</div>
+            <div class="premiumBox">
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <span class="btns" id="subMitBtn">免费测算保费<span>（原价￥199元）</span></span>
+                    <p class="pre-text">
+                        安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img src="@@webRoot/lib/images/hssex-0907/4.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/hssex-0907/5.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/hssex-0907/6.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/hssex-0907/7.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/hssex-0907/8.jpg" alt="" class="img-c">
+        <img src="@@webRoot/lib/images/hssex-0907/9.jpg" alt="" class="img-c">
+        @@include("include/tell.htm")
+        <div class="blank"></div>
+        <a href="#showFixed" class="botton-fixed">
+            免费测算保费
+        </a>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+$(function() {
+    scrollFixed();
+    function scrollFixed() {
+        var showFixedHeight = $("#showFixed").offset().top
+        $(window).on("scroll", function () {
+            if ($(this).scrollTop() > showFixedHeight) {
+                $(".botton-fixed").addClass("show")
+            } else {
+                $(".botton-fixed").removeClass("show")
+            }
+        })
+    };
+    var fromsFn = $.fromsFn();
+    let ageArr = []
+    for(let i=0;i<=17;i++){
+        ageArr[i] = {}
+        ageArr[i].value = i +'岁'
+    }
+    let schemeArr = [
+        {value:'130万重疾+600万医疗'},
+        {value:'100万重疾+600万医疗'},
+        {value:'50万重疾+600万医疗'},
+        {value:'30万重疾+600万医疗'},
+        {value:'其他方案'}
+    ];
+    var fromData = [
+    {
+        name: '宝宝年龄:',
+        type: 5,
+        id: 'age',
+        items: ageArr
+    },
+    {
+        name: '投保方案:',
+        type: 5,
+        id: 'scheme',
+        items: schemeArr
+    },
+    {
+        name: '宝宝性别:',
+        type: 6,
+        id: 'sex',
+        items: [{
+            value: '男',
+            selected: true
+        }, {
+            value: '女'
+        }]
+    },
+    {
+        name: '您的姓名:',
+        type: 2,
+        id: 'name',
+        desc:'您的信息将被严格保密'
+    },
+   {
+        name: '您的电话:',
+        type: 3,
+        id: 'mobile',
+        desc:'用于接收产品分析'
+    },];
+    fromsFn.startFroms(fromData,{
+        title:'华少推荐-2020超牛少儿险',
+        msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+    })
+    function setNum(startNum,num){
+        //一共86个，一天减少一个
+        var startTime = new Date(startNum).getTime();
+        var nowTime = new Date().getTime();
+        var oneDay = 1000*24*60*60;
+        var tempNum = 86-Math.floor((nowTime-startTime)/oneDay);
+        if(tempNum<0){
+            tempNum=0;
+        }
+        else if(tempNum>86){
+            tempNum=86;
+        }
+        $('.setNum').text(tempNum);
+    }
+    setNum('2020/09/22',86);
+})
+</script>
+
+</html>

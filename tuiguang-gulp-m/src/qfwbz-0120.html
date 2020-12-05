@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"2020超省钱成人保障方案", "keywords": "", "description":"" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/qfwbz-0120.css">
+    <link rel="stylesheet" href="@@webRoot/lib/css/swiper.min.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <script src="@@webRoot/lib/js/swiper-3.4.2.jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="body-container qfwbz-0120">
+        <div class="banner-box">
+            <img src="@@webRoot/lib/images/qfwbz-0120/1.jpg">
+            <div class="linq clearfix">
+                <div class="left">已有<span>200225</span>人定制成功</div>
+                <div class="right swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="item swiper-slide">陈**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">李**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">刘**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">谢**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">张**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">李**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">孙**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">文**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">严**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">杜**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">王**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">曾**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">黄**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">赵**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">余**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">刘**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">李**领取了成人保险定制方案</div>
+                        <div class="item swiper-slide">吴**领取了成人保险定制方案</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-bg" id="fixedTop">
+            <!-- <div class="premiumBox">
+                <div class="info">安全声明:您的信息将被严格保密，您的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。</div>
+            </div> -->
+            <div class="premiumBox" id="premiumdw">
+                <div class='tops'>
+                    <p class="titles">限时免费领取定制保障方案<span>（原价269元）</span></p>
+                    <p class="time">限免倒计时:<span class="h">26</span>:<span class="m">59</span>:<span class="s">59</span>
+                    </p>
+                </div>
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <div class="btnbox">
+                        <span class="btns" id="subMitBtn">立即免费领取<div class="btnsDesc">（现在领取方案，还能免费获得万元保额防癌保障）</div>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="ct-box" id="showFixed">
+
+            </div>
+            <div class="ct-box">
+                <img src="@@webRoot/lib/images/qfwbz-0120/2.jpg" alt="">
+            </div>
+            <div class="ct-box">
+                <img src="@@webRoot/lib/images/qfwbz-0120/3.jpg" alt="">
+            </div>
+            <div class="ct-box">
+                <img src="@@webRoot/lib/images/qfwbz-0120/4.jpg" alt="">
+            </div>
+            <div class="ct-box">
+                <a href="#fixedTop">
+                    <img src="@@webRoot/lib/images/qfwbz-0120/5.jpg" alt="">
+                    <img class="fixedTopBtn" src="@@webRoot/lib/images/qfwbz-0120/1.png" alt="">
+                </a>
+
+            </div>
+            <div class="ct-box">
+                <img src="@@webRoot/lib/images/qfwbz-0120/6.jpg" alt="">
+            </div>
+            <div class="ct-box">
+                <img src="@@webRoot/lib/images/qfwbz-0120/7.jpg" alt="">
+            </div>
+            <div class="ct-box">
+                <img src="@@webRoot/lib/images/qfwbz-0120/8.jpg" alt="">
+            </div>
+            <div class="ct-box">
+                <a href="#fixedTop">
+                    <img src="@@webRoot/lib/images/qfwbz-0120/9.jpg" alt="">
+                    <img class="fixedTopBtn" src="@@webRoot/lib/images/qfwbz-0120/1.png" alt="">
+                </a>
+
+            </div>
+            <div class="ct-box">
+                <img src="@@webRoot/lib/images/qfwbz-0120/10.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+    @@include("include/tell.htm")
+    @@include("include/footer.htm")
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            autoplay: 3000,
+            loop: true,
+        });
+        countdown()
+        var times = setInterval(countdown, 1000)
+        function countdown() {
+            var myDate = new Date();
+            var year = myDate.getFullYear();   //获取系统的年；
+            var month = myDate.getMonth() + 1;   //获取系统月份，由于月份是从0开始计算，所以要加1
+            var tian = myDate.getDate(); // 获取系统日
+            var endTime = new Date(year + '/' + month + '/' + (tian * 1 + 1) + ' 03:00:00')
+            var leftTime = endTime.getTime() - myDate.getTime()
+            h = Math.floor(leftTime / 1000 / 60 / 60);
+            if (h > 24) {
+                endTime = new Date(year + '/' + month + '/' + (tian * 1) + ' 23:59:59')
+                leftTime = endTime.getTime() - myDate.getTime()
+            }
+            var d, h, m, s;
+            if (leftTime >= 0) {
+                h = Math.floor(leftTime / 1000 / 60 / 60);
+                m = Math.floor(leftTime / 1000 / 60 % 60);
+                s = Math.floor(leftTime / 1000 % 60);
+                if (s < 10) {
+                    s = "0" + s;
+                }
+                if (m < 10) {
+                    m = "0" + m;
+                }
+                if (h < 10) {
+                    h = "0" + h;
+                }
+                $('.time .h').html(h)
+                $('.time .m').html(m)
+                $('.time .s').html(s)
+            } else {
+                clearInterval(times)
+            }
+        }
+        var fromData = [
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            },
+            {
+                name: '领取电话',
+                type: 3,
+                id: 'mobile',
+            },];
+        fromsFn.startFroms(fromData, {
+            title: '2020超省钱成人保障方案',
+            msg: 1
+        })
+        // 每分钟+3人
+        var _n = parseInt((new Date().getTime() - new Date("2019-11-17").getTime()) / 1000) + 1;
+        $(".left span").text(_n);
+    })
+</script>
+
+</html>

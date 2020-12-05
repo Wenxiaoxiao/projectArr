@@ -1,0 +1,171 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.fadz-1119{
+    background: #fff;
+    .banner-box{
+        width: 100%;
+        position: relative;
+        img{
+            width: 100%;
+            display: block;
+        }
+        .linq{
+            position: absolute;
+            bottom: 0.4rem;
+            width: 95%;
+            left: 2.5%;
+            border-radius: r(18);
+            height: r(36);
+            line-height: r(30);
+            background: rgba(0,0,0,0.4);
+            font-size: 0.3rem;
+            color: #fff;
+            padding:r(3) r(20);
+            letter-spacing: 1px;
+
+            .left{
+                float: left;
+                border-right: 2px solid #797877;
+                padding-right: 0.3rem;
+                span{
+                    color: #fe771d;
+                }
+            }
+            .swiper-container{
+                height: r(30);
+            }
+            .right{
+                float: right;
+            }
+        }
+    }
+    .wrap{
+        .ct-box{
+            width: 100%;
+            position: relative;
+            img{
+                width: 100%;
+                display: block;
+            }
+            a{
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: r(165);
+                z-index: 100;
+                cursor: pointer;
+            }
+        }
+    }
+    .premiumBox{
+        background: #2988e2;
+        border: none;
+        .info{
+            color: #999;
+            padding: 0 r(30);
+            padding-bottom: r(30);
+            font-size: r(22);
+        }
+        .tops{
+            text-align: center;
+            .titles{
+                font-size: 0.52rem;
+                font-weight: 800;
+                span{
+                    font-size: 0.3rem;
+                    color: #ffe203;
+                    text-decoration:line-through;
+                    font-weight: 100;
+                }
+            }
+            .time{
+                font-size: 0.4rem;
+                margin: 0.15rem 0;
+                letter-spacing: 1px;
+                span{
+                    display: inline-block;
+                    height: 0.4rem;
+                    line-height: 0.4rem;
+                    background: #fff;
+                    color: #fe771d;
+                    font-size: 0.3rem;
+                    padding: 0 0.1rem;
+                    border-radius: 0.1rem;
+                    margin: 0 0.1rem;
+                }
+            }
+        }
+        .premium-border{
+            border-radius: 5px;
+            background: #fff;
+            .btnbox{
+                background: #fff;
+                padding-bottom: 0.3rem;
+                .btns{
+                    width: 8rem;
+                    height: 1.33333rem;
+                    line-height: 1.33333rem;
+                    font-size: .66667rem;
+                    border-radius: 5px;
+                    margin: 0 auto .13333rem;
+                    display: block;
+                    text-align: center;
+                    background: #fe771d;
+                    -webkit-box-shadow: 0 4px 0 #ffb788;
+                    box-shadow: 0 4px 0 #ffb788;
+                    color: #fff;
+                }
+            }
+        }
+        .labeltxt{
+            color: #000;
+        }
+        .changes{
+            border-radius: 4px;
+        }
+        .qm-radio-box .radio-box{
+            padding: 0 6px;
+            min-width: 2rem;
+            &.active{
+                border-color: #ff771f;
+            }
+            &.active::after{
+                display: none;
+            }
+            &.active::before{
+                display: none;
+            }
+        }
+    }
+    .wrap{
+        padding-bottom: 0.2rem;
+    }
+    
+}
+.blanks{
+    height: r(145);
+}
+.botton-fixed{
+    width: 100%;
+    font-size: r(36);
+    height: r(145);
+    line-height: r(145);
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: r(-145);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    img{
+        width: 100%;
+    }
+    &.show{
+        bottom: 0;
+    }
+}

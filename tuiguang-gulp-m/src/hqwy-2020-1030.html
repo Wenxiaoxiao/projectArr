@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"2020超高性价比重疾险-无忧人生", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/hqwy-2020-1030.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container hqwy-2020-1030 cp-details">
+        <!-- <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/1.png" alt="" class="img-block">
+        </div> -->
+        <div class="img-box common-box-1">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/2.png" alt="" class="img-block">
+            <div class="content-block">
+                <img class="content-title" src="@@webRoot/lib/images/hqwy-2020-1030/title.png"/>
+                <div class="subtitle">六大亮点成就高能性价比</div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="item-top">188种</div>
+                        <div class="item-bottom">疾病保障</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="item-top">160%</div>
+                        <div class="item-bottom">重疾最高赔付</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="item-top">372.5万</div>
+                        <div class="item-bottom">累计最高赔付</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="premiumBox" id="fixedTop">
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <button class="btns" id="subMitBtn">查看测试结果</button>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您重疾保障方案领取，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <div class="why-chose" id="showFixed">
+            <div class="why-title"><span>为什么选择</span>横琴无忧人生2020？</div>
+            <div class="why-content">打破疾病赔付比例天花板·六大超豪华保障配置</div>
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/4.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/5.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/6.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/7.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/8.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/9.png" alt="" class="img-block">
+        </div>
+        <div class="img-box">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/10.png" alt="" class="img-block">
+        </div>
+        <div class="img-box bottom-png">
+            <img src="@@webRoot/lib/images/hqwy-2020-1030/11.png" alt="" class="img-block">
+        </div>
+        @@include("include/tell.htm")
+        <div class="blanks"></div>
+        <a href="#fixedTop" class="botton-fixed">免费测算保费</a>
+        @@include("include/footer.htm")
+        @@include("include/from.htm")
+
+</body>
+
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top;
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show");
+                } else {
+                    $(".botton-fixed").removeClass("show");
+                }
+            })
+        }
+        $(".lz-readys").remove();
+        var fromData = [
+        {
+            name: '您的性别',
+            type: 6,
+            id: 'sex',
+            items: [{
+                value: '男',
+                selected: true
+            }, {
+                value: '女'
+            },]
+        },
+        {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        }, 
+        {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+        }];
+        fromsFn.startFroms(fromData, {
+            title: '2020超高性价比重疾险-无忧人生',
+        })
+    })
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.xzdp-0617{
+    background: #4e29cd;
+    width:r(750);
+    .img-c{
+        width:r(750);
+    }
+    .premiumBox{
+        width:r(750);
+        height:r(677);
+        background:url("../../images/xzdp-0617/6.png") no-repeat;
+        background-size:100% 100%;
+        padding:r(164) r(40) r(0) r(53);
+        border:none;
+        margin:0 auto;
+        border-radius:0;
+        .qm-change{
+            .labeltxt{
+                color:#999;
+                font-size:r(27);
+                text-align: center;
+            }
+            .box-right{
+                .changes{
+                    border:1px solid #dbdbdb;
+                    border-radius:r(15);
+                    text-align: center;
+                }
+            }
+        }
+        .btns{
+            width:r(596);
+            height:r(88);
+            background:linear-gradient(to bottom,#756ee2,#6059cb);
+            border-radius: r(50);
+            display: block;
+            line-height:r(88);
+            text-align: center;
+            margin:0 auto;
+            font-size:r(39);
+            color:#fff;
+        }
+    }
+}

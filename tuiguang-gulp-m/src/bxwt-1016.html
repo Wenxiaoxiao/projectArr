@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"买保险你是否有这样的问题？", "keywords": "", "description": "" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/bxwt-1016.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container bxwt-1016">
+        <div class="banner">
+            <img src="@@webRoot/lib/images/bxwt-1016/img-2.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/bxwt-1016/img-1.png" alt="" class="banner-text">
+        </div>
+        <div class="banner banner-1">
+            <img src="@@webRoot/lib/images/bxwt-1016/img-3.jpg" alt="" class="img-c">
+            <div class="b-p p1">种类太多， </br>怎么选择？</div>
+            <div class="b-p p2">预算不够，</br> 怎么买？</div>
+            <div class="b-p p3">年年交保费，</br> 出事了就不赔？</div>
+            <div class="b-p p4">保险产品都有坑，</br> 到底是不是真的？</div>
+            <div class="b-p p5">人群不同，</br> 如何搭配？</div>
+        </div>
+        <div class="premiumBox" id="showFixed">
+            <div class="premium-border">
+                <div class="premium-title">
+                    <span class="yuan"></span>
+                    用于给您发送相关资料
+                    <span class="yuan"></span>
+                </div>
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即领取保险指南</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您开启保障，我们不会泄露给任何第三方或其他用途。
+                </p>
+            </div>
+        </div>
+        <div class="pageContent" >
+            <div class="box box-1">
+                <div class="box-title box-title-1">
+                    <div class="p6">全面保障“一步到位”</div>
+                    <div class="p6">无忧人生2020plus重大疾病保险</div>
+                </div>
+                <div class="img-box">
+                    <img src="@@webRoot/lib/images/bxwt-1016/img-3.png" alt="" class="img-c img-1">
+                    <span class="b-p-2 p7">188种疾病保障 113种重疾</span>
+                    <span class="b-p-2 p8">可选特定心脑血管保险金</span>
+                    <span class="b-p-2 p9">累计赔付高达372万 </span>
+                    <span class="b-p-2 p10">被/投保人保费可豁免</span>
+                    <span class="b-p-2 p11">附加18种少儿特疾</span>
+                    <span class="b-p-2 p12">身故有保障100%赔付</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-title">
+                    <div class="p13">住院不用愁</div>
+                </div>
+                <div class="img-box img-box-2">
+                    <img src="@@webRoot/lib/images/bxwt-1016/img-4.png" alt="" class="img-c img-2">
+                    <span class="b-p-3 p14">帮忙安排门诊 </br>预约及医疗陪诊</span>
+                    <span class="b-p-3 p15">帮忙安排住院 </br>绿色通道</span>
+                    <span class="b-p-3 p16">帮忙获取全球医疗 </br>专家第二诊疗意见</span>
+                    <span class="b-p-3 p17">帮忙垫付住院费 </br>免押金住院  </span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-title">
+                    <div class="p13">理赔不操心</div>
+                </div>
+                <div class="img-box img-box-3">
+                    <img src="@@webRoot/lib/images/bxwt-1016/img-5.png" alt="" class="img-c img-3">
+                    <div class="b-p-4 p20">
+                        <div class="p18">1v1提供理赔协助服务</div>
+                        <div class="p19">协助客户收集理赔所需资料</div>
+                    </div>
+                    <div class="b-p-4 p21">
+                        <div class="p18">全程跟踪案件理赔情况</div>
+                        <div class="p19">实时反馈确保处理时效</div>
+                    </div>
+                    <div class="b-p-4 p22">
+                        <div class="p18">核对理赔明细</div>
+                        <div class="p19">逐一查算</div>
+                    </div>
+                    <div class="b-p-4 p23">
+                        <div class="p18">进行案件督查回访</div>
+                        <div class="p19">听取客户意见和建议</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include("include/tell.htm") 
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        var fromData = [
+            {
+                name: '您的性别',
+                type: 6,
+                id: 'sex',
+                items: [{
+                    value: '男',
+                    selected: true
+                }, {
+                    value: '女'
+                }, ]
+            },
+            {
+                name: '您的姓名',
+                type: 2,
+                id: 'name',
+            }, {
+                name: '您的电话',
+                type: 3,
+                id: 'mobile',
+            },
+        ];
+        fromsFn.startFroms(fromData,{
+            title:'买保险你是否有这样的问题？',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+})
+</script>
+</html>

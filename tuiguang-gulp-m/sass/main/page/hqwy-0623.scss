@@ -1,0 +1,84 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.hqwy-0623{
+    background: #ffced2;
+    width:r(750);
+    padding-bottom:r(90);
+    .img-c{
+        width:r(750);
+    }
+    #showFixed{
+        margin-top:r(-1);
+    }
+    .premiumBox{
+        width:r(750);
+        height:r(714);
+        background:url("../../images/hqwy-0623/bg.jpg") no-repeat;
+        background-size:100% 100%;
+        padding:r(100) r(60) r(60) r(53);
+        border:none;
+        margin:0 auto;
+        border-radius:0;
+        .premium-box{
+            padding:0;
+        }
+        .qm-change{
+            .labeltxt{
+                color:#999;
+                font-size:r(27);
+                text-align: center;
+            }
+            .box-right{
+                .changes{
+                    border:1px solid #dbdbdb;
+                    border-radius:r(15);
+                    text-align: center;
+                }
+            }
+        }
+        .btns{
+            width:r(580);
+            height:r(80);
+            background:linear-gradient(to bottom,#ff6470,#f0323f);
+            border-radius: r(50);
+            display: block;
+            line-height:r(80);
+            text-align: center;
+            margin:0 auto;
+            font-size:r(39);
+            color:#fff;
+        }
+        .pre-text{
+            font-size:r(24);
+            text-align:center;
+            color:#c6c6c6;
+        }
+    }
+    .botton-fixed1{
+        width:r(750);
+        left:50%;
+        transform: translateX(-50%);
+        font-size: r(37);
+        font-weight:bold;
+        height:r(127);
+        line-height:r(127);
+        text-align: center;
+        color: #fff;
+        position: fixed;
+        bottom:r(-127);
+        background-image:linear-gradient(to bottom,#fe5a66,#f23441);
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        &.show{
+            bottom: 0;
+        }
+    }
+    .copyright-m{
+        width:r(712);
+        margin:0 auto;
+    }
+}

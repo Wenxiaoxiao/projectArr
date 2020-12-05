@@ -1,0 +1,134 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.hqwyrs{
+    font-size: 0;
+    .premiumBox{
+        margin: 0;
+    }
+    .btnfix{
+        display: none;
+        position: fixed;
+        width: r(750);
+        left: 50%;
+        margin-left: r(-375);
+        bottom: 0;
+        z-index: 1;
+        height: r(80);
+        line-height: r(80);
+        text-align: center;
+        font-size: .45333rem;
+        background: #ff7052;
+        color: #fff;
+        &.show{
+            display: block;
+        }
+    }
+    .blanks{
+        height: r(80);
+    }
+    .premium-box{
+        padding: 1.06667rem;
+        padding-top: 2.26667rem;
+        padding-bottom: .26667rem;
+        text-align: center;
+        font-size: r(28);
+        .labeltxt{
+            width: 27% !important;
+        }
+        .box-right{
+            width: 71% !important;
+        }
+    }
+    .img-box{
+        width: 100%;
+        position: relative;
+        .img-block{
+            width: 100%;
+            display: block;
+        }
+    }
+    .img-box2{
+        .action{
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            display: block;
+            width: r(406);
+            height: r(90);
+            transform: translateX(-50%);
+        }
+    }
+    .img-box3{
+        .action{
+            width: r(456);
+            height: r(106);
+            bottom: 0;
+        }
+    }
+    
+    .premiumBox {
+        padding: 0;
+        width: 100%;
+        height: r(625);
+        border-radius: 0;
+        border: none;
+        background: #9aa9fe;
+        .premium-border{
+            height: 100%;
+            background:url("../../images/hqwyrs/yd_02.jpg") no-repeat;
+            background-size: 100% 100%;
+            border-radius: 0;
+            overflow: hidden;
+            .padding-box{
+                padding: r(80);
+                padding-top: r(170);
+                padding-bottom: r(20);
+                text-align: center;
+                .btns{
+                    width: r(513);
+                    height: r(100);
+                    margin: r(30) auto 0;
+                    display: block;
+                    img{
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+
+            .qm-change{
+                background: #fff;
+                height: r(90) !important;
+                border-radius: 5px;
+                overflow: hidden;
+                margin-bottom: r(20);
+                border: 1px solid #ccc;
+                .labeltxt{
+                    width: r(164);
+                    color: #333;
+                    height: r(86) !important;
+                    line-height: r(86);
+                }
+                .changes{
+                    border: none;
+                     height: r(86) !important;
+                }
+            }
+        }
+        .pre-text{
+            padding: 0 r(82);
+            font-size: r(26);
+            color: #333;
+        }
+    } 
+    .btnbox{
+        padding:0 1.06667rem;
+        #subMitBtn{
+            width: 100%;
+            height: r(110);
+            line-height: r(55);
+            
+        }
+    }  
+}

@@ -1,0 +1,268 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.insurerate-1119{
+    padding-bottom: r(77);
+    background: #e9edf2;
+    .banner-box{
+        overflow: hidden;
+        height: r(396);
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .cs-bg {
+        .ct_01 {
+            position: relative;
+            padding: r(30) r(20);
+            margin: r(20) r(15) 0;
+            width: r(720);
+            background: #191844;
+            border-radius: r(30);
+            .rate {
+                position: relative;
+                .showpop {
+                    position: absolute;
+                    top: r(232);
+                    right: r(34);
+                    display: inline-block;
+                    width: r(152);
+                    height: r(756);
+                }
+                .showpop1 {
+                    display: inline-block;
+                    position: absolute;
+                    bottom: r(18);
+                    left: r(150);
+                    width: r(384);
+                    height: r(66);
+                }
+            }
+            img {
+                width: 100%;
+            }
+            .ct_01_box {
+                padding: r(25) 0 0;
+                width: 100%;
+                border-radius: r(40);
+                background: #425181;
+                img {
+                    width: 100%;
+                }
+            }
+            .rate_box_1 {
+                position: relative;
+                span {
+                    position: absolute;
+                    left: r(242);
+                    display: block;
+                    width: r(132);
+                    height: r(32);
+                }
+                .a1 {
+                    top: r(366);
+                }
+                .a2 {
+                    top: r(716);
+                }
+            }
+            .rate_box_2 {
+                position: relative;
+                span {
+                    position: absolute;
+                    left: r(242);
+                    display: block;
+                    width: r(132);
+                    height: r(32);
+                }
+                .a1 {
+                    top: r(268);
+                }
+                .a2 {
+                    top: r(650);
+                }
+                .a3 {
+                    top: r(1010);
+                }
+            }
+            .rate_box_3 {
+                position: relative;
+                span {
+                    position: absolute;
+                    left: r(242);
+                    display: block;
+                    width: r(132);
+                    height: r(32);
+                }
+                .a1 {
+                    top: r(288);
+                }
+                .a2 {
+                    top: r(620);
+                }
+                .a3 {
+                    top: r(950);
+                }
+            }
+            .rate_box_4 {
+                position: relative;
+                span {
+                    position: absolute;
+                    left: r(242);
+                    display: block;
+                    width: r(132);
+                    height: r(32);
+                }
+                .a1 {
+                    top: r(262);
+                }
+                .a2 {
+                    top: r(596);
+                }
+                .a3 {
+                    top: r(926);
+                }
+            }
+            .rate_box_5 {
+                position: relative;
+                span {
+                    position: absolute;
+                    left: r(242);
+                    display: block;
+                    width: r(132);
+                    height: r(32);
+                }
+                .a1 {
+                    top: r(266);
+                }
+                .a2 {
+                    top: r(598);
+                }
+            }
+            .rate_box_6 {
+                position: relative;
+                span {
+                    position: absolute;
+                    left: r(242);
+                    display: block;
+                    width: r(132);
+                    height: r(32);
+                }
+                .a1 {
+                    top: r(266);
+                }
+                .a2 {
+                    top: r(568);
+                }
+            }
+        }
+    }
+    .pop {
+        display: none;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.7);
+        .premiumBox {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0;
+            margin: 0;
+            height: r(624);
+            background-image: url('../../images/insurerate-1119/form.png');    
+            width: 100%;
+            border: none;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            .close_pop {
+                display: inline-block;
+                width: r(60);
+                height: r(60);
+                position: absolute;
+                bottom: 0;
+                left: r(354);
+            }
+            .premium-box {
+                padding-top: r(230);
+                padding-bottom: 0;
+                .qm-change {
+                    margin: 0 auto;
+                    padding-left: r(12);
+                    width: r(360);
+                    border-bottom: 1px solid #d2d2d2;
+                    .icon_name,
+                    .icon_tel {
+                        margin-top: r(24);
+                        width: r(30);
+                        height: r(30);
+                    }
+                    .labeltxt {
+                        width: 0;
+                        color: #000;
+                        font-size: 0;
+                    }
+                    .changes {
+                        padding-left: 0;
+                        border: none;
+                        width: 100%;
+                        font-size: r(24);
+                    }
+                }
+                .box-right {
+                    width: r(300);
+                    min-height: r(75);
+                    line-height: r(75);
+                }
+            }
+            .btns {
+                margin: r(40) 0 0 r(200);
+                display: inline-block;
+                width: r(360);
+                height: r(80);
+            }
+            .pre-text {
+                margin: r(4) auto 0;
+                font-family: SourceHanSansCN-Regular;
+                font-size: r(24);
+                width: r(600);
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: r(32);
+                letter-spacing: 0px;
+                color: #5e5e5e;
+            }
+        }
+        .ok {
+            display: none;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: r(500) auto 0;
+            width: r(500);
+        }
+    }
+}
+
+.botton-fixed{
+    width: 100%;
+    font-size: r(36);
+    height: r(80);
+    line-height: r(80);
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: r(-95);
+    background-color:#fd7d60;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    &.show{
+        bottom: 0;
+    }
+}

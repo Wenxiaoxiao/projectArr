@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    @@include("include/header.htm",{ "title":"高性价比儿童保险方案，一对一专业免费定制", "keywords": "", "description":"" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/rtbxfa-1118.css">
+    <link rel="stylesheet" href="@@webRoot/lib/css/swiper.min.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    <script src="@@webRoot/lib/js/swiper-3.4.2.jquery.min.js"></script>
+</head>
+<body>
+    <div class="body-container rtbxfa-1118">
+        <div class="banner-box">
+            <img src="@@webRoot/lib/images/rtbxfa-1118/1.jpg">
+            <div class="linq clearfix">
+                <div class="left">已有<span>200225</span>人定制成功</div>
+                <div class="right swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="item swiper-slide">***领取了1岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了12岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了6岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了3岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了4岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了14岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了5岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了2岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了7岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了0岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了13岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了9岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了10岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了11岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了16岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了17岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了15岁儿童保险定制方案</div>
+                        <div class="item swiper-slide">***领取了8岁儿童保险定制方案</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-bg" id="fixedTop">
+            <!-- <div class="premiumBox">
+                <div class="info">安全声明:您的信息将被严格保密，您的个人信息授权仅用于本次给您测算保费，我们不会泄露给任何第三方或其他用途。</div>
+            </div> -->
+            <div class="premiumBox" id="premiumdw">
+                <div class='tops'>
+                    <p class="titles">限时免费领取定制保障方案<span>（原价269元）</span></p>
+                    <p class="time">限免倒计时:<span class="h">26</span>:<span class="m">59</span>:<span class="s">59</span></p>
+                </div>
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <div class="btnbox">
+                        <span class="btns" id="subMitBtn">立即免费领取</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="ct-box" id="showFixed">
+              
+            </div>
+            <!-- <div class="ct-box">
+                <a href="#premiumdw" class="dw2 dw"></a>
+                <img src="@@webRoot/lib/images/rtbxfa-1118/2.jpg" alt="">
+            </div> -->
+            <div class="ct-box">
+                <a href="#premiumdw" class="dw3 dw"></a>
+                <img src="@@webRoot/lib/images/rtbxfa-1118/3.jpg" alt="">
+            </div>
+            <div class="ct-box">
+                <a href="#premiumdw" class="dw5 dw"></a>
+                <img src="@@webRoot/lib/images/rtbxfa-1118/4.jpg" alt="">
+            </div>
+        </div>
+        
+    </div>
+    @@include("include/tell.htm")
+    @@include("include/footer.htm")
+    <div class="blanks" style="width: 100%;"></div>
+        <a href="#fixedTop" class="botton-fixed"><img src="@@webRoot/lib/images/rtbxfa-1118/8.jpg" alt=""></a>
+    @@include("include/from.htm")
+</body>
+<script>
+    $(function () {
+        var fromsFn = $.fromsFn();
+        scrollFixed();
+        function scrollFixed() {
+            var showFixedHeight = $("#showFixed").offset().top
+            console.log(showFixedHeight)
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() >= showFixedHeight) {
+                    $(".botton-fixed").addClass("show")
+                } else {
+                    $(".botton-fixed").removeClass("show")
+                }
+            })
+        }
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            autoplay: 3000,
+            loop:true,
+        });
+        countdown()
+        var times = setInterval(countdown,1000)
+        function countdown(){
+            var myDate = new Date();
+            var year = myDate.getFullYear();   //获取系统的年；
+            var month = myDate.getMonth()+1;   //获取系统月份，由于月份是从0开始计算，所以要加1
+            var tian = myDate.getDate(); // 获取系统日
+            var endTime = new Date(year+'/'+month+'/'+(tian*1+1)+' 03:00:00')
+            var leftTime = endTime.getTime()-myDate.getTime()
+            h = Math.floor(leftTime / 1000 / 60 / 60);
+            if(h>24){
+                endTime = new Date(year+'/'+month+'/'+(tian*1)+' 23:59:59')
+                leftTime = endTime.getTime()-myDate.getTime()
+            }
+            var d, h, m, s;
+            if(leftTime >= 0) {
+                h = Math.floor(leftTime / 1000 / 60 / 60);
+                m = Math.floor(leftTime / 1000 / 60 % 60);
+                s = Math.floor(leftTime / 1000 % 60);
+                if(s < 10) {
+                    s = "0" + s;
+                }
+                if(m < 10) {
+                    m = "0" + m;
+                }
+                if(h < 10) {
+                    h = "0" + h;
+                }
+                $('.time .h').html(h)
+                $('.time .m').html(m)
+                $('.time .s').html(s)
+            } else {
+                clearInterval(times)
+            }
+        }
+        var fromData = [
+        {
+            name: '宝宝姓名',
+            type: 2,
+            id: 'name',
+        },
+        {
+            name: '宝宝年龄',
+            type: 6,
+            id: 'age',
+            items: [{
+                value: '0-3岁',
+                selected: true
+            }, {
+                value: '4-10岁'
+            }, {
+                value: '10-17岁'
+            }]
+        }, 
+        {
+            name: '领取电话',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'超高性价比儿童保险方案',
+            msg: 1
+        })
+        // 每分钟+3人
+        var _n= parseInt((new Date().getTime()- new Date("2019-11-17").getTime())/1000)+1;
+        $(".left span").text(_n);
+    })
+</script>
+ 
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+    <head lang="en">
+        @@include("include/header.htm",{ "title":"渤海人寿i宝贝教育年金险", "keywords": "教育年金", "description": "一款专为儿童设计，旨在保障，1元起投，压力小，收益大，解决18-21岁的教育经费问题，兼具年金保障、门槛低、高灵活性、稳定增值的特点。" })
+        <link rel="stylesheet" href="@@webRoot/lib/css/page/education-0818.css">
+        <script type="text/javascript" src="/static/js/extend_route.js"></script>
+    </head>
+
+    <body>
+        <div class="body-container education-0818">
+            <img src="@@webRoot/lib/images/education-0818/1.jpg" alt="" class="img-c">
+            <div class="premiumBox" id="showFixed">
+                <div class="premium-border">
+                    <div class="premium-box">
+                    </div>
+                    <span class="btns" id="subMitBtn">立即开启保障</span>
+                    <p class="pre-text">
+                        安全声明：您的信息将被严格保密，您提供的个人信息授权仅用于本次给您开启保障，我们不会泄露给任何第三方或其他用途。
+                    </p>
+                </div>
+            </div>
+            <img src="@@webRoot/lib/images/education-0818/2.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/education-0818/3.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/education-0818/4.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/education-0818/5.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/education-0818/6.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/education-0818/7.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/education-0818/8.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/education-0818/10.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/education-0818/11.jpg" alt="" class="img-c">
+            <img src="@@webRoot/lib/images/education-0818/12.jpg" alt="" class="img-c">
+            @@include("include/tell.htm")
+            <a href="#showFixed" class="botton-fixed">
+                立即开启保障
+            </a>
+        </div>
+        <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+        @@include("include/footer.htm") 
+        @@include("include/from.htm") 
+        <script src="@@webRoot/lib/js/jdate.min.js"></script>
+    </body>
+    <script>
+        $(function() {
+            var fromsFn = $.fromsFn();
+            
+            var fromData = [
+            {
+                name: '宝宝年龄',
+                type: 5,
+                id: 'age',
+                items:fromsFn.getAges(0,11)
+            }, 
+            {
+            name: '宝宝性别',
+            type: 6,
+            id: 'sex',
+            items: [{
+                value: '男',
+                selected: true
+            }, {
+                value: '女'
+            }]
+        }, 
+            {
+                name: '基本保额',
+                type: 2,
+                id: 'jbbe',
+            },
+            {
+                name: '称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;呼',
+                type: 2,
+                id: 'name',
+                desc:'请输入您的称呼'
+            },
+            {
+                name: '手&nbsp;机&nbsp;号',
+                type: 3,
+                id: 'mobile',
+                desc:'请输入您的电话'
+            }];
+            fromsFn.startFroms(fromData,{
+                title:'渤海人寿i宝贝教育年金险',
+                msg: '您的结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+            })
+            //初始化数据
+            function setNum(startNum){
+                var timestamp=new Date().getTime();
+                console.log(timestamp);
+                var num=Math.floor((timestamp-startNum)/(1000*5))+26848;
+                return num
+            }
+            var startTime = new Date()
+            var yy = startTime.getFullYear();
+            var mm = startTime.getMonth()+1;
+            var dd = startTime.getDate();
+            if(mm<10){
+                mm = '0'+mm
+            }
+            if(dd<10){
+                dd = '0'+dd
+            }
+            var start=new Date(yy+'/'+mm+'/'+dd).getTime()
+            console.log(start)
+            var testNum=setNum(start);
+            $(".setNum").html(testNum);
+            scrollFixed() //按钮显示隐藏
+            function scrollFixed() {
+                var showFixedHeight = $("#showFixed").offset().top
+                console.log(showFixedHeight)
+                $(window).on("scroll", function () {
+                    if ($(this).scrollTop() > showFixedHeight) {
+                        $(".botton-fixed").addClass("show")
+                    } else {
+                        $(".botton-fixed").removeClass("show")
+                    }
+                })
+            }
+    })
+    </script>
+    
+    </html>

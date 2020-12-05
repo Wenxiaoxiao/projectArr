@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import "../../helper/variables.scss";
+@import "../../helper/mixin.scss";
+.wmrs-0831{
+    background:#ffdda0;
+    padding-bottom:r(100);
+    .premiumBox{
+        width: r(710);
+        height: r(900);
+        background:url("../../images/wmrs-0831/bg.png") no-repeat;
+        border: none;
+        background-size: 100% 100%;
+        padding: r(40);
+        padding-top: r(170);
+        .fromNumber{
+            background:#fff6e8;
+            color:#ff6049;
+            font-size:r(27);
+            padding:r(10) r(30);
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            top:r(75);
+            border-radius:r(40);
+        }
+        .premium-border{
+            .premium-box{
+                padding:0;
+                .labeltxt{
+                    color:#111;
+                    font-size:r(28);
+                }
+            }
+            .btns{
+                height:r(100);
+                line-height:r(100);
+                font-size:r(46);
+                font-weight:bold;
+                background:#fc4b15;
+                width:100%;
+                display: block;
+                text-align: center;
+                border-radius:r(50);
+                i{
+                    font-size: r(26);
+                    font-weight: 300;
+                    margin-left: r(10);
+                    text-decoration:line-through;
+                }
+            }
+        }
+        .pre-text {
+            color: #5e5e5e;
+            font-size: r(24);
+        }
+    }
+    .img-box{
+        width: 100%;
+        position: relative;
+        .img-block{
+            width: 100%;
+            min-height: 3rem;
+            display: block;
+        }
+    }
+    .botton-fixed{
+        width: 100%;
+        font-size: r(40);
+        letter-spacing: 1px;
+        font-weight:bold;
+        height:r(100);
+        line-height:r(100);
+        text-align: center;
+        color: #fff;
+        position: fixed;
+        left: 0;
+        bottom:r(-100);
+        background-color:#e13424;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        &.show{
+            bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    @@include("include/header.htm",{ "title":"妈咪保贝少儿重疾险", "keywords": "", "description": "妈咪保贝少儿重疾险" })
+    <link rel="stylesheet" href="@@webRoot/lib/css/page/mmbb-0514.css">
+    <script type="text/javascript" src="/static/js/extend_route.js"></script>
+</head>
+
+<body>
+    <div class="body-container mmbb-0514">
+        <div class="toptxt">
+            <img src="@@webRoot/lib/images/mmbb-0514/toptxt.png" alt=""/>
+        </div>
+        <div class="tips">-专为未成年人设计-</div>
+        <a class="_btn" href="#showFixed">父母给孩子最好的礼物</a>
+        <div class="readMe-box">
+            <ul class="wrapper">
+                <li><img src="@@webRoot/lib/images/mmbb-0514/duigou.png"/>覆盖<span class="pink">173种</span>疾病，最高保额<span class="pink">60万</span></li>
+                <li><img src="@@webRoot/lib/images/mmbb-0514/duigou.png"/>18种少儿特定疾病（可附加），最高<span class="pink">120万</span></li>
+                <li><img src="@@webRoot/lib/images/mmbb-0514/duigou.png"/>5种少儿罕见疾病（可附加），最高<span class="pink">180万</span></li>
+                <li><img src="@@webRoot/lib/images/mmbb-0514/duigou.png"/>重大疾病二次赔付（可附加），最高<span class="pink">60万</span></li>
+                <li><img src="@@webRoot/lib/images/mmbb-0514/duigou.png"/>被保人重疾/中症/轻症豁免</li>
+                <li><img src="@@webRoot/lib/images/mmbb-0514/duigou.png"/>投保人6重豁免权益（可附加）</li>
+            </ul>
+        </div>
+        <div class="mmbb-title">这样一份专为未成年人设计的<br/>重疾险保费是多少呢？</div>
+        <div class="premiumBox" id="showFixed">
+            <div class="premium-border">
+                <div class="premium-box">
+                </div>
+                <span class="btns" id="subMitBtn">立即测算保费</span>
+                <p class="pre-text">
+                    安全声明：您的信息将被严格保密，您的个人信息授权仅用于本次给你测算保费，我们不会泄露给任何第三方或其他用途
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="@@webRoot/lib/js/jquery.lazyload.min.js"></script>
+    @@include("include/footer.htm") 
+    @@include("include/from.htm") 
+</body>
+<script>
+    $(function() {
+
+        var fromsFn = $.fromsFn();
+        
+        var fromData = [
+        {
+            name: '性别',
+            type: 4,
+            id: 'sex',
+            items: [{
+                value: '男'
+            }, {
+                value: '女'
+            }]
+        }, 
+        {
+            name: '承保年龄',
+            type: 5,
+            id: 'age',
+            items: fromsFn.getAges(0,17)
+        }, 
+        {
+            name: '基本保额',
+            type: 5,
+            id: 'jbbe',
+            items: [{
+                value: '10万'
+            }, {
+                value: '20万'
+            },{
+                value: '30万'
+            },{
+                value: '40万'
+            }, {
+                value: '50万',
+                selected:true
+            }, {
+                value: '其他'
+            }]
+        }, 
+         {
+            name: '您的姓名',
+            type: 2,
+            id: 'name',
+        }, {
+            name: '您的电话',
+            type: 3,
+            id: 'mobile',
+        }, ];
+        fromsFn.startFroms(fromData,{
+            title:'妈咪保贝少儿重疾险',
+            msg: '您的测算结果将会有专业保险规划师告知，请保持电话畅通。为您提供更专业，更贴心的保险规划方案及产品咨询服务。'
+        })
+})
+</script>
+
+</html>
